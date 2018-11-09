@@ -43,7 +43,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let textGeometry = SCNText(string: "SUN: 149.6 mil km away from Earth", extrusionDepth: 1.0)
         
-        textGeometry.firstMaterial?.diffuse.contents = UIColor.yellow
+        textGeometry.firstMaterial?.diffuse.contents = UIColor.red
         
         textNode = SCNNode(geometry: textGeometry)
         
