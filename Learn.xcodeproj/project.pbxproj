@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		095637AF2196A83400FC724A /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095637AE2196A83400FC724A /* Planet.swift */; };
+		095637B22196B20C00FC724A /* Stars.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 095637B02196B20C00FC724A /* Stars.scnp */; };
+		095637B32196B20C00FC724A /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 095637B12196B20C00FC724A /* star.png */; };
+		095637B62196C1F400FC724A /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 095637B42196C1F400FC724A /* spark.png */; };
+		095637B72196C1F400FC724A /* sunFlare.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 095637B52196C1F400FC724A /* sunFlare.scnp */; };
 		3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A098A2173793A005E69E4 /* AppDelegate.swift */; };
 		3C6A098D2173793A005E69E4 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A098C2173793A005E69E4 /* art.scnassets */; };
 		3C6A098F2173793A005E69E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A098E2173793A005E69E4 /* ViewController.swift */; };
@@ -18,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		095637AE2196A83400FC724A /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		095637B02196B20C00FC724A /* Stars.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Stars.scnp; sourceTree = "<group>"; };
+		095637B12196B20C00FC724A /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		095637B42196C1F400FC724A /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		095637B52196C1F400FC724A /* sunFlare.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = sunFlare.scnp; sourceTree = "<group>"; };
 		3C6A09872173793A005E69E4 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6A098A2173793A005E69E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C6A098C2173793A005E69E4 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -41,6 +51,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		095637AC2196A7DA00FC724A /* Galaxy */ = {
+			isa = PBXGroup;
+			children = (
+				095637AE2196A83400FC724A /* Planet.swift */,
+				095637B02196B20C00FC724A /* Stars.scnp */,
+				095637B12196B20C00FC724A /* star.png */,
+				095637B42196C1F400FC724A /* spark.png */,
+				095637B52196C1F400FC724A /* sunFlare.scnp */,
+			);
+			path = Galaxy;
+			sourceTree = "<group>";
+		};
+		095637AD2196A7F100FC724A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				095637AC2196A7DA00FC724A /* Galaxy */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		3C6A097E2173793A005E69E4 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +90,7 @@
 		3C6A09892173793A005E69E4 /* Learn */ = {
 			isa = PBXGroup;
 			children = (
+				095637AD2196A7F100FC724A /* Models */,
 				3C6A098A2173793A005E69E4 /* AppDelegate.swift */,
 				3C6A098C2173793A005E69E4 /* art.scnassets */,
 				3C6A098E2173793A005E69E4 /* ViewController.swift */,
@@ -134,9 +165,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C6A098D2173793A005E69E4 /* art.scnassets in Resources */,
+				095637B72196C1F400FC724A /* sunFlare.scnp in Resources */,
 				3C6A09972173793A005E69E4 /* LaunchScreen.storyboard in Resources */,
 				3C6A09942173793A005E69E4 /* Assets.xcassets in Resources */,
+				095637B62196C1F400FC724A /* spark.png in Resources */,
+				095637B22196B20C00FC724A /* Stars.scnp in Resources */,
 				3C6A09922173793A005E69E4 /* Main.storyboard in Resources */,
+				095637B32196B20C00FC724A /* star.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +186,7 @@
 				3C6A098F2173793A005E69E4 /* ViewController.swift in Sources */,
 				3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */,
 				3C6A09A521738FFF005E69E4 /* ViewControllers3.swift in Sources */,
+				095637AF2196A83400FC724A /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +330,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 584KM2K64C;
 				INFOPLIST_FILE = Learn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.faatehjarree.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -310,7 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 584KM2K64C;
 				INFOPLIST_FILE = Learn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.faatehjarree.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
