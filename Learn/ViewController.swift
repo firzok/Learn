@@ -77,23 +77,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Planets
         // order = merc, venus, earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
-        let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(35)), texture: "art.scnassets/mercury.jpg", distanceFromSun: 1.5)
+        let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: "art.scnassets/mercury.jpg", distanceFromSun: 1.5)
         
-        let venus = Planet(name: "Venus", radius: 0.23, rotation: CGFloat(GLKMathDegreesToRadians(45)), texture: "art.scnassets/venus.jpg", distanceFromSun: 2)
+        let venus = Planet(name: "Venus", radius: 0.23, rotation: CGFloat(GLKMathDegreesToRadians(18)), texture: "art.scnassets/venus.jpg", distanceFromSun: 2)
         
-        let earth = Planet(name: "Earth", radius: 0.25, rotation: CGFloat(GLKMathDegreesToRadians(20)), texture: "art.scnassets/earth.jpg", distanceFromSun: 4)
+        let earth = Planet(name: "Earth", radius: 0.25, rotation: CGFloat(GLKMathDegreesToRadians(16)), texture: "art.scnassets/earth.jpg", distanceFromSun: 4)
         
-        let mars = Planet(name: "Mars", radius: 0.15, rotation: CGFloat(GLKMathDegreesToRadians(8)), texture: "art.scnassets/sun_8k.jpg", distanceFromSun: 5.5)
+        let mars = Planet(name: "Mars", radius: 0.15, rotation: CGFloat(GLKMathDegreesToRadians(2)), texture: "art.scnassets/sun_8k.jpg", distanceFromSun: 5.5)
         
-        let jupiter = Planet(name: "Jupiter", radius: 0.80, rotation: CGFloat(GLKMathDegreesToRadians(9)), texture: "art.scnassets/sun_8k.jpg", distanceFromSun: 8)
+        let jupiter = Planet(name: "Jupiter", radius: 0.80, rotation: CGFloat(GLKMathDegreesToRadians(5)), texture: "art.scnassets/sun_8k.jpg", distanceFromSun: 8)
         
-        let saturn = Planet(name: "Saturn", radius: 0.75, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: "art.scnassets/saturn.jpg", distanceFromSun: 11)
+        let saturn = Planet(name: "Saturn", radius: 0.75, rotation: CGFloat(GLKMathDegreesToRadians(9)), texture: "art.scnassets/saturn.jpg", distanceFromSun: 11)
         
-        let uranus = Planet(name: "Uranus", radius: 0.46, rotation: CGFloat(GLKMathDegreesToRadians(13)), texture: "art.scnassets/sun_8k.jpg", distanceFromSun: 15)
+        let uranus = Planet(name: "Uranus", radius: 0.46, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: "art.scnassets/sun_8k.jpg", distanceFromSun: 15)
         
-        let neptune = Planet(name: "Neptune", radius: 0.45, rotation: CGFloat(GLKMathDegreesToRadians(15)), texture: "art.scnassets/sun_8k.jpg", distanceFromSun: 19)
+        let neptune = Planet(name: "Neptune", radius: 0.45, rotation: CGFloat(GLKMathDegreesToRadians(13)), texture: "art.scnassets/sun_8k.jpg", distanceFromSun: 19)
         
-        let pluto = Planet(name: "Pluto", radius: 0.05, rotation: CGFloat(GLKMathDegreesToRadians(20)), texture: "art.scnassets/sun_8k.jpg", distanceFromSun: 23)
+        let pluto = Planet(name: "Pluto", radius: 0.05, rotation: CGFloat(GLKMathDegreesToRadians(15)), texture: "art.scnassets/sun_8k.jpg", distanceFromSun: 23)
         
         // The Sun and sunFlare animation
         let sun = Planet(name: "sun", radius: 1, rotation: CGFloat(5), texture: "art.scnassets/sun_8k.jpg", distanceFromSun: 0)
