@@ -6,12 +6,20 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "jar.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "ipad",
+      "filename" : "Icon-App-60x60@2x.png",
+      "scale" : "2x"
     }
   ],
   "info" : {

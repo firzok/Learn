@@ -66,9 +66,17 @@
 		095637AD2196A7F100FC724A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				09AB072F219C189600ACADE5 /* Human Anatomy */,
 				095637AC2196A7DA00FC724A /* Galaxy */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		09AB072F219C189600ACADE5 /* Human Anatomy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Human Anatomy";
 			sourceTree = "<group>";
 		};
 		3C6A097E2173793A005E69E4 = {
@@ -329,7 +337,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9K9J6T8MWH;
+				DEVELOPMENT_TEAM = 584KM2K64C;
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -347,7 +355,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9K9J6T8MWH;
+				DEVELOPMENT_TEAM = 584KM2K64C;
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
