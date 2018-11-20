@@ -52,14 +52,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 //
 //        sceneView.scene.rootNode.addChildNode(textNode)
         
-//        createSolarSystem()
+        createSolarSystem()
 //        let parentNode = SCNNode()
 //        parentNode.position.z = -5
-        
-        let mercury = Planet(name: "Mercury", radius: 0.50, rotation: CGFloat(GLKMathDegreesToRadians(0)), texture: UIColor.white, sepTexture: UIImage(named: "art.scnassets/mercury.jpg")!,  distanceFromSun: 0)
-        let m = createNode(from :mercury)
-        m.position.z = -5
-        sceneView.scene.rootNode.addChildNode(m)
+//
+//        let mercury = Planet(name: "Mercury", radius: 0.50, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIColor.white, distanceFromSun: 0)
+//         let planets = mercury
+//        parentNode.addChildNode(createNode(from :mercury))
+//        sceneView.scene.rootNode.addChildNode(parentNode)
         sceneView.autoenablesDefaultLighting = true
     }
     
@@ -82,31 +82,32 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
         // Planets
         // order = merc, venus, earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
-        let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIColor.white, sepTexture: UIImage(named: "")!, distanceFromSun: 1.5)
+        let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIImage(named: "art.scnassets/mercury.jpg")!, distanceFromSun: 1.5)
         
-        let venus = Planet(name: "Venus", radius: 0.23, rotation: CGFloat(GLKMathDegreesToRadians(18)), texture: UIColor.darkGray, sepTexture: UIImage(named: "")!, distanceFromSun: 2)
+        let venus = Planet(name: "Venus", radius: 0.23, rotation: CGFloat(GLKMathDegreesToRadians(18)), texture: UIImage(named: "art.scnassets/venus.jpg")!, distanceFromSun: 2)
         
-        let earth = Planet(name: "Earth", radius: 0.25, rotation: CGFloat(GLKMathDegreesToRadians(16)), texture: UIColor.green, sepTexture: UIImage(named: "")!, distanceFromSun: 4)
+        let earth = Planet(name: "Earth", radius: 0.25, rotation: CGFloat(GLKMathDegreesToRadians(16)), texture: UIImage(named: "art.scnassets/earth.jpg")!, distanceFromSun: 4)
         
-        let mars = Planet(name: "Mars", radius: 0.15, rotation: CGFloat(GLKMathDegreesToRadians(2)), texture: UIColor.red, sepTexture: UIImage(named: "")!, distanceFromSun: 5.5)
+        let mars = Planet(name: "Mars", radius: 0.15, rotation: CGFloat(GLKMathDegreesToRadians(2)), texture: UIImage(named: "art.scnassets/8k_mars.jpg")!, distanceFromSun: 5.5)
         
-        let jupiter = Planet(name: "Jupiter", radius: 0.80, rotation: CGFloat(GLKMathDegreesToRadians(5)), texture: UIColor.blue, sepTexture: UIImage(named: "")!, distanceFromSun: 8)
-        
-        let saturn = Planet(name: "Saturn", radius: 0.75, rotation: CGFloat(GLKMathDegreesToRadians(9)), texture: UIColor.brown, sepTexture: UIImage(named: "")!, distanceFromSun: 11)
-        
-        let uranus = Planet(name: "Uranus", radius: 0.46, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIColor.purple, sepTexture: UIImage(named: "")!, distanceFromSun: 15)
-        
-        let neptune = Planet(name: "Neptune", radius: 0.45, rotation: CGFloat(GLKMathDegreesToRadians(13)), texture: UIColor.cyan, sepTexture: UIImage(named: "")!, distanceFromSun: 19)
-        
-        let pluto = Planet(name: "Pluto", radius: 0.05, rotation: CGFloat(GLKMathDegreesToRadians(15)), texture: UIColor.yellow, sepTexture: UIImage(named: "")!, distanceFromSun: 23)
+        let jupiter = Planet(name: "Jupiter", radius: 0.80, rotation: CGFloat(GLKMathDegreesToRadians(5)), texture: UIImage(named: "art.scnassets/8k_jupiter.jpg")!, distanceFromSun: 8)
+//
+//        let saturn = Planet(name: "Saturn", radius: 0.75, rotation: CGFloat(GLKMathDegreesToRadians(9)), texture: UIColor.brown, distanceFromSun: 11)
+//
+//        let uranus = Planet(name: "Uranus", radius: 0.46, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIColor.purple, distanceFromSun: 15)
+//
+//        let neptune = Planet(name: "Neptune", radius: 0.45, rotation: CGFloat(GLKMathDegreesToRadians(13)), texture: UIColor.cyan, distanceFromSun: 19)
+//
+//        let pluto = Planet(name: "Pluto", radius: 0.05, rotation: CGFloat(GLKMathDegreesToRadians(15)), texture: UIColor.yellow, distanceFromSun: 23)
         
         // The Sun and sunFlare animation
-//        let sun = Planet(name: "sun", radius: 0.5, rotation: CGFloat(5), texture: UIColor.orange, sepTexture: UIImage(named: "")!, distanceFromSun: 0)
+//        let sun = Planet(name: "sun", radius: 0.5, rotation: CGFloat(5), texture: UIColor.orange, distanceFromSun: 0)
         
         let sunFlare = SCNParticleSystem(named: "sunFlare.scnp", inDirectory: nil)!
         parentNode.addParticleSystem(sunFlare)
         
-        let planets = [mercury, venus, earth, mars, jupiter, saturn, uranus, neptune, pluto]
+        let planets = [mercury, venus, earth, mars, jupiter]
+//        , saturn, uranus, neptune, pluto]
         
         for planet in planets{
             parentNode.addChildNode(createNode(from: planet))
@@ -149,7 +150,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         var textNode = SCNNode()
         
         let sphereGeometry = SCNSphere(radius: planet.radius)
-        sphereGeometry.firstMaterial?.diffuse.contents = planet.sepTexture
+        sphereGeometry.firstMaterial?.diffuse.contents = planet.texture
         
         let planetNode = SCNNode(geometry: sphereGeometry)
         planetNode.position.z = -planet.distanceFromSun
@@ -215,4 +216,3 @@ extension Int {
         return CGFloat(self) * .pi / 180
     }
 }
-
