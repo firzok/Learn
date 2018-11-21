@@ -29,7 +29,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         cam.sensorHeight = 1
     
         sceneView.scene.rootNode.camera = cam
-//        cam.fieldOfView = 10
+//        cam.fieldOfView = 100
 //        sceneView.pointOfView?.camera!.sensorHeight = 1
 //        let parentNode = SCNNode()
 //        parentNode.position.z = -5
