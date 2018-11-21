@@ -10,49 +10,27 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
-
+    var nodesRendered = [SCNNode] ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set the view delegate
         sceneView.delegate = self
+        
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
-//        let cube = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0.01)
-
-//        let sphere = SCNS phere(radius: 0.2)
-//
-//        let material = SCNMaterial()
-//
-//        material.diffuse.contents = UIImage(named: "art.scnassets/sun.jpg")
-//
-//        sphere.materials = [material]
-//
-//        let node = SCNNode()
-//
-//        node.position = SCNVector3(x: 0, y: 0.5, z: -0.5)
-//
-//        node.geometry = sphere
-//
-//        sceneView.scene.rootNode.addChildNode(node)
-//
-//        textNode.removeFromParentNode()
-//
-//        let textGeometry = SCNText(string: "SUN: 149.6 mil km away from Earth", extrusionDepth: 1.0)
-//
-//        textGeometry.firstMaterial?.diffuse.contents = UIColor.red
-//
-//        textNode = SCNNode(geometry: textGeometry)
-//
-//        textNode.position = SCNVector3(0, 0.1, -0.5)
-//
-//        textNode.scale = SCNVector3(0.01, 0.01, 0.01)
-//
-//        sceneView.scene.rootNode.addChildNode(textNode)
-        
         createSolarSystem()
+        sceneView.autoenablesDefaultLighting = true
+        sceneView.scene.background.contents = UIImage(named: "art.scnassets/milky.jpg")!
+        
+        let cam = SCNCamera()
+        cam.sensorHeight = 1
+    
+        sceneView.scene.rootNode.camera = cam
+//        cam.fieldOfView = 10
+//        sceneView.pointOfView?.camera!.sensorHeight = 1
 //        let parentNode = SCNNode()
 //        parentNode.position.z = -5
 //
@@ -60,21 +38,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 //         let planets = mercury
 //        parentNode.addChildNode(createNode(from :mercury))
 //        sceneView.scene.rootNode.addChildNode(parentNode)
-        sceneView.autoenablesDefaultLighting = true
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Create a session configuration
-        
         let configuration = ARWorldTrackingConfiguration()
 
         // Run the view's session
         sceneView.session.run(configuration)
     }
     
-    func createSolarSystem(){
+    func createSolarSystem() {
 
         // Parent Node
         let parentNode = SCNNode()
@@ -109,54 +86,58 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let planets = [mercury, venus, earth, mars, jupiter]
 //        , saturn, uranus, neptune, pluto]
         
-        for planet in planets{
-            parentNode.addChildNode(createNode(from: planet))
+        for planet in planets {
+            nodesRendered.append(createNode(from: planet))
+            parentNode.addChildNode(nodesRendered.last ?? createNode(from: planet))
         }
         
 
         // Light
-//        let lightNode = SCNNode()
         let light = SCNLight()
         light.type = .omni
         parentNode.light = light
-//        lightNode.light = light
-//        lightNode.position.y = parentNode.position.y + 1
-//        parentNode.addChildNode(lightNode)
         
         // Star particles
         let stars = SCNParticleSystem(named: "Stars.scnp", inDirectory: nil)!
         parentNode.addParticleSystem(stars)
         
         sceneView.scene.rootNode.addChildNode(parentNode)
+        
     }
     
-    func createTextNode(from string: String) -> SCNNode {
-        let text = SCNText(string: string, extrusionDepth: 0.1)
-        text.font = UIFont.systemFont(ofSize: 1.0)
-        text.flatness = 0.01
-        text.firstMaterial?.diffuse.contents = UIColor.white
+    func createTextNode(from planet: SCNNode, texture: UIImage) -> SCNNode {
         
-        let textNode = SCNNode(geometry: text)
+        let textGeometry = SCNText(string: "\(planet.name ?? "no name")", extrusionDepth: 1.0)
         
-        let fontSize = Float(0.04)
-        textNode.scale = SCNVector3(fontSize, fontSize, fontSize)
+        textGeometry.firstMaterial?.diffuse.contents = texture//UIImage(named: planet.texture)
+        
+        let textNode = SCNNode(geometry: textGeometry)
+        
+        textNode.position = planet.position
+        textNode.position.y = planet.position.y + 0.5
+        textNode.scale = SCNVector3(0.04, 0.04, 0.04)
         
         return textNode
     }
     
     func createNode(from planet: Planet) -> SCNNode {
         
+        // Create a parent node which will hold bith text and planet together
         let parentNode = SCNNode()
-        var textNode = SCNNode()
         
+        // Create a spherical geometry node and apply texture
         let sphereGeometry = SCNSphere(radius: planet.radius)
         sphereGeometry.firstMaterial?.diffuse.contents = planet.texture
         
+        // Create a node to contain a planet inside the spherical geometry
         let planetNode = SCNNode(geometry: sphereGeometry)
         planetNode.position.z = -planet.distanceFromSun
         planetNode.name = planet.name
+        
+        // Add planet to parent node
         parentNode.addChildNode(planetNode)
      
+        // Add rings of Saturn to Saturn Planet node
         if planet.name == "Saturn" {
             let ringGeometry = SCNTube(innerRadius: 1, outerRadius: 1.4, height: 0.05)
             ringGeometry.firstMaterial?.diffuse.contents = UIImage(named:"art.scnassets/saturn-ring.png")
@@ -167,22 +148,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
         }
         
-        let textGeometry = SCNText(string: "\(planet.name)", extrusionDepth: 1.0)
+        // Add Text Node (name of planet) with the same texture as of the planet to parent node
+        parentNode.addChildNode(createTextNode(from: planetNode,texture: planet.texture))
         
-        textGeometry.firstMaterial?.diffuse.contents = planet.texture//UIImage(named: planet.texture)
+        // Add axial rotation
+//        let axisRotateAction = SCNAction.rotate(by: .pi/2, around: SCNVector3(0,1,0), duration: 1)
+//        planetNode.runAction(.repeatForever(axisRotateAction))
         
-        textNode = SCNNode(geometry: textGeometry)
-        
-        textNode.position = planetNode.position
-        textNode.position.y = planetNode.position.y + 0.5
-        
-        textNode.scale = SCNVector3(0.05, 0.05, 0.05)
-        
-        parentNode.addChildNode(textNode)
-        
-        let axisRotateAction = SCNAction.rotate(by: .pi/2, around: SCNVector3(0,1,0), duration: 1)
-        planetNode.runAction(.repeatForever(axisRotateAction))
-        
+        // Add orbital rotation to all planets except the sun and add action to parent node
         if planet.name != "sun"{
             let rotateAction = SCNAction.rotateBy(x: 0, y:planet.rotation , z:0 , duration: 1)
             parentNode.runAction(.repeatForever(rotateAction))
@@ -202,13 +175,37 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     // MARK: - ARSCNViewDelegate
     
 
-//     Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+    // Override to create and configure nodes for anchors added to the view's session.
+/*    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
      
         return node
     }
+*/
     
+    func checkIfNodeDetectedInFrustumOfCameraView() {
+        
+        guard let cameraPointOfView = sceneView.pointOfView  else {return}
+        
+        for node in nodesRendered{
+            
+            if sceneView.isNode(node, insideFrustumOf: cameraPointOfView) {
+                print("\(node.childNodes.first?.name ?? "Yes Name") Is in view of the Camera")
+            }
+//            else {
+//                print("None of the planets are in view of the Camera")
+//            }
+        }
+        
+        
+    }
+    
+    // Check if scene rendered in any possibel way (for nodal detection)
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        
+        checkIfNodeDetectedInFrustumOfCameraView()
+    
+    }
 }
 
 extension Int {
