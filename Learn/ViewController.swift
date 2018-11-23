@@ -231,7 +231,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
         let planetName = detectNode()
-        print(planetName + "\(center!.x,center!.y)")
+        if (planetName != "No Name Found" || planetName != "No name to return"){
+            setPlanetDetailText(planetName)
+        }
+//        print(planetName + "\(center!.x,center!.y)")
         
     }
     
@@ -243,10 +246,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         if !tappedNode.isEmpty {
             let node = tappedNode[0].node
+            setPlanetDetailText(node.name!)
             print(node.name ?? "Not a node")
         }
     }
 
+    func setPlanetDetailText(_ info: String){
+        planetDetailText.text = info
+    }
 }
 
 extension Int {
