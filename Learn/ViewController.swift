@@ -9,8 +9,12 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet var planetDetailText: UITextView!
+    @IBOutlet var tapRec: UITapGestureRecognizer!
     
-    var nodesRendered = [SCNNode] ()
+//    var nodesRendered = [SCNNode] ()
+//    var center = CGPoint(x:UIScreen.main.bounds.size.width/2,y:UIScreen.main.bounds.size.height/2)
+    var center :CGPoint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +25,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
+        // Create the whole Solar System AR model {Function}
         createSolarSystem()
+        
+        // Enable Auto lightning
         sceneView.autoenablesDefaultLighting = true
+        
+        // Provide a background milkyway image to the scene
         sceneView.scene.background.contents = UIImage(named: "art.scnassets/milky.jpg")!
         
-        let cam = SCNCamera()
-        cam.sensorHeight = 1
-    
-        sceneView.scene.rootNode.camera = cam
-//        cam.fieldOfView = 100
-//        sceneView.pointOfView?.camera!.sensorHeight = 1
+        // Create and add a tap gesture recognizer to the scene
+        tapRec = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:)))
+        sceneView.addGestureRecognizer(tapRec)
+
+        // Create a 2d coordinate in the middle of the screen for node detection location
+        center = CGPoint(x:sceneView.bounds.midX,y:sceneView.bounds.midY)
+        
+        
 //        let parentNode = SCNNode()
 //        parentNode.position.z = -5
 //
@@ -59,43 +70,43 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
         // Planets
         // order = merc, venus, earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
-        let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIImage(named: "art.scnassets/mercury.jpg")!, distanceFromSun: 1.5)
+        let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIImage(named: "art.scnassets/LowRes/mercury.jpg")!, distanceFromSun: 1.5)
         
-        let venus = Planet(name: "Venus", radius: 0.23, rotation: CGFloat(GLKMathDegreesToRadians(18)), texture: UIImage(named: "art.scnassets/venus.jpg")!, distanceFromSun: 2)
+        let venus = Planet(name: "Venus", radius: 0.23, rotation: CGFloat(GLKMathDegreesToRadians(18)), texture: UIImage(named: "art.scnassets/LowRes/venus.jpg")!, distanceFromSun: 2)
         
-        let earth = Planet(name: "Earth", radius: 0.25, rotation: CGFloat(GLKMathDegreesToRadians(16)), texture: UIImage(named: "art.scnassets/earth.jpg")!, distanceFromSun: 4)
+        let earth = Planet(name: "Earth", radius: 0.25, rotation: CGFloat(GLKMathDegreesToRadians(16)), texture: UIImage(named: "art.scnassets/LowRes/earth.jpg")!, distanceFromSun: 4)
         
-        let mars = Planet(name: "Mars", radius: 0.15, rotation: CGFloat(GLKMathDegreesToRadians(2)), texture: UIImage(named: "art.scnassets/8k_mars.jpg")!, distanceFromSun: 5.5)
+        let mars = Planet(name: "Mars", radius: 0.15, rotation: CGFloat(GLKMathDegreesToRadians(2)), texture: UIImage(named: "art.scnassets/LowRes/mars.jpg")!, distanceFromSun: 5.5)
         
-        let jupiter = Planet(name: "Jupiter", radius: 0.80, rotation: CGFloat(GLKMathDegreesToRadians(5)), texture: UIImage(named: "art.scnassets/8k_jupiter.jpg")!, distanceFromSun: 8)
-//
-//        let saturn = Planet(name: "Saturn", radius: 0.75, rotation: CGFloat(GLKMathDegreesToRadians(9)), texture: UIColor.brown, distanceFromSun: 11)
-//
-//        let uranus = Planet(name: "Uranus", radius: 0.46, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIColor.purple, distanceFromSun: 15)
-//
-//        let neptune = Planet(name: "Neptune", radius: 0.45, rotation: CGFloat(GLKMathDegreesToRadians(13)), texture: UIColor.cyan, distanceFromSun: 19)
-//
-//        let pluto = Planet(name: "Pluto", radius: 0.05, rotation: CGFloat(GLKMathDegreesToRadians(15)), texture: UIColor.yellow, distanceFromSun: 23)
+        let jupiter = Planet(name: "Jupiter", radius: 0.80, rotation: CGFloat(GLKMathDegreesToRadians(5)), texture: UIImage(named: "art.scnassets/LowRes/jupiter.jpg")!, distanceFromSun: 8)
+
+        let saturn = Planet(name: "Saturn", radius: 0.75, rotation: CGFloat(GLKMathDegreesToRadians(9)), texture: UIImage(named: "art.scnassets/LowRes/saturn.jpg")!, distanceFromSun: 11)
+
+        let uranus = Planet(name: "Uranus", radius: 0.46, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIImage(named: "art.scnassets/LowRes/uranus.jpg")!, distanceFromSun: 15)
+
+        let neptune = Planet(name: "Neptune", radius: 0.45, rotation: CGFloat(GLKMathDegreesToRadians(13)), texture: UIImage(named: "art.scnassets/LowRes/neptune.jpg")!, distanceFromSun: 19)
+
+        let pluto = Planet(name: "Pluto", radius: 0.05, rotation: CGFloat(GLKMathDegreesToRadians(15)), texture: UIImage(named: "art.scnassets/LowRes/pluto.jpg")!, distanceFromSun: 23)
         
         // The Sun and sunFlare animation
-//        let sun = Planet(name: "sun", radius: 0.5, rotation: CGFloat(5), texture: UIColor.orange, distanceFromSun: 0)
-        
+        let sun = Planet(name: "sun", radius: 0.5, rotation: CGFloat(5), texture: UIImage(named: "art.scnassets/sun_8k.jpg")!, distanceFromSun: 0)
         let sunFlare = SCNParticleSystem(named: "sunFlare.scnp", inDirectory: nil)!
         parentNode.addParticleSystem(sunFlare)
         
-        let planets = [mercury, venus, earth, mars, jupiter]
-//        , saturn, uranus, neptune, pluto]
+        let planets = [sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune, pluto]
         
         for planet in planets {
-            nodesRendered.append(createNode(from: planet))
-            parentNode.addChildNode(nodesRendered.last ?? createNode(from: planet))
+            parentNode.addChildNode(createNode(from: planet))
         }
         
-
         // Light
-        let light = SCNLight()
-        light.type = .omni
-        parentNode.light = light
+//        let light = SCNLight()
+//        light.type = .omni
+//        let lightNode = SCNNode()
+//        lightNode.light = light
+//        lightNode.position.y = 3
+//        parentNode.addChildNode(lightNode)
+//        parentNode.light = light
         
         // Star particles
         let stars = SCNParticleSystem(named: "Stars.scnp", inDirectory: nil)!
@@ -140,7 +151,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Add rings of Saturn to Saturn Planet node
         if planet.name == "Saturn" {
             let ringGeometry = SCNTube(innerRadius: 1, outerRadius: 1.4, height: 0.05)
-            ringGeometry.firstMaterial?.diffuse.contents = UIImage(named:"art.scnassets/saturn-ring.png")
+            ringGeometry.firstMaterial?.diffuse.contents = UIImage(named:"art.scnassets/LowRes/saturn-ring.png")
             
             let ringNode = SCNNode(geometry: ringGeometry)
             ringNode.eulerAngles.x = Float(-20.degToRad)
@@ -183,29 +194,59 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 */
     
-    func checkIfNodeDetectedInFrustumOfCameraView() {
-        
-        guard let cameraPointOfView = sceneView.pointOfView  else {return}
-        
-        for node in nodesRendered{
-            
-            if sceneView.isNode(node, insideFrustumOf: cameraPointOfView) {
-                print("\(node.childNodes.first?.name ?? "Yes Name") Is in view of the Camera")
-            }
-//            else {
-//                print("None of the planets are in view of the Camera")
+//    func checkIfNodeDetectedInFrustumOfCameraView() {
+//
+//        guard let cameraPointOfView = sceneView.pointOfView  else {return}
+//
+//        for node in nodesRendered{
+//
+//            if sceneView.isNode(node, insideFrustumOf: cameraPointOfView) {
+//                print("\(node.childNodes.first?.name ?? "Yes Name") Is in view of the Camera")
+////                planetDetailText.text = node.childNodes.first?.name
 //            }
-        }
+////            else {
+////                print("None of the planets are in view of the Camera")
+////            }
+//        }
+//
+//
+//    }
+//
+//    // Check if scene rendered in any possibel way (for nodal detection)
+//    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+//
+//        checkIfNodeDetectedInFrustumOfCameraView()
+//
+//    }
+    
+    func detectNode() -> String {
         
+        let sceneHitTest = sceneView.hitTest(center!, options: nil)
+        guard let hitNode = sceneHitTest.last?.node else {return "No name found!"}
+        return hitNode.name ?? "No name to return"
         
     }
     
-    // Check if scene rendered in any possibel way (for nodal detection)
+    
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
-        checkIfNodeDetectedInFrustumOfCameraView()
-    
+        let planetName = detectNode()
+        print(planetName + "\(center!.x,center!.y)")
+        
     }
+    
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        let results = self.sceneView.hitTest(gesture.location(in: gesture.view), types: ARHitTestResult.ResultType.featurePoint)
+        guard let _: ARHitTestResult = results.first else {return}
+        
+        let tappedNode = self.sceneView.hitTest(gesture.location(in: gesture.view), options: [:])
+        
+        if !tappedNode.isEmpty {
+            let node = tappedNode[0].node
+            print(node.name ?? "Not a node")
+        }
+    }
+
 }
 
 extension Int {
