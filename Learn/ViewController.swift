@@ -12,9 +12,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var planetDetailText: UITextView!
     @IBOutlet var tapRec: UITapGestureRecognizer!
     
-//    var nodesRendered = [SCNNode] ()
-//    var center = CGPoint(x:UIScreen.main.bounds.size.width/2,y:UIScreen.main.bounds.size.height/2)
-    var center :CGPoint?
+    var center :CGPoint?    // Point declared for nodal detection
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +60,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.run(configuration)
     }
     
+    // Function that creates the solar system
     func createSolarSystem() {
 
         // Parent Node
@@ -93,8 +92,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let sunFlare = SCNParticleSystem(named: "sunFlare.scnp", inDirectory: nil)!
         parentNode.addParticleSystem(sunFlare)
         
+        // Add planets to Array for ease of use
         let planets = [sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune, pluto]
         
+        // Create Planet nodes and add to Parent Node
         for planet in planets {
             parentNode.addChildNode(createNode(from: planet))
         }
@@ -116,6 +117,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
     }
     
+    // Function that creates a Text node for planet from name and applies given texture
     func createTextNode(from planet: SCNNode, texture: UIImage) -> SCNNode {
         
         let textGeometry = SCNText(string: "\(planet.name ?? "no name")", extrusionDepth: 1.0)
@@ -131,6 +133,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         return textNode
     }
     
+    // Function that creates a node from planet
     func createNode(from planet: Planet) -> SCNNode {
         
         // Create a parent node which will hold bith text and planet together
@@ -163,8 +166,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         parentNode.addChildNode(createTextNode(from: planetNode,texture: planet.texture))
         
         // Add axial rotation
-//        let axisRotateAction = SCNAction.rotate(by: .pi/2, around: SCNVector3(0,1,0), duration: 1)
-//        planetNode.runAction(.repeatForever(axisRotateAction))
+        let axisRotateAction = SCNAction.rotate(by: .pi/2, around: SCNVector3(0,1,0), duration: 1)
+        planetNode.runAction(.repeatForever(axisRotateAction))
         
         // Add orbital rotation to all planets except the sun and add action to parent node
         if planet.name != "sun"{
@@ -219,6 +222,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 //
 //    }
     
+    // Function detects a node via the hitTest in the center of the screen with a CGPoint
     func detectNode() -> String {
         
         let sceneHitTest = sceneView.hitTest(center!, options: nil)
@@ -227,18 +231,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
     }
     
-    
+    // Function to check every frame change
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
         let planetName = detectNode()
-        if (planetName != "No Name Found" || planetName != "No name to return"){
-            setPlanetDetailText(planetName)
+        
+        // DispatchQueue for threading and multi-threaded pooling
+        DispatchQueue.main.async {
+            if (planetName != "No name found!" && planetName != "No name to return"){
+                self.setPlanetDetailText(planetName)
+            }
         }
+        
+        // Debug
 //        print(planetName + "\(center!.x,center!.y)")
         
     }
     
+    //  Funciton as Tap Gesture Recognizer Handler
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        
         let results = self.sceneView.hitTest(gesture.location(in: gesture.view), types: ARHitTestResult.ResultType.featurePoint)
         guard let _: ARHitTestResult = results.first else {return}
         
@@ -246,16 +258,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         if !tappedNode.isEmpty {
             let node = tappedNode[0].node
-            setPlanetDetailText(node.name!)
-            print(node.name ?? "Not a node")
+            
+            // DispatchQueue for threading and multi-threaded pooling
+            DispatchQueue.main.async {
+                if (node.name != "No name found!" && node.name != "No name to return"){
+                    self.setPlanetDetailText(node.name!)
+                }
+            }
+            
+            // Debug
+//            print(node.name ?? "Not a node")
         }
     }
 
+    // Function that sets the Info pane text
     func setPlanetDetailText(_ info: String){
         planetDetailText.text = info
     }
 }
 
+// Extension that converts an Integer to CGFloat and multiplies with pi [for degree to radians]
 extension Int {
     var degToRad: CGFloat {
         return CGFloat(self) * .pi / 180
