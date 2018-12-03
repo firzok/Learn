@@ -13,6 +13,7 @@
 		095637B62196C1F400FC724A /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 095637B42196C1F400FC724A /* spark.png */; };
 		095637B72196C1F400FC724A /* sunFlare.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 095637B52196C1F400FC724A /* sunFlare.scnp */; };
 		096FF3A421A3FC4500634093 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096FF3A321A3FC4500634093 /* TableViewController.swift */; };
+		09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 09BDF63321ADABAE00BC541A /* planetOrbit.scnp */; };
 		3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A098A2173793A005E69E4 /* AppDelegate.swift */; };
 		3C6A098D2173793A005E69E4 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A098C2173793A005E69E4 /* art.scnassets */; };
 		3C6A098F2173793A005E69E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A098E2173793A005E69E4 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		095637B42196C1F400FC724A /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		095637B52196C1F400FC724A /* sunFlare.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = sunFlare.scnp; sourceTree = "<group>"; };
 		096FF3A321A3FC4500634093 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		09BDF63321ADABAE00BC541A /* planetOrbit.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = planetOrbit.scnp; sourceTree = "<group>"; };
 		3C6A09872173793A005E69E4 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6A098A2173793A005E69E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C6A098C2173793A005E69E4 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				095637B12196B20C00FC724A /* star.png */,
 				095637B42196C1F400FC724A /* spark.png */,
 				095637B52196C1F400FC724A /* sunFlare.scnp */,
+				09BDF63321ADABAE00BC541A /* planetOrbit.scnp */,
 			);
 			path = Galaxy;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				095637B62196C1F400FC724A /* spark.png in Resources */,
 				095637B22196B20C00FC724A /* Stars.scnp in Resources */,
 				3C6A09922173793A005E69E4 /* Main.storyboard in Resources */,
+				09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */,
 				095637B32196B20C00FC724A /* star.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

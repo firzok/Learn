@@ -30,7 +30,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.autoenablesDefaultLighting = true
         
         // Provide a background milkyway image to the scene
-        sceneView.scene.background.contents = UIImage(named: "art.scnassets/milky.jpg")!
+//        sceneView.scene.background.contents = UIImage(named: "art.scnassets/milky.jpg")!
         
         // Create and add a tap gesture recognizer to the scene
         tapRec = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:)))
@@ -166,11 +166,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         parentNode.addChildNode(createTextNode(from: planetNode,texture: planet.texture))
         
         // Add axial rotation
-        let axisRotateAction = SCNAction.rotate(by: .pi/2, around: SCNVector3(0,1,0), duration: 1)
-        planetNode.runAction(.repeatForever(axisRotateAction))
+//        let axisRotateAction = SCNAction.rotate(by: .pi/2, around: SCNVector3(0,1,0), duration: 1)
+//        planetNode.runAction(.repeatForever(axisRotateAction))
         
-        // Add orbital rotation to all planets except the sun and add action to parent node
+        // Add orbital rotation and particle trace of orbit to all planets except the sun and add action to parent node
         if planet.name != "sun"{
+            // Particle Trace
+            let planetOrbitLine = SCNParticleSystem(named: "planetOrbit.scnp", inDirectory: nil)!
+            planetNode.addParticleSystem(planetOrbitLine)
+            
+            // Orbital rotation
             let rotateAction = SCNAction.rotateBy(x: 0, y:planet.rotation , z:0 , duration: 1)
             parentNode.runAction(.repeatForever(rotateAction))
         }
@@ -185,10 +190,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
-
     // MARK: - ARSCNViewDelegate
     
-
     // Override to create and configure nodes for anchors added to the view's session.
 /*    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
@@ -275,6 +278,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func setPlanetDetailText(_ info: String){
         planetDetailText.text = info
     }
+    
 }
 
 // Extension that converts an Integer to CGFloat and multiplies with pi [for degree to radians]
