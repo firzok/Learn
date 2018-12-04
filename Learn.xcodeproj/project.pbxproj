@@ -7,16 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09410E3021B6DDDA00002115 /* redchair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 09410E2921B6DDD800002115 /* redchair.usdz */; };
+		09410E3121B6DDDA00002115 /* cupandsaucer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 09410E2A21B6DDD800002115 /* cupandsaucer.usdz */; };
+		09410E3221B6DDDA00002115 /* wateringcan.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 09410E2B21B6DDD900002115 /* wateringcan.usdz */; };
+		09410E3321B6DDDA00002115 /* teapot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 09410E2C21B6DDD900002115 /* teapot.usdz */; };
+		09410E3421B6DDDA00002115 /* plantpot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 09410E2D21B6DDD900002115 /* plantpot.usdz */; };
+		09410E3521B6DDDA00002115 /* tulip.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 09410E2E21B6DDDA00002115 /* tulip.usdz */; };
+		09410E3621B6DDDA00002115 /* gramophone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 09410E2F21B6DDDA00002115 /* gramophone.usdz */; };
+		09410E4321B6EC3100002115 /* Heart.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 09410E4221B6EC3000002115 /* Heart.usdz */; };
 		095637AF2196A83400FC724A /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095637AE2196A83400FC724A /* Planet.swift */; };
 		095637B22196B20C00FC724A /* Stars.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 095637B02196B20C00FC724A /* Stars.scnp */; };
 		095637B32196B20C00FC724A /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 095637B12196B20C00FC724A /* star.png */; };
 		095637B62196C1F400FC724A /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 095637B42196C1F400FC724A /* spark.png */; };
 		095637B72196C1F400FC724A /* sunFlare.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 095637B52196C1F400FC724A /* sunFlare.scnp */; };
 		096FF3A421A3FC4500634093 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096FF3A321A3FC4500634093 /* TableViewController.swift */; };
+		097A6E1221B6BA3E001908C3 /* cellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A6E1121B6BA3E001908C3 /* cellClass.swift */; };
+		097A6E1421B6BB39001908C3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A6E1321B6BB39001908C3 /* CollectionViewController.swift */; };
 		09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 09BDF63321ADABAE00BC541A /* planetOrbit.scnp */; };
+		09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */; };
 		3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A098A2173793A005E69E4 /* AppDelegate.swift */; };
 		3C6A098D2173793A005E69E4 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A098C2173793A005E69E4 /* art.scnassets */; };
-		3C6A098F2173793A005E69E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A098E2173793A005E69E4 /* ViewController.swift */; };
+		3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */; };
 		3C6A09922173793A005E69E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A09902173793A005E69E4 /* Main.storyboard */; };
 		3C6A09942173793A005E69E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A09932173793A005E69E4 /* Assets.xcassets */; };
 		3C6A09972173793A005E69E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */; };
@@ -25,17 +36,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09410E2921B6DDD800002115 /* redchair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = redchair.usdz; sourceTree = "<group>"; };
+		09410E2A21B6DDD800002115 /* cupandsaucer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = cupandsaucer.usdz; sourceTree = "<group>"; };
+		09410E2B21B6DDD900002115 /* wateringcan.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = wateringcan.usdz; sourceTree = "<group>"; };
+		09410E2C21B6DDD900002115 /* teapot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = teapot.usdz; sourceTree = "<group>"; };
+		09410E2D21B6DDD900002115 /* plantpot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = plantpot.usdz; sourceTree = "<group>"; };
+		09410E2E21B6DDDA00002115 /* tulip.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = tulip.usdz; sourceTree = "<group>"; };
+		09410E2F21B6DDDA00002115 /* gramophone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = gramophone.usdz; sourceTree = "<group>"; };
+		09410E4221B6EC3000002115 /* Heart.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Heart.usdz; sourceTree = "<group>"; };
 		095637AE2196A83400FC724A /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		095637B02196B20C00FC724A /* Stars.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Stars.scnp; sourceTree = "<group>"; };
 		095637B12196B20C00FC724A /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		095637B42196C1F400FC724A /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		095637B52196C1F400FC724A /* sunFlare.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = sunFlare.scnp; sourceTree = "<group>"; };
 		096FF3A321A3FC4500634093 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		097A6E1121B6BA3E001908C3 /* cellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellClass.swift; sourceTree = "<group>"; };
+		097A6E1321B6BB39001908C3 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		09BDF63321ADABAE00BC541A /* planetOrbit.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = planetOrbit.scnp; sourceTree = "<group>"; };
+		09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAnatomyViewController.swift; sourceTree = "<group>"; };
 		3C6A09872173793A005E69E4 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6A098A2173793A005E69E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C6A098C2173793A005E69E4 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		3C6A098E2173793A005E69E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemViewController.swift; sourceTree = "<group>"; };
 		3C6A09912173793A005E69E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C6A09932173793A005E69E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C6A09962173793A005E69E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,6 +93,14 @@
 		095637AD2196A7F100FC724A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				09410E2A21B6DDD800002115 /* cupandsaucer.usdz */,
+				09410E2F21B6DDDA00002115 /* gramophone.usdz */,
+				09410E2D21B6DDD900002115 /* plantpot.usdz */,
+				09410E2921B6DDD800002115 /* redchair.usdz */,
+				09410E2C21B6DDD900002115 /* teapot.usdz */,
+				09410E2E21B6DDDA00002115 /* tulip.usdz */,
+				09410E2B21B6DDD900002115 /* wateringcan.usdz */,
+				09410E4221B6EC3000002115 /* Heart.usdz */,
 				09AB072F219C189600ACADE5 /* Human Anatomy */,
 				095637AC2196A7DA00FC724A /* Galaxy */,
 			);
@@ -106,9 +136,12 @@
 				095637AD2196A7F100FC724A /* Models */,
 				3C6A098A2173793A005E69E4 /* AppDelegate.swift */,
 				3C6A098C2173793A005E69E4 /* art.scnassets */,
-				3C6A098E2173793A005E69E4 /* ViewController.swift */,
+				3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */,
+				09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */,
+				097A6E1321B6BB39001908C3 /* CollectionViewController.swift */,
 				3C6A09A62173934E005E69E4 /* ViewController2.swift */,
 				096FF3A321A3FC4500634093 /* TableViewController.swift */,
+				097A6E1121B6BA3E001908C3 /* cellClass.swift */,
 				3C6A09A421738FFF005E69E4 /* ViewControllers3.swift */,
 				3C6A09902173793A005E69E4 /* Main.storyboard */,
 				3C6A09932173793A005E69E4 /* Assets.xcassets */,
@@ -180,13 +213,21 @@
 			files = (
 				3C6A098D2173793A005E69E4 /* art.scnassets in Resources */,
 				095637B72196C1F400FC724A /* sunFlare.scnp in Resources */,
+				09410E3521B6DDDA00002115 /* tulip.usdz in Resources */,
+				09410E3621B6DDDA00002115 /* gramophone.usdz in Resources */,
+				09410E3121B6DDDA00002115 /* cupandsaucer.usdz in Resources */,
+				09410E3221B6DDDA00002115 /* wateringcan.usdz in Resources */,
 				3C6A09972173793A005E69E4 /* LaunchScreen.storyboard in Resources */,
+				09410E3421B6DDDA00002115 /* plantpot.usdz in Resources */,
 				3C6A09942173793A005E69E4 /* Assets.xcassets in Resources */,
 				095637B62196C1F400FC724A /* spark.png in Resources */,
+				09410E3021B6DDDA00002115 /* redchair.usdz in Resources */,
 				095637B22196B20C00FC724A /* Stars.scnp in Resources */,
 				3C6A09922173793A005E69E4 /* Main.storyboard in Resources */,
+				09410E4321B6EC3100002115 /* Heart.usdz in Resources */,
 				09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */,
 				095637B32196B20C00FC724A /* star.png in Resources */,
+				09410E3321B6DDDA00002115 /* teapot.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,9 +238,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097A6E1421B6BB39001908C3 /* CollectionViewController.swift in Sources */,
+				097A6E1221B6BA3E001908C3 /* cellClass.swift in Sources */,
 				3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */,
 				096FF3A421A3FC4500634093 /* TableViewController.swift in Sources */,
-				3C6A098F2173793A005E69E4 /* ViewController.swift in Sources */,
+				09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */,
+				3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */,
 				3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */,
 				3C6A09A521738FFF005E69E4 /* ViewControllers3.swift in Sources */,
 				095637AF2196A83400FC724A /* Planet.swift in Sources */,
