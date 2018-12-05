@@ -33,6 +33,7 @@
 		3C6A09972173793A005E69E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */; };
 		3C6A09A521738FFF005E69E4 /* ViewControllers3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A421738FFF005E69E4 /* ViewControllers3.swift */; };
 		3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A62173934E005E69E4 /* ViewController2.swift */; };
+		EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		3C6A09982173793A005E69E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C6A09A421738FFF005E69E4 /* ViewControllers3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers3.swift; sourceTree = "<group>"; };
 		3C6A09A62173934E005E69E4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				3C6A09932173793A005E69E4 /* Assets.xcassets */,
 				3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */,
 				3C6A09982173793A005E69E4 /* Info.plist */,
+				EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */,
 			);
 			path = Learn;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				097A6E1421B6BB39001908C3 /* CollectionViewController.swift in Sources */,
+				EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */,
 				097A6E1221B6BA3E001908C3 /* cellClass.swift in Sources */,
 				3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */,
 				096FF3A421A3FC4500634093 /* TableViewController.swift in Sources */,
@@ -389,11 +393,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 584KM2K64C;
+				DEVELOPMENT_TEAM = 9K9J6T8MWH;
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.faatehjarree.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.firzok.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -407,11 +411,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 584KM2K64C;
+				DEVELOPMENT_TEAM = 9K9J6T8MWH;
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.faatehjarree.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.firzok.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
