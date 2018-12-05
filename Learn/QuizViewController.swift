@@ -17,8 +17,11 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var tapRec: UITapGestureRecognizer!
     
     var center :CGPoint?    // Point declared for nodal detection
+    
+    var score: Int = 0
 
     
+    var array = [String](arrayLiteral: "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto" )
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,6 +141,8 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
     //  Funciton as Tap Gesture Recognizer Handler
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
         
+        print("In handleTap")
+        
         let results = self.sceneView.hitTest(gesture.location(in: gesture.view), types: ARHitTestResult.ResultType.featurePoint)
         guard let _: ARHitTestResult = results.first else {return}
         
@@ -147,14 +152,24 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
             let node = tappedNode[0].node
             
             // DispatchQueue for threading and multi-threaded pooling
-            DispatchQueue.main.async {
-                if (node.name != "No name found!" && node.name != "No name to return"){
-                    self.setPlanetDetailText(node.name!)
-                }
+//            DispatchQueue.main.async {
+//                if (node.name != "No name found!" && node.name != "No name to return"){
+//                    self.setPlanetDetailText(node.name!)
+//
+//
+//                    self.score+=1
+//                }
+//            }
+            
+            if (node.name != "No name found!" && node.name != "No name to return"){
+                self.setPlanetDetailText(node.name!)
+
+
+                self.score+=1
             }
             
             // Debug
-            //            print(node.name ?? "Not a node")
+            print("Score: ", score)
         }
     }
     

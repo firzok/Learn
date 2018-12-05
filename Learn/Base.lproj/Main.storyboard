@@ -390,7 +390,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="1024" height="176"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Find Mercury" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1BS-U3-zCI">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Tap Mercury" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1BS-U3-zCI">
                                             <rect key="frame" x="0.0" y="0.0" width="1024" height="176"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
