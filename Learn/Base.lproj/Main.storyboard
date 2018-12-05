@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eOu-Dy-Fpd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yHb-ab-nYE">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -233,7 +233,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back2" translatesAutoresizingMaskIntoConstraints="NO" id="tFi-dg-AeT">
-                                <rect key="frame" x="0.0" y="0.0" width="1377" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="learnImg" translatesAutoresizingMaskIntoConstraints="NO" id="b8c-hc-DHn">
@@ -268,6 +268,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="B1c-dK-iCq" firstAttribute="height" secondItem="d6C-Gf-Xxw" secondAttribute="height" id="Yo8-mH-kar"/>
                             <constraint firstItem="lGL-wV-Oac" firstAttribute="leading" secondItem="B1c-dK-iCq" secondAttribute="trailing" id="beF-Ra-na9"/>
                             <constraint firstItem="lGL-wV-Oac" firstAttribute="width" secondItem="B1c-dK-iCq" secondAttribute="width" id="fUQ-bW-O92"/>
                             <constraint firstItem="lGL-wV-Oac" firstAttribute="baseline" secondItem="B1c-dK-iCq" secondAttribute="firstBaseline" constant="132" symbolType="layoutAnchor" id="y4s-Ak-3B5"/>
@@ -306,7 +307,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Select Model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQB-eK-khH">
-                                <rect key="frame" x="353" y="49" width="319" height="27.5"/>
+                                <rect key="frame" x="353" y="53" width="319" height="27.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" red="0.64272992227979275" green="0.1703186515438776" blue="0.057724153356119239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -389,12 +390,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="1024" height="176"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Lorem ipsum dolor sit " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1BS-U3-zCI">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Find Mercury" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1BS-U3-zCI">
                                             <rect key="frame" x="0.0" y="0.0" width="1024" height="176"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="textColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
@@ -432,7 +433,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dr0-LK-TOh" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="E02-Ea-cbl"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="839"/>
+            <point key="canvasLocation" x="1382" y="817"/>
         </scene>
     </scenes>
     <resources>
@@ -444,6 +445,7 @@
         <image name="playImg" width="341" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="YBI-s8-qvz"/>
         <segue reference="YY4-gF-kew"/>
         <segue reference="i1h-pu-G39"/>
     </inferredMetricsTieBreakers>
