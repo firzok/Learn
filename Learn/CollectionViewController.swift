@@ -32,6 +32,11 @@ class CollectionViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! HumanAnatomyViewController
+        destinationVC.modelName = "\(sender.unsafelyUnwrapped)"
+    }
+    
 }
 
 extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -54,11 +59,13 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        thumbnailIndex = indexPath.item
-        let previewController = QLPreviewController()
-        previewController.dataSource = self
-        previewController.delegate = self
-        present(previewController, animated: true)
+        
+        self.performSegue(withIdentifier: "ArViewSegue", sender: models[indexPath.item])
+//        thumbnailIndex = indexPath.item
+//        let previewController = QLPreviewController()
+//        previewController.dataSource = self
+//        previewController.delegate = self
+//        present(previewController, animated: true)
     }
     
 }

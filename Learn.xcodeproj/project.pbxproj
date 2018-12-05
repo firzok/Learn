@@ -14,7 +14,6 @@
 		09410E3421B6DDDA00002115 /* plantpot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 09410E2D21B6DDD900002115 /* plantpot.usdz */; };
 		09410E3521B6DDDA00002115 /* tulip.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 09410E2E21B6DDDA00002115 /* tulip.usdz */; };
 		09410E3621B6DDDA00002115 /* gramophone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 09410E2F21B6DDDA00002115 /* gramophone.usdz */; };
-		09410E4321B6EC3100002115 /* Heart.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 09410E4221B6EC3000002115 /* Heart.usdz */; };
 		095637AF2196A83400FC724A /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095637AE2196A83400FC724A /* Planet.swift */; };
 		095637B22196B20C00FC724A /* Stars.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 095637B02196B20C00FC724A /* Stars.scnp */; };
 		095637B32196B20C00FC724A /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 095637B12196B20C00FC724A /* star.png */; };
@@ -43,7 +42,6 @@
 		09410E2D21B6DDD900002115 /* plantpot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = plantpot.usdz; sourceTree = "<group>"; };
 		09410E2E21B6DDDA00002115 /* tulip.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = tulip.usdz; sourceTree = "<group>"; };
 		09410E2F21B6DDDA00002115 /* gramophone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = gramophone.usdz; sourceTree = "<group>"; };
-		09410E4221B6EC3000002115 /* Heart.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Heart.usdz; sourceTree = "<group>"; };
 		095637AE2196A83400FC724A /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		095637B02196B20C00FC724A /* Stars.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Stars.scnp; sourceTree = "<group>"; };
 		095637B12196B20C00FC724A /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 				09410E2C21B6DDD900002115 /* teapot.usdz */,
 				09410E2E21B6DDDA00002115 /* tulip.usdz */,
 				09410E2B21B6DDD900002115 /* wateringcan.usdz */,
-				09410E4221B6EC3000002115 /* Heart.usdz */,
 				09AB072F219C189600ACADE5 /* Human Anatomy */,
 				095637AC2196A7DA00FC724A /* Galaxy */,
 			);
@@ -224,7 +221,6 @@
 				09410E3021B6DDDA00002115 /* redchair.usdz in Resources */,
 				095637B22196B20C00FC724A /* Stars.scnp in Resources */,
 				3C6A09922173793A005E69E4 /* Main.storyboard in Resources */,
-				09410E4321B6EC3100002115 /* Heart.usdz in Resources */,
 				09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */,
 				095637B32196B20C00FC724A /* star.png in Resources */,
 				09410E3321B6DDDA00002115 /* teapot.usdz in Resources */,

@@ -44,9 +44,5 @@ class ViewController2: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedGradeLabel.text = "Grade: " + gradeArray[row]
     }
-    
-    
-    
-
 
 }
