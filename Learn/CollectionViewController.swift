@@ -13,20 +13,18 @@ class CollectionViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-//    let models = ["cupandsaucer","gramophone","plantpot","tulip","wateringcan","teapot","redchair"]
-    let models = ["Heart"]
+    let models = ["Heart","Body","Brain","Muscle","Eyes"]
     var thumbnails = [UIImage] ()
     var thumbnailIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.reloadData()
         
         for model in models{
-            if let thumbnail = UIImage(named: "art.scnassets/\(model).jpg"){
+            if let thumbnail = UIImage(named: "art.scnassets/AnatomyThumbnails/\(model).jpg"){
                 thumbnails.append(thumbnail)
             }
         }

@@ -15,10 +15,9 @@ class HumanAnatomyViewController: UIViewController, ARSCNViewDelegate {
    
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet var tapRec: UITapGestureRecognizer!
-    
     @IBOutlet weak var planetDetailText: UITextView!
     
-    var modelName: String=""
+    var modelName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +32,7 @@ class HumanAnatomyViewController: UIViewController, ARSCNViewDelegate {
         sceneView.allowsCameraControl = true
 //        tapRec = UITapGestureRecognizer(target: self, action: #selector(SolarSystemViewController.handleTap(_:)))
 //        sceneView.addGestureRecognizer(tapRec)
-        createModel(modelName: "\(modelName)")
+        createModel(modelName: "\(modelName!)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +40,9 @@ class HumanAnatomyViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        
+        // Automatic Texuturing for surrounding occlusion on Body Model
+        configuration.environmentTexturing = .automatic
         
         // Run the view's session
         sceneView.session.run(configuration)
@@ -55,7 +57,7 @@ class HumanAnatomyViewController: UIViewController, ARSCNViewDelegate {
     
     func createModel(modelName: String) {
         
-        if let modelScene = SCNScene(named: "art.scnassets/\(modelName).scn") {
+        if let modelScene = SCNScene(named: "art.scnassets/AnatomyModels/\(modelName).scn") {
             
             if let modelNode = modelScene.rootNode.childNodes.first {
                 
