@@ -441,7 +441,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dr0-LK-TOh" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="E02-Ea-cbl"/>
             </objects>
-            <point key="canvasLocation" x="1381.640625" y="816.40625"/>
+            <point key="canvasLocation" x="-358" y="927"/>
         </scene>
     </scenes>
     <resources>
