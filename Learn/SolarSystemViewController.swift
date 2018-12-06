@@ -72,19 +72,19 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         // order = merc, venus, earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
         let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIImage(named: "\(solarSystemAssetsPath)mercury.jpg")!, distanceFromSun: 1.5)
         
-        let venus = Planet(name: "Venus", radius: 0.23, rotation: CGFloat(GLKMathDegreesToRadians(18)), texture: UIImage(named: "\(solarSystemAssetsPath)venus.jpg")!, distanceFromSun: 2)
+        let venus = Planet(name: "Venus", radius: 0.2, rotation: CGFloat(GLKMathDegreesToRadians(18)), texture: UIImage(named: "\(solarSystemAssetsPath)venus.jpg")!, distanceFromSun: 2)
         
         let earth = Planet(name: "Earth", radius: 0.25, rotation: CGFloat(GLKMathDegreesToRadians(16)), texture: UIImage(named: "\(solarSystemAssetsPath)earth.jpg")!, distanceFromSun: 2.5)
         
         let mars = Planet(name: "Mars", radius: 0.15, rotation: CGFloat(GLKMathDegreesToRadians(2)), texture: UIImage(named: "\(solarSystemAssetsPath)mars.jpg")!, distanceFromSun: 3)
         
-        let jupiter = Planet(name: "Jupiter", radius: 0.80, rotation: CGFloat(GLKMathDegreesToRadians(5)), texture: UIImage(named: "\(solarSystemAssetsPath)jupiter.jpg")!, distanceFromSun: 4)
+        let jupiter = Planet(name: "Jupiter", radius: 0.40, rotation: CGFloat(GLKMathDegreesToRadians(5)), texture: UIImage(named: "\(solarSystemAssetsPath)jupiter.jpg")!, distanceFromSun: 4)
 
-        let saturn = Planet(name: "Saturn", radius: 0.75, rotation: CGFloat(GLKMathDegreesToRadians(9)), texture: UIImage(named: "\(solarSystemAssetsPath)saturn.jpg")!, distanceFromSun: 6)
+        let saturn = Planet(name: "Saturn", radius: 0.45, rotation: CGFloat(GLKMathDegreesToRadians(9)), texture: UIImage(named: "\(solarSystemAssetsPath)saturn.jpg")!, distanceFromSun: 6)
 
-        let uranus = Planet(name: "Uranus", radius: 0.46, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIImage(named: "\(solarSystemAssetsPath)uranus.jpg")!, distanceFromSun: 7)
+        let uranus = Planet(name: "Uranus", radius: 0.35, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIImage(named: "\(solarSystemAssetsPath)uranus.jpg")!, distanceFromSun: 7)
 
-        let neptune = Planet(name: "Neptune", radius: 0.45, rotation: CGFloat(GLKMathDegreesToRadians(13)), texture: UIImage(named: "\(solarSystemAssetsPath)neptune.jpg")!, distanceFromSun: 8)
+        let neptune = Planet(name: "Neptune", radius: 0.3, rotation: CGFloat(GLKMathDegreesToRadians(13)), texture: UIImage(named: "\(solarSystemAssetsPath)neptune.jpg")!, distanceFromSun: 8)
 
         let pluto = Planet(name: "Pluto", radius: 0.17, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIImage(named: "\(solarSystemAssetsPath)pluto.jpg")!, distanceFromSun: 8.5)
         
@@ -147,6 +147,7 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         // Create a node to contain a planet inside the spherical geometry
         let planetNode = SCNNode(geometry: sphereGeometry)
         planetNode.position.z = -planet.distanceFromSun
+        
         planetNode.name = planet.name
         
         // Add planet to parent node
@@ -154,7 +155,7 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
      
         // Add rings of Saturn to Saturn Planet node
         if planet.name == "Saturn" {
-            let ringGeometry = SCNTube(innerRadius: 1, outerRadius: 1.4, height: 0.05)
+            let ringGeometry = SCNTube(innerRadius: 0.5, outerRadius: 0.7, height: 0.02)
             ringGeometry.firstMaterial?.diffuse.contents = UIImage(named:"\(solarSystemAssetsPath)saturn-ring.jpg")
             
             let ringNode = SCNNode(geometry: ringGeometry)
@@ -173,8 +174,19 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         // Add orbital rotation and particle trace of orbit to all planets except the sun and add action to parent node
         if planet.name != "sun"{
             // Particle Trace
-//            let planetOrbitLine = SCNParticleSystem(named: "planetOrbit.scnp", inDirectory: nil)!
-//            planetNode.addParticleSystem(planetOrbitLine)
+            let planetOrbitLine = SCNParticleSystem(named: "planetOrbit.scnp", inDirectory: nil)!
+            planetOrbitLine.particleColor = UIColor.magenta
+            planetNode.addParticleSystem(planetOrbitLine)
+            
+            if planet.name == "Mercury"{planetNode.position.y = -0.1}
+            else if planet.name == "Venus"{planetNode.position.y = -0.2}
+            else if planet.name == "Earth"{planetNode.position.y = 0.2}
+            else if planet.name == "Mars"{planetNode.position.y = 0.2}
+            else if planet.name == "Jupiter"{planetNode.position.y = -0.3}
+            else if planet.name == "Saturn"{planetNode.position.y = -0.3}
+            else if planet.name == "Uranus"{planetNode.position.y = 0.3}
+            else if planet.name == "Neptune"{planetNode.position.y = 0.4}
+            else if planet.name == "Pluto"{planetNode.position.y = -0.4}
             
             // Orbital rotation
             let rotateAction = SCNAction.rotateBy(x: 0, y:planet.rotation , z:0 , duration: 1)
