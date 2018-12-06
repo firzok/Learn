@@ -13,18 +13,43 @@ import ARKit
 class QuizViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var sceneView: ARSCNView!
-    @IBOutlet weak var planetDetailText: UITextView!
+    
+    @IBOutlet weak var QuestionText: UITextView!
     @IBOutlet var tapRec: UITapGestureRecognizer!
+    @IBOutlet weak var scoreView: UILabel!
     
     var center :CGPoint?    // Point declared for nodal detection
     
     var score: Int = 0
+    
+    var questionNumber: Int = 0
 
     
     var array = [String](arrayLiteral: "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto" )
     
+    var questions = [Question]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        scoreView.text = "\(score)"
+        
+        questions.append(Question(question: "Find and Tap on Mars.", solution: "Mars", score: 10))
+        questions.append(Question(question: "Find and Tap on Jupiter.", solution: "Jupiter", score: 10))
+        questions.append(Question(question: "Find and Tap on Saturn.", solution: "Saturn", score: 10))
+        questions.append(Question(question: "Find and Tap on Earth.", solution: "Earth", score: 10))
+        questions.append(Question(question: "Find and Tap on Neptune.", solution: "Neptune", score: 10))
+        questions.append(Question(question: "Find and Tap on Pluto.", solution: "Pluto", score: 10))
+        questions.append(Question(question: "Find and Tap on Mercury.", solution: "Mercury", score: 10))
+        questions.append(Question(question: "Find and Tap on Venus.", solution: "Venus", score: 10))
+        questions.append(Question(question: "Find and Tap on Sun.", solution: "Sun", score: 10))
+        questions.append(Question(question: "Find and Tap on Uranus.", solution: "Uranus", score: 10))
+        
+        
+        QuestionText.text = questions[questionNumber].question
+        
         
         // Set the view delegate
         sceneView.delegate = self
@@ -49,11 +74,15 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
         
         // Planets
         // order = merc, venus, earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
-        let mercury = Planet(name: "Mercury", radius: 0.50, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIImage(named: "art.scnassets/LowRes/mercury.jpg")!, distanceFromSun: 1.5)
+        placePlanetsForQuiz()
         
-        parentNode.addChildNode(createNode(from: mercury))
         
-        sceneView.scene.rootNode.addChildNode(parentNode)
+        
+//        let mercury = Planet(name: "Mercury", radius: 0.50, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIImage(named: "art.scnassets/LowRes/mercury.jpg")!, distanceFromSun: 1.5)
+        
+//        parentNode.addChildNode(createNode(from: mercury))
+        
+//        sceneView.scene.rootNode.addChildNode(parentNode)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,7 +106,7 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
     
     
     // Function that creates a node from planet
-    func createNode(from planet: Planet) -> SCNNode {
+    func createNode(from planet: Planet, position: SCNVector3) -> SCNNode {
         
         // Create a parent node which will hold bith text and planet together
         let parentNode = SCNNode()
@@ -88,7 +117,9 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a node to contain a planet inside the spherical geometry
         let planetNode = SCNNode(geometry: sphereGeometry)
-        planetNode.position.z = -planet.distanceFromSun
+        planetNode.position.z = -position.z
+        planetNode.position.x = -position.x
+        planetNode.position.y = -position.y
         planetNode.name = planet.name
         
         // Add planet to parent node
@@ -105,6 +136,8 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
             
         }
         
+        
+        
         // Add Text Node (name of planet) with the same texture as of the planet to parent node
 //        parentNode.addChildNode(createTextNode(from: planetNode,texture: planet.texture))
         
@@ -113,14 +146,9 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
         //        planetNode.runAction(.repeatForever(axisRotateAction))
         
         // Add orbital rotation and particle trace of orbit to all planets except the sun and add action to parent node
-        if planet.name != "sun"{
-            // Particle Trace
-            let planetOrbitLine = SCNParticleSystem(named: "planetOrbit.scnp", inDirectory: nil)!
-            planetNode.addParticleSystem(planetOrbitLine)
-            
-            // Orbital rotation
-            let rotateAction = SCNAction.rotateBy(x: 0, y:planet.rotation , z:0 , duration: 1)
-            parentNode.runAction(.repeatForever(rotateAction))
+        if planet.name == "sun"{
+            let sunFlare = SCNParticleSystem(named: "sunFlare.scnp", inDirectory: nil)!
+            planetNode.addParticleSystem(sunFlare)
         }
         
         return parentNode
@@ -141,7 +169,6 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
     //  Funciton as Tap Gesture Recognizer Handler
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
         
-        print("In handleTap")
         
         let results = self.sceneView.hitTest(gesture.location(in: gesture.view), types: ARHitTestResult.ResultType.featurePoint)
         guard let _: ARHitTestResult = results.first else {return}
@@ -154,18 +181,32 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
             // DispatchQueue for threading and multi-threaded pooling
 //            DispatchQueue.main.async {
 //                if (node.name != "No name found!" && node.name != "No name to return"){
-//                    self.setPlanetDetailText(node.name!)
+//                    self.setQuestionText(node.name!)
 //
 //
 //                    self.score+=1
 //                }
 //            }
             
+            print("\(node.name)")
+            print("\(questions[questionNumber].solution)")
+
             if (node.name != "No name found!" && node.name != "No name to return"){
-                self.setPlanetDetailText(node.name!)
+//                self.setQuestionText(node.name!)
 
+                if (node.name! == "\(questions[questionNumber].solution)"){
+                    
+                    score += questions[questionNumber].score
+                    scoreView.text = "\(score)"
+                    questionNumber+=1
+                    
+                    node.removeFromParentNode()
+                    
+                    QuestionText.text = questions[questionNumber].question
+                    
+                    
+                }
 
-                self.score+=1
             }
             
             // Debug
@@ -173,14 +214,75 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
-    
-    // Function that sets the Info pane text
-    func setPlanetDetailText(_ info: String){
-        planetDetailText.text = info
-    }
+
 
     
     
+    
+    
+    // Function that creates the planets for Quiz
+    func placePlanetsForQuiz() {
+        
+        // Parent Node
+        let parentNode = SCNNode()
+        parentNode.position.z = -5
+        
+        // Planets
+        // order = merc, venus, earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
+        let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIImage(named: "art.scnassets/LowRes/mercury.jpg")!, distanceFromSun: 0)
+        
+        let venus = Planet(name: "Venus", radius: 0.23, rotation: CGFloat(GLKMathDegreesToRadians(18)), texture: UIImage(named: "art.scnassets/LowRes/venus.jpg")!, distanceFromSun: 0)
+        
+        let earth = Planet(name: "Earth", radius: 0.25, rotation: CGFloat(GLKMathDegreesToRadians(16)), texture: UIImage(named: "art.scnassets/LowRes/earth.jpg")!, distanceFromSun: 0)
+        
+        let mars = Planet(name: "Mars", radius: 0.15, rotation: CGFloat(GLKMathDegreesToRadians(2)), texture: UIImage(named: "art.scnassets/LowRes/mars.jpg")!, distanceFromSun: 0)
+        
+        let jupiter = Planet(name: "Jupiter", radius: 0.80, rotation: CGFloat(GLKMathDegreesToRadians(5)), texture: UIImage(named: "art.scnassets/LowRes/jupiter.jpg")!, distanceFromSun: 0)
+        
+        let saturn = Planet(name: "Saturn", radius: 0.75, rotation: CGFloat(GLKMathDegreesToRadians(9)), texture: UIImage(named: "art.scnassets/LowRes/saturn.jpg")!, distanceFromSun: 0)
+        
+        let uranus = Planet(name: "Uranus", radius: 0.46, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIImage(named: "art.scnassets/LowRes/uranus.jpg")!, distanceFromSun: 0)
+        
+        let neptune = Planet(name: "Neptune", radius: 0.45, rotation: CGFloat(GLKMathDegreesToRadians(13)), texture: UIImage(named: "art.scnassets/LowRes/neptune.jpg")!, distanceFromSun: 0)
+        
+        let pluto = Planet(name: "Pluto", radius: 0.05, rotation: CGFloat(GLKMathDegreesToRadians(15)), texture: UIImage(named: "art.scnassets/LowRes/pluto.jpg")!, distanceFromSun: 0)
+        
+        // The Sun and sunFlare animation
+        let sun = Planet(name: "Sun", radius: 0.5, rotation: CGFloat(5), texture: UIImage(named: "art.scnassets/sun_8k.jpg")!, distanceFromSun: 0)
+        
+        
+        // Add planets to Array for ease of use
+        let planets = [sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune, pluto]
+        
+        // Create Planet nodes and add to Parent Node
+        for planet in planets {
+            
+            var position = SCNVector3Make((Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -10 ..< 10))),
+                                          (Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -3 ..< 3))),
+                                          (Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -10 ..< 10))))
+            
+            
+            
+            
+            parentNode.addChildNode(createNode(from: planet, position: position))
+        }
+        
+        // Light
+        //        let light = SCNLight()
+        //        light.type = .omni
+        //        let lightNode = SCNNode()
+        //        lightNode.light = light
+        //        lightNode.position.y = 3
+        //        parentNode.addChildNode(lightNode)
+        //        parentNode.light = light
+        
+//        // Star particles
+//        let stars = SCNParticleSystem(named: "Stars.scnp", inDirectory: nil)!
+//        parentNode.addParticleSystem(stars)
+        
+        sceneView.scene.rootNode.addChildNode(parentNode)
+        
+    }
     
 
 }

@@ -413,11 +413,18 @@
                                     <segue destination="eOu-Dy-Fpd" kind="presentation" id="YY4-gF-kew"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjZ-of-oFW">
-                                <rect key="frame" x="506" y="374" width="13" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Par-rb-EIf">
+                                <rect key="frame" x="871" y="8" width="89" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVG-Tc-UCl">
+                                <rect key="frame" x="935" y="8" width="89" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -425,15 +432,16 @@
                         <viewLayoutGuide key="safeArea" id="B6E-ad-0ZY"/>
                     </view>
                     <connections>
-                        <outlet property="planetDetailText" destination="1BS-U3-zCI" id="SdB-Wo-OCV"/>
+                        <outlet property="QuestionText" destination="1BS-U3-zCI" id="JDH-Yz-db0"/>
                         <outlet property="sceneView" destination="lN1-fb-o1C" id="si8-iE-bxB"/>
+                        <outlet property="scoreView" destination="rVG-Tc-UCl" id="eMz-ef-CpP"/>
                         <outlet property="tapRec" destination="E02-Ea-cbl" id="lI2-8f-4ch"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dr0-LK-TOh" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="E02-Ea-cbl"/>
             </objects>
-            <point key="canvasLocation" x="1382" y="817"/>
+            <point key="canvasLocation" x="1381.640625" y="816.40625"/>
         </scene>
     </scenes>
     <resources>
@@ -445,7 +453,6 @@
         <image name="playImg" width="341" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YBI-s8-qvz"/>
         <segue reference="YY4-gF-kew"/>
         <segue reference="i1h-pu-G39"/>
     </inferredMetricsTieBreakers>
