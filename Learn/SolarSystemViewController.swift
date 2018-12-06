@@ -40,15 +40,6 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         // Create a 2d coordinate in the middle of the screen for node detection location
         center = CGPoint(x:sceneView.bounds.midX,y:sceneView.bounds.midY)
         
-        
-//        let parentNode = SCNNode()
-//        parentNode.position.z = -5
-//
-//        let mercury = Planet(name: "Mercury", radius: 0.50, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIColor.white, distanceFromSun: 0)
-//         let planets = mercury
-//        parentNode.addChildNode(createNode(from :mercury))
-//        sceneView.scene.rootNode.addChildNode(parentNode)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +61,7 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         
         // Planets
         // order = merc, venus, earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
-        let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIImage(named: "\(solarSystemAssetsPath)mercury.jpg")!, distanceFromSun: 1.5, desc: "The closest planet to the sun, Mercury is only a bit larger than Earth's moon. Its day side is scorched by the sun and can reach 840 degrees Fahrenheit (450 Celsius), but on the night side, temperatures drop to hundreds of degrees below freezing. Mercury has virtually no atmosphere to absorb meteor impacts, so its surface is pockmarked with craters, just like the moon. Over its four-year mission, NASA's MESSENGER spacecraft has revealed views of the planet that have challenged astronomers' expectations.\nDiscovery: Known to the ancients and visible to the naked eye\nNamed for: Messenger of the Roman gods\nDiameter: 3,031 miles (4,878 km)\nOrbit: 88 Earth days\nDay: 58.6 Earth days")
+        let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIImage(named: "\(solarSystemAssetsPath)mercury.jpg")!, distanceFromSun: 1.5, desc: "s")
         
         let venus = Planet(name: "Venus", radius: 0.2, rotation: CGFloat(GLKMathDegreesToRadians(18)), texture: UIImage(named: "\(solarSystemAssetsPath)venus.jpg")!, distanceFromSun: 2, desc: "s")
         
@@ -88,14 +79,14 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
         let pluto = Planet(name: "Pluto", radius: 0.17, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIImage(named: "\(solarSystemAssetsPath)pluto.jpg")!, distanceFromSun: 8.5, desc: "s")
         
-        // The Sun and sunFlare animation
-        let sun = Planet(name: "sun", radius: 0.5, rotation: CGFloat(5), texture: UIImage(named: "\(solarSystemAssetsPath)sun.jpg")!, distanceFromSun: 0, desc: "s")
+        // The Sun and SunFlare animation
+        let Sun = Planet(name: "Sun", radius: 0.5, rotation: CGFloat(5), texture: UIImage(named: "\(solarSystemAssetsPath)sun.jpg")!, distanceFromSun: 0, desc: "s")
         
-        let sunFlare = SCNParticleSystem(named: "sunFlare.scnp", inDirectory: nil)!
-        parentNode.addParticleSystem(sunFlare)
+        let SunFlare = SCNParticleSystem(named: "sunFlare.scnp", inDirectory: nil)!
+        parentNode.addParticleSystem(SunFlare)
         
         // Add planets to Array for ease of use
-        let planets = [sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune, pluto]
+        let planets = [Sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune, pluto]
         
         // Create Planet nodes and add to Parent Node
         for planet in planets {
@@ -171,8 +162,8 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 //        let axisRotateAction = SCNAction.rotate(by: .pi/2, around: SCNVector3(0,1,0), duration: 1)
 //        planetNode.runAction(.repeatForever(axisRotateAction))
         
-        // Add orbital rotation and particle trace of orbit to all planets except the sun and add action to parent node
-        if planet.name != "sun"{
+        // Add orbital rotation and particle trace of orbit to all planets except the Sun and add action to parent node
+        if planet.name != "Sun"{
             
             // Particle Trace
             let planetOrbitLine = SCNParticleSystem(named: "planetOrbit.scnp", inDirectory: nil)!
@@ -276,7 +267,7 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
     
         if !tappedNode.isEmpty {
             let node = tappedNode[0].node
-            
+        
             // DispatchQueue for threading and multi-threaded pooling
             DispatchQueue.main.async {
                 if (node.name != "No name found!" && node.name != "No name to return"){
@@ -288,7 +279,33 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
     // Function that sets the Info pane text
     func setPlanetDetailText(_ info: String){
-        planetDetailText.text = info
+        var desc = ""
+        
+        switch info {
+        case "Mercury":
+            desc = info+"\nThe closest planet to the Sun, Mercury is only a bit larger than Earth's moon. Its day side is scorched by the Sun and can reach 840 degrees Fahrenheit (450 Celsius), but on the night side, temperatures drop to hundreds of degrees below freezing. Mercury has virtually no atmosphere to absorb meteor impacts, so its surface is pockmarked with craters, just like the moon. Over its four-year mission, NASA's MESSENGER spacecraft has revealed views of the planet that have challenged astronomers' expectations.\nDiscovery: Known to the ancients and visible to the naked eye\nNamed for: Messenger of the Roman gods\nDiameter: 3,031 miles (4,878 km)\nOrbit: 88 Earth days\nDay: 58.6 Earth days"
+        case "Venus":
+            desc = info+"\nThe second planet from the sun, Venus is terribly hot, even hotter than Mercury. The atmosphere is toxic. The pressure at the surface would crush and kill you. Scientists describe Venus’ situation as a runaway greenhouse effect. Its size and structure are similar to Earth, Venus' thick, toxic atmosphere traps heat in a runaway greenhouse effect. Oddly, Venus spins slowly in the opposite direction of most planets.\nThe Greeks believed Venus was two different objects — one in the morning sky and another in the evening. Because it is often brighter than any other object in the sky — except for the sun and moon — Venus has generated many UFO reports.\nDiscovery: Known to the ancients and visible to the naked eye\nNamed for: Roman goddess of love and beauty\nDiameter: 7,521 miles (12,104 km)\nOrbit: 225 Earth days\nDay: 241 Earth days"
+        case "Earth":
+            desc = info+"\nThe third planet from the sun, Earth is a waterworld, with two-thirds of the planet covered by ocean. It’s the only world known to harbor life. Earth’s atmosphere is rich in life-sustaining nitrogen and oxygen. Earth's surface rotates about its axis at 1,532 feet per second (467 meters per second) — slightly more than 1,000 mph (1,600 kph) — at the equator. The planet zips around the sun at more than 18 miles per second (29 km per second)./nDiameter: 7,926 miles (12,760 km)\nOrbit: 365.24 days\nDay: 23 hours, 56 minutes"
+        case "Mars":
+            desc = info+"\nThe fourth planet from the sun, is a cold, dusty place. The dust, an iron oxide, gives the planet its reddish cast. Mars shares similarities with Earth: It is rocky, has mountains and valleys, and storm systems ranging from localized tornado-like dust devils to planet-engulfing dust storms. It snows on Mars. And Mars harbors water ice. Scientists think it was once wet and warm, though today it’s cold and desert-like.\nMars' atmosphere is too thin for liquid water to exist on the surface for any length of time. Scientists think ancient Mars would have had the conditions to support life, and there is hope that signs of past life — possibly even present biology — may exist on the Red Planet.\nDiscovery: Known to the ancients and visible to the naked eye\nNamed for: Roman god of war\nDiameter: 4,217 miles (6,787 km)\nOrbit: 687 Earth days\nDay: Just more than one Earth day (24 hours, 37 minutes)"
+        case "Jupiter":
+            desc = info+"\nThe fifth planet from the sun, Jupiter is huge and is the most massive planet in our solar system. It’s a mostly gaseous world, mostly hydrogen and helium. Its swirling clouds are colorful due to different types of trace gases. A big feature is the Great Red Spot, a giant storm which has raged for hundreds of years. Jupiter has a strong magnetic field, and with dozens of moons, it looks a bit like a miniature solar system.\nDiscovery: Known to the ancients and visible to the naked eye\nNamed for: Ruler of the Roman gods\nDiameter: 86,881 miles (139,822 km)\nOrbit: 11.9 Earth years\nDay: 9.8 Earth hours"
+        case "Saturn":
+            desc = info+"\nThe sixth planet from the sun is known most for its rings. When Galileo Galilei first studied Saturn in the early 1600s, he thought it was an object with three parts. Not knowing he was seeing a planet with rings, the stumped astronomer entered a small drawing — a symbol with one large circle and two smaller ones — in his notebook, as a noun in a sentence describing his discovery. More than 40 years later, Christiaan Huygens proposed that they were rings. The rings are made of ice and rock. Scientists are not yet sure how they formed. The gaseous planet is mostly hydrogen and helium. It has numerous moons.\nDiscovery: Known to the ancients and visible to the naked eye\nNamed for: Roman god of agriculture\nDiameter: 74,900 miles (120,500 km)\nOrbit: 29.5 Earth years\nDay: About 10.5 Earth hours"
+        case "Uranus":
+            desc = "\nThe seventh planet from the sun, Uranus is an oddball. It’s the only giant planet whose equator is nearly at right angles to its orbit — it basically orbits on its side. Astronomers think the planet collided with some other planet-size object long ago, causing the tilt. The tilt causes extreme seasons that last 20-plus years, and the sun beats down on one pole or the other for 84 Earth-years. Uranus is about the same size as Neptune. Methane in the atmosphere gives Uranus its blue-green tint. It has numerous moons and faint rings.\nDiscovery: 1781 by William Herschel (was thought previously to be a star)\nNamed for: Personification of heaven in ancient myth\nDiameter: 31,763 miles (51,120 km)\nOrbit: 84 Earth years\nDay: 18 Earth hours"
+        case "Neptune":
+            desc = info+"\nThe eighth planet from the sun, Neptune is known for strong winds — sometimes faster than the speed of sound. Neptune is far out and cold. The planet is more than 30 times as far from the sun as Earth. It has a rocky core. Neptune was the first planet to be predicted to exist by using math, before it was detected. Irregularities in the orbit of Uranus led French astronomer Alexis Bouvard to suggest some other might be exerting a gravitational tug. German astronomer Johann Galle used calculations to help find Neptune in a telescope. Neptune is about 17 times as massive as Earth.\nDiscovery: 1846\nNamed for: Roman god of water\nDiameter: 30,775 miles (49,530 km)\nOrbit: 165 Earth years\nDay: 19 Earth hours"
+        case "Pluto":
+            desc = info+"(Dwarf Planet)\nOnce the ninth planet from the sun, Pluto is unlike other planets in many respects. It is smaller than Earth's moon. Its orbit carries it inside the orbit of Neptune and then way out beyond that orbit. From 1979 until early 1999, Pluto had actually been the eighth planet from the sun. Then, on Feb. 11, 1999, it crossed Neptune's path and once again became the solar system's most distant planet — until it was demoted to dwarf planet status. Pluto will stay beyond Neptune for 228 years. Pluto’s orbit is tilted to the main plane of the solar system — where the other planets orbit — by 17.1 degrees. It’s a cold, rocky world with only a very ephemeral atmosphere. NASA's New Horizons mission performed history's first flyby of the Pluto system on July 14, 2015.\nDiscovery: 1930 by Clyde Tombaugh\nNamed for: Roman god of the underworld, Hades\nDiameter: 1,430 miles (2,301 km)\nOrbit: 248 Earth years\nDay: 6.4 Earth day"
+        case "Sun":
+            desc = info+"merc"
+        default:
+            break
+        }
+        planetDetailText.text = desc
     }
     
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yHb-ab-nYE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eOu-Dy-Fpd">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -497,7 +497,7 @@
         <image name="playImg" width="341" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YY4-gF-kew"/>
+        <segue reference="5bC-Gg-hPj"/>
         <segue reference="PnT-hm-JhY"/>
     </inferredMetricsTieBreakers>
 </document>

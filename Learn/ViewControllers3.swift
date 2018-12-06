@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewControllers3: UIViewController {
 
@@ -15,6 +16,7 @@ class ViewControllers3: UIViewController {
     @IBOutlet var learnBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     
+    var backgroundPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +28,27 @@ class ViewControllers3: UIViewController {
         learnBtn.layer.cornerRadius = 115
         learnBtn.clipsToBounds = true
 
+        playBackgroundMusic(musicFileName: "art.scnassets/leARnBackgroundMusic.WAV")
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func playBackgroundMusic(musicFileName: String) {
+        let url = Bundle.main.url(forResource: musicFileName, withExtension: nil)
+        
+        do {
+            backgroundPlayer = try AVAudioPlayer(contentsOf: url!)
+            backgroundPlayer.numberOfLoops = -1
+            backgroundPlayer.prepareToPlay()
+            backgroundPlayer.play()
+        }
+        catch let error as NSError{
+            print(error.description)
+        }
     }
     
 
