@@ -34,6 +34,7 @@
 		3C6A09A521738FFF005E69E4 /* ViewControllers3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A421738FFF005E69E4 /* ViewControllers3.swift */; };
 		3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A62173934E005E69E4 /* ViewController2.swift */; };
 		EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */; };
+		EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE968C8521B92F9300AAA6C1 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		3C6A09A421738FFF005E69E4 /* ViewControllers3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers3.swift; sourceTree = "<group>"; };
 		3C6A09A62173934E005E69E4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		EE968C8521B92F9300AAA6C1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		3C6A09892173793A005E69E4 /* Learn */ = {
 			isa = PBXGroup;
 			children = (
+				EE968C8421B92F6100AAA6C1 /* Quiz */,
 				095637AD2196A7F100FC724A /* Models */,
 				3C6A098A2173793A005E69E4 /* AppDelegate.swift */,
 				3C6A098C2173793A005E69E4 /* art.scnassets */,
@@ -152,6 +155,14 @@
 				EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */,
 			);
 			path = Learn;
+			sourceTree = "<group>";
+		};
+		EE968C8421B92F6100AAA6C1 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				EE968C8521B92F9300AAA6C1 /* Question.swift */,
+			);
+			path = Quiz;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +261,7 @@
 				3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */,
 				3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */,
 				3C6A09A521738FFF005E69E4 /* ViewControllers3.swift in Sources */,
+				EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */,
 				095637AF2196A83400FC724A /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
