@@ -17,7 +17,7 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Set the view delegate
         sceneView.delegate = self
         
@@ -70,26 +70,27 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         
         // Planets
         // order = merc, venus, earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
-        let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIImage(named: "\(solarSystemAssetsPath)mercury.jpg")!, distanceFromSun: 1.5)
+        let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIImage(named: "\(solarSystemAssetsPath)mercury.jpg")!, distanceFromSun: 1.5, desc: "The closest planet to the sun, Mercury is only a bit larger than Earth's moon. Its day side is scorched by the sun and can reach 840 degrees Fahrenheit (450 Celsius), but on the night side, temperatures drop to hundreds of degrees below freezing. Mercury has virtually no atmosphere to absorb meteor impacts, so its surface is pockmarked with craters, just like the moon. Over its four-year mission, NASA's MESSENGER spacecraft has revealed views of the planet that have challenged astronomers' expectations.\nDiscovery: Known to the ancients and visible to the naked eye\nNamed for: Messenger of the Roman gods\nDiameter: 3,031 miles (4,878 km)\nOrbit: 88 Earth days\nDay: 58.6 Earth days")
         
-        let venus = Planet(name: "Venus", radius: 0.2, rotation: CGFloat(GLKMathDegreesToRadians(18)), texture: UIImage(named: "\(solarSystemAssetsPath)venus.jpg")!, distanceFromSun: 2)
+        let venus = Planet(name: "Venus", radius: 0.2, rotation: CGFloat(GLKMathDegreesToRadians(18)), texture: UIImage(named: "\(solarSystemAssetsPath)venus.jpg")!, distanceFromSun: 2, desc: "s")
         
-        let earth = Planet(name: "Earth", radius: 0.25, rotation: CGFloat(GLKMathDegreesToRadians(16)), texture: UIImage(named: "\(solarSystemAssetsPath)earth.jpg")!, distanceFromSun: 2.5)
+        let earth = Planet(name: "Earth", radius: 0.25, rotation: CGFloat(GLKMathDegreesToRadians(16)), texture: UIImage(named: "\(solarSystemAssetsPath)earth.jpg")!, distanceFromSun: 2.5, desc: "s")
         
-        let mars = Planet(name: "Mars", radius: 0.15, rotation: CGFloat(GLKMathDegreesToRadians(2)), texture: UIImage(named: "\(solarSystemAssetsPath)mars.jpg")!, distanceFromSun: 3)
+        let mars = Planet(name: "Mars", radius: 0.15, rotation: CGFloat(GLKMathDegreesToRadians(2)), texture: UIImage(named: "\(solarSystemAssetsPath)mars.jpg")!, distanceFromSun: 3, desc: "s")
         
-        let jupiter = Planet(name: "Jupiter", radius: 0.40, rotation: CGFloat(GLKMathDegreesToRadians(5)), texture: UIImage(named: "\(solarSystemAssetsPath)jupiter.jpg")!, distanceFromSun: 4)
+        let jupiter = Planet(name: "Jupiter", radius: 0.40, rotation: CGFloat(GLKMathDegreesToRadians(5)), texture: UIImage(named: "\(solarSystemAssetsPath)jupiter.jpg")!, distanceFromSun: 4, desc: "s")
 
-        let saturn = Planet(name: "Saturn", radius: 0.45, rotation: CGFloat(GLKMathDegreesToRadians(9)), texture: UIImage(named: "\(solarSystemAssetsPath)saturn.jpg")!, distanceFromSun: 6)
+        let saturn = Planet(name: "Saturn", radius: 0.45, rotation: CGFloat(GLKMathDegreesToRadians(9)), texture: UIImage(named: "\(solarSystemAssetsPath)saturn.jpg")!, distanceFromSun: 6, desc: "s")
 
-        let uranus = Planet(name: "Uranus", radius: 0.35, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIImage(named: "\(solarSystemAssetsPath)uranus.jpg")!, distanceFromSun: 7)
+        let uranus = Planet(name: "Uranus", radius: 0.35, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIImage(named: "\(solarSystemAssetsPath)uranus.jpg")!, distanceFromSun: 7, desc: "s")
 
-        let neptune = Planet(name: "Neptune", radius: 0.3, rotation: CGFloat(GLKMathDegreesToRadians(13)), texture: UIImage(named: "\(solarSystemAssetsPath)neptune.jpg")!, distanceFromSun: 8)
+        let neptune = Planet(name: "Neptune", radius: 0.3, rotation: CGFloat(GLKMathDegreesToRadians(13)), texture: UIImage(named: "\(solarSystemAssetsPath)neptune.jpg")!, distanceFromSun: 8, desc: "s")
 
-        let pluto = Planet(name: "Pluto", radius: 0.17, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIImage(named: "\(solarSystemAssetsPath)pluto.jpg")!, distanceFromSun: 8.5)
+        let pluto = Planet(name: "Pluto", radius: 0.17, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIImage(named: "\(solarSystemAssetsPath)pluto.jpg")!, distanceFromSun: 8.5, desc: "s")
         
         // The Sun and sunFlare animation
-        let sun = Planet(name: "sun", radius: 0.5, rotation: CGFloat(5), texture: UIImage(named: "\(solarSystemAssetsPath)sun.jpg")!, distanceFromSun: 0)
+        let sun = Planet(name: "sun", radius: 0.5, rotation: CGFloat(5), texture: UIImage(named: "\(solarSystemAssetsPath)sun.jpg")!, distanceFromSun: 0, desc: "s")
+        
         let sunFlare = SCNParticleSystem(named: "sunFlare.scnp", inDirectory: nil)!
         parentNode.addParticleSystem(sunFlare)
         
@@ -161,7 +162,6 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
             let ringNode = SCNNode(geometry: ringGeometry)
             ringNode.eulerAngles.x = Float(-20.degToRad)
             planetNode.addChildNode(ringNode)
-
         }
         
         // Add Text Node (name of planet) with the same texture as of the planet to parent node
@@ -173,11 +173,13 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         
         // Add orbital rotation and particle trace of orbit to all planets except the sun and add action to parent node
         if planet.name != "sun"{
+            
             // Particle Trace
             let planetOrbitLine = SCNParticleSystem(named: "planetOrbit.scnp", inDirectory: nil)!
-            planetOrbitLine.particleColor = UIColor.magenta
+            planetOrbitLine.particleColor = UIColor.darkGray
             planetNode.addParticleSystem(planetOrbitLine)
             
+            // Planet y axes positioning
             if planet.name == "Mercury"{planetNode.position.y = -0.1}
             else if planet.name == "Venus"{planetNode.position.y = -0.2}
             else if planet.name == "Earth"{planetNode.position.y = 0.2}
@@ -251,7 +253,7 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
         let planetName = detectNode()
-        
+
         // DispatchQueue for threading and multi-threaded pooling
         DispatchQueue.main.async {
             if (planetName != "No name found!" && planetName != "No name to return"){
@@ -267,11 +269,11 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
     //  Funciton as Tap Gesture Recognizer Handler
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
         
-        let results = self.sceneView.hitTest(gesture.location(in: gesture.view), types: ARHitTestResult.ResultType.featurePoint)
-        guard let _: ARHitTestResult = results.first else {return}
+//        let results = self.sceneView.hitTest(gesture.location(in: gesture.view), types: ARHitTestResult.ResultType.featurePoint)
+//        guard let _: ARHitTestResult = results.first else {return}
         
         let tappedNode = self.sceneView.hitTest(gesture.location(in: gesture.view), options: [:])
-        
+    
         if !tappedNode.isEmpty {
             let node = tappedNode[0].node
             
@@ -281,9 +283,6 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
                     self.setPlanetDetailText(node.name!)
                 }
             }
-            
-            // Debug
-//            print(node.name ?? "Not a node")
         }
     }
 

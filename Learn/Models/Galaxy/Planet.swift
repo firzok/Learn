@@ -14,13 +14,15 @@ class Planet {
     var rotation : CGFloat
     var texture : UIImage
     var distanceFromSun : Float
+    var desc: String
  
     // Initializer
-    init(name : String, radius : CGFloat, rotation : CGFloat, texture : UIImage, distanceFromSun : Float) {
+    init(name : String, radius : CGFloat, rotation : CGFloat, texture : UIImage, distanceFromSun : Float, desc: String) {
         self.name = name
         self.radius = radius
         self.rotation = rotation
         self.texture = texture
         self.distanceFromSun = distanceFromSun
+        self.desc = desc
     }
 }
