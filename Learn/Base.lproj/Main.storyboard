@@ -13,7 +13,7 @@
         <!--Collection View Controller-->
         <scene sceneID="bWh-zg-ZiM">
             <objects>
-                <viewController id="qyb-7y-OOS" customClass="CollectionViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CollectionViewController" id="qyb-7y-OOS" customClass="CollectionViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ihV-M0-Sz2">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,12 +146,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qQ-eQ-LZr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="26v-jf-x1V"/>
             </objects>
-            <point key="canvasLocation" x="2502.5390625" y="-1177.34375"/>
+            <point key="canvasLocation" x="3226.7578125" y="-1177.34375"/>
         </scene>
         <!--Solar System View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="SolarSystemViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SolarSystemView" id="BV1-FR-VrT" customClass="SolarSystemViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PPe-WQ-6rK">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -270,6 +270,71 @@
             </objects>
             <point key="canvasLocation" x="-424.21875" y="65.625"/>
         </scene>
+        <!--Model Selection View Controller-->
+        <scene sceneID="aOU-CW-7LZ">
+            <objects>
+                <viewController id="fZr-qj-ix8" customClass="ModelSelectionViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S27-TO-UdD">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0oz-Ey-Wjo">
+                                <rect key="frame" x="0.0" y="146" width="1024" height="622"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x5C-bA-VGu">
+                                    <size key="itemSize" width="972" height="216"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="xc5-7C-Rug" customClass="ModelSelectionViewCell" customModule="Learn" customModuleProvider="target">
+                                        <rect key="frame" x="26" y="0.0" width="972" height="216"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="972" height="216"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A S T R O N O M Y" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eF3-oO-JUI">
+                                                    <rect key="frame" x="97" y="37" width="803" height="136"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="67"/>
+                                                    <color key="textColor" red="0.1640707062" green="0.65951057479999997" blue="0.72746452740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="modelName" destination="eF3-oO-JUI" id="DM4-V2-Qd2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="fZr-qj-ix8" id="boQ-xZ-S7H"/>
+                                    <outlet property="delegate" destination="fZr-qj-ix8" id="MdV-3c-fud"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAq-mG-dCI">
+                                <rect key="frame" x="-4" y="77" width="70" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1640707062" green="0.65951057479999997" blue="0.72746452740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="back_btn">
+                                    <color key="titleColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1640707062" green="0.65951057479999997" blue="0.72746452740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="DUe-V6-RX7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QcZ-sN-Hjm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Cq-qT-K9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1344.7265625" y="-1127.34375"/>
+        </scene>
         <!--View Controllers3-->
         <scene sceneID="XmA-n9-MRb">
             <objects>
@@ -310,6 +375,9 @@
                                 <state key="normal" title="LEARN">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="9h8-px-A3k" kind="show" id="M0r-NT-JUa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -487,6 +555,24 @@
             </objects>
             <point key="canvasLocation" x="-358" y="927"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9vL-ga-3Hm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9h8-px-A3k" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7N2-Q0-41d">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fZr-qj-ix8" kind="relationship" relationship="rootViewController" id="qv8-Fd-yeI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qvO-Ka-Hhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620.5078125" y="-1127.34375"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back1" width="1440" height="2560"/>
@@ -497,6 +583,7 @@
         <image name="playImg" width="341" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="YBI-s8-qvz"/>
         <segue reference="5bC-Gg-hPj"/>
         <segue reference="PnT-hm-JhY"/>
     </inferredMetricsTieBreakers>
