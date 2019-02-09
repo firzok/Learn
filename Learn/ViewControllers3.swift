@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 
+
+var backgroundPlayer = AVAudioPlayer()
 class ViewControllers3: UIViewController {
 
     
@@ -16,7 +18,7 @@ class ViewControllers3: UIViewController {
     @IBOutlet var learnBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     
-    var backgroundPlayer = AVAudioPlayer()
+//    var backgroundPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()

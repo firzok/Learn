@@ -23,6 +23,10 @@ class ModelSelectionViewController : UIViewController, UICollectionViewDataSourc
         return modelNames.count
     }
     
+    override func viewDidLoad() {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         

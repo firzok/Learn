@@ -25,6 +25,7 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
     
     var solarSystemAssetsPath = "art.scnassets/SolarSystem/PlanetTextures/" //Textures and Assets Path
     var questions = [Question] ()
+    var sounds = AVAudioPlayer()
     
     override func viewDidLoad() {
         
@@ -66,6 +67,8 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
         // order = merc, venus, earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
         placePlanetsForQuiz()
         
+        backgroundPlayer.stop()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,7 +90,7 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
         
         // Planets
         // order = merc, venus, earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
-        let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIImage(named: "\(solarSystemAssetsPath)mercury.jpg")!, distanceFromSun: 1.5, desc: "The closest planet to the sun, Mercury is only a bit larger than Earth's moon. Its day side is scorched by the sun and can reach 840 degrees Fahrenheit (450 Celsius), but on the night side, temperatures drop to hundreds of degrees below freezing. Mercury has virtually no atmosphere to absorb meteor impacts, so its surface is pockmarked with craters, just like the moon. Over its four-year mission, NASA's MESSENGER spacecraft has revealed views of the planet that have challenged astronomers' expectations.\nDiscovery: Known to the ancients and visible to the naked eye\nNamed for: Messenger of the Roman gods\nDiameter: 3,031 miles (4,878 km)\nOrbit: 88 Earth days\nDay: 58.6 Earth days")
+        let mercury = Planet(name: "Mercury", radius: 0.10, rotation: CGFloat(GLKMathDegreesToRadians(22)), texture: UIImage(named: "\(solarSystemAssetsPath)mercury.jpg")!, distanceFromSun: 1.5, desc:"s")
         
         let venus = Planet(name: "Venus", radius: 0.2, rotation: CGFloat(GLKMathDegreesToRadians(18)), texture: UIImage(named: "\(solarSystemAssetsPath)venus.jpg")!, distanceFromSun: 2, desc: "s")
         
@@ -203,6 +206,7 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
             
                 if (node.name! == "\(self.questions[self.questionNumber].solution)"){
                     self.score += self.questions[self.questionNumber].score
+                    self.playBackgroundMusic(musicFileName: "art.scnassets/sound108.wav")
                     self.scoreView.text = "\(self.score)"
                     self.questionNumber += 1
                     
@@ -221,12 +225,29 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
 
                     self.score -= self.questions[self.questionNumber].score
                     self.scoreView.text = "\(self.score)"
+                    self.playBackgroundMusic(musicFileName: "art.scnassets/fail-buzzer-04.wav")
                     node.addChildNode(self.createAnswerCheckNode(checker: "Wrong", planet: node))
+//                    node.childNodes.re
+                    
                 }
 
             }
         }
     }
+    func playBackgroundMusic(musicFileName: String) {
+        let url = Bundle.main.url(forResource: musicFileName, withExtension: nil)
+        
+        do {
+            sounds = try AVAudioPlayer(contentsOf: url!)
+            backgroundPlayer.numberOfLoops = 1
+            sounds.prepareToPlay()
+            sounds.play()
+        }
+        catch let error as NSError{
+            print(error.description)
+        }
+    }
+    
    
     // Reset The scene by removing all planets
     func resetScene() {

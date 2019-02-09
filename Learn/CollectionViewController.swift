@@ -24,7 +24,7 @@ class CollectionViewController: UIViewController {
         collectionView.reloadData()
         
         for model in models{
-            if let thumbnail = UIImage(named: "art.scnassets/AnatomyThumbnails/\(model).jpg"){
+            if let thumbnail = UIImage(named: "art.scnassets/HumanAnatomy/AnatomyThumbnails/\(model).jpg"){
                 thumbnails.append(thumbnail)
             }
         }

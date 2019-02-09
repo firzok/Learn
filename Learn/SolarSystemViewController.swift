@@ -301,7 +301,8 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         case "Pluto":
             desc = info+"(Dwarf Planet)\nOnce the ninth planet from the sun, Pluto is unlike other planets in many respects. It is smaller than Earth's moon. Its orbit carries it inside the orbit of Neptune and then way out beyond that orbit. From 1979 until early 1999, Pluto had actually been the eighth planet from the sun. Then, on Feb. 11, 1999, it crossed Neptune's path and once again became the solar system's most distant planet — until it was demoted to dwarf planet status. Pluto will stay beyond Neptune for 228 years. Pluto’s orbit is tilted to the main plane of the solar system — where the other planets orbit — by 17.1 degrees. It’s a cold, rocky world with only a very ephemeral atmosphere. NASA's New Horizons mission performed history's first flyby of the Pluto system on July 14, 2015.\nDiscovery: 1930 by Clyde Tombaugh\nNamed for: Roman god of the underworld, Hades\nDiameter: 1,430 miles (2,301 km)\nOrbit: 248 Earth years\nDay: 6.4 Earth day"
         case "Sun":
-            desc = info+"merc"
+            desc = info + " AGE : 4.5 Billin Years" + "Facts about the Sun : The Sun accounts for 99.86% of the mass in the solar system. It has a mass of around 330,000 times that of Earth. It is three quarters hydrogen and most of its remaining mass is helium."
+            + " The Sun—the heart of our solar system—is a yellow dwarf star, a hot ball of glowing gases. Its gravity holds the solar system together, keeping everything from the biggest planets to the smallest particles of debris in its orbit. Electric currents in the Sun generate a magnetic field that is carried out through the solar system by the solar wind—a stream of electrically charged gas blowing outward from the Sun in all directions."
         default:
             break
         }
