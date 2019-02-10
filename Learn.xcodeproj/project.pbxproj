@@ -27,8 +27,13 @@
 		3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A62173934E005E69E4 /* ViewController2.swift */; };
 		5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */; };
 		5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */; };
+		D99043FFFD62D6111657B4B8 /* Pods_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F7786F49CCCC4E6861CCB5 /* Pods_Learn.framework */; };
+		EE1B1CEC220F6A7400B7090F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B1CEB220F6A7400B7090F /* MainViewController.swift */; };
 		EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */; };
 		EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE968C8521B92F9300AAA6C1 /* Question.swift */; };
+		EEE9D6DC2210343100091471 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEE9D6DB2210343100091471 /* GoogleService-Info.plist */; };
+		EEE9D6DE2210373100091471 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9D6DD2210373100091471 /* RegisterViewController.swift */; };
+		EEE9D6E022103DA000091471 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9D6DF22103DA000091471 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,9 @@
 		097A6E1321B6BB39001908C3 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		09BDF63321ADABAE00BC541A /* planetOrbit.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = planetOrbit.scnp; sourceTree = "<group>"; };
 		09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAnatomyViewController.swift; sourceTree = "<group>"; };
+		11D582E999DAD2A633954621 /* Pods-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Learn/Pods-Learn.debug.xcconfig"; sourceTree = "<group>"; };
+		1276F8D4465237BB82218D26 /* Pods-Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Learn/Pods-Learn.release.xcconfig"; sourceTree = "<group>"; };
+		12F7786F49CCCC4E6861CCB5 /* Pods_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6A09872173793A005E69E4 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6A098A2173793A005E69E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C6A098C2173793A005E69E4 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -54,8 +62,12 @@
 		3C6A09A62173934E005E69E4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewController.swift; sourceTree = "<group>"; };
 		5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewCell.swift; sourceTree = "<group>"; };
+		EE1B1CEB220F6A7400B7090F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		EE968C8521B92F9300AAA6C1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		EEE9D6DB2210343100091471 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EEE9D6DD2210373100091471 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Pods/RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
+		EEE9D6DF22103DA000091471 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D99043FFFD62D6111657B4B8 /* Pods_Learn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +116,8 @@
 			children = (
 				3C6A09892173793A005E69E4 /* Learn */,
 				3C6A09882173793A005E69E4 /* Products */,
+				8A126C6C88D5DC0205F23BCF /* Pods */,
+				5373470F73DED9C9E6DC4758 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,14 +144,35 @@
 				097A6E1121B6BA3E001908C3 /* cellClass.swift */,
 				3C6A09A421738FFF005E69E4 /* ViewControllers3.swift */,
 				3C6A09902173793A005E69E4 /* Main.storyboard */,
+				EE1B1CEB220F6A7400B7090F /* MainViewController.swift */,
 				3C6A09932173793A005E69E4 /* Assets.xcassets */,
 				3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */,
 				3C6A09982173793A005E69E4 /* Info.plist */,
 				EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */,
 				5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */,
 				5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */,
+				EEE9D6DB2210343100091471 /* GoogleService-Info.plist */,
+				EEE9D6DD2210373100091471 /* RegisterViewController.swift */,
+				EEE9D6DF22103DA000091471 /* LoginViewController.swift */,
 			);
 			path = Learn;
+			sourceTree = "<group>";
+		};
+		5373470F73DED9C9E6DC4758 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12F7786F49CCCC4E6861CCB5 /* Pods_Learn.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A126C6C88D5DC0205F23BCF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11D582E999DAD2A633954621 /* Pods-Learn.debug.xcconfig */,
+				1276F8D4465237BB82218D26 /* Pods-Learn.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		EE968C8421B92F6100AAA6C1 /* Quiz */ = {
@@ -154,9 +190,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C6A099B2173793A005E69E4 /* Build configuration list for PBXNativeTarget "Learn" */;
 			buildPhases = (
+				A7D2F4FC3909052F32F2D6FC /* [CP] Check Pods Manifest.lock */,
 				3C6A09832173793A005E69E4 /* Sources */,
 				3C6A09842173793A005E69E4 /* Frameworks */,
 				3C6A09852173793A005E69E4 /* Resources */,
+				D2EBF93B59DE85B5023B4FA6 /* [CP] Embed Pods Frameworks */,
+				A81A13A56787F5BAA7835E36 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,12 +253,86 @@
 				095637B62196C1F400FC724A /* spark.png in Resources */,
 				095637B22196B20C00FC724A /* Stars.scnp in Resources */,
 				3C6A09922173793A005E69E4 /* Main.storyboard in Resources */,
+				EEE9D6DC2210343100091471 /* GoogleService-Info.plist in Resources */,
 				09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */,
 				095637B32196B20C00FC724A /* star.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A7D2F4FC3909052F32F2D6FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Learn-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A81A13A56787F5BAA7835E36 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2EBF93B59DE85B5023B4FA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C6A09832173793A005E69E4 /* Sources */ = {
@@ -232,10 +345,13 @@
 				097A6E1221B6BA3E001908C3 /* cellClass.swift in Sources */,
 				3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */,
 				096FF3A421A3FC4500634093 /* TableViewController.swift in Sources */,
+				EEE9D6DE2210373100091471 /* RegisterViewController.swift in Sources */,
 				09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */,
+				EE1B1CEC220F6A7400B7090F /* MainViewController.swift in Sources */,
 				3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */,
 				5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */,
 				3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */,
+				EEE9D6E022103DA000091471 /* LoginViewController.swift in Sources */,
 				3C6A09A521738FFF005E69E4 /* ViewControllers3.swift in Sources */,
 				EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */,
 				095637AF2196A83400FC724A /* Planet.swift in Sources */,
@@ -377,6 +493,7 @@
 		};
 		3C6A099C2173793A005E69E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11D582E999DAD2A633954621 /* Pods-Learn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -385,7 +502,7 @@
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.firzok.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ffs.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -395,6 +512,7 @@
 		};
 		3C6A099D2173793A005E69E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1276F8D4465237BB82218D26 /* Pods-Learn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -403,7 +521,7 @@
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.firzok.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ffs.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
