@@ -21,12 +21,18 @@
 		3C6A098D2173793A005E69E4 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A098C2173793A005E69E4 /* art.scnassets */; };
 		3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */; };
 		3C6A09922173793A005E69E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A09902173793A005E69E4 /* Main.storyboard */; };
-		3C6A09942173793A005E69E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A09932173793A005E69E4 /* Assets.xcassets */; };
 		3C6A09972173793A005E69E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */; };
 		3C6A09A521738FFF005E69E4 /* ViewControllers3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A421738FFF005E69E4 /* ViewControllers3.swift */; };
 		3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A62173934E005E69E4 /* ViewController2.swift */; };
+		5E2D1F8A2218300300D15A72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E2D1F892218300300D15A72 /* Assets.xcassets */; };
+		5E2D1F8C221830A400D15A72 /* space.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5E2D1F8B221830A400D15A72 /* space.gif */; };
 		5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */; };
 		5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */; };
+		5EA99EC62214024A00895595 /* BotanySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */; };
+		5EA99EC8221402A400895595 /* BotanyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA99EC7221402A400895595 /* BotanyCollectionViewCell.swift */; };
+		5EA99ECA22140FD400895595 /* BotanyARSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA99EC922140FD400895595 /* BotanyARSceneController.swift */; };
+		5ED1B5972215E4D800099671 /* RunGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED1B5962215E4D800099671 /* RunGif.swift */; };
+		5ED1B5992215E4E600099671 /* GifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED1B5982215E4E600099671 /* GifViewController.swift */; };
 		EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */; };
 		EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE968C8521B92F9300AAA6C1 /* Question.swift */; };
 /* End PBXBuildFile section */
@@ -47,13 +53,20 @@
 		3C6A098C2173793A005E69E4 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemViewController.swift; sourceTree = "<group>"; };
 		3C6A09912173793A005E69E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3C6A09932173793A005E69E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C6A09962173793A005E69E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C6A09982173793A005E69E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C6A09A421738FFF005E69E4 /* ViewControllers3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers3.swift; sourceTree = "<group>"; };
 		3C6A09A62173934E005E69E4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		5E2D1F892218300300D15A72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5E2D1F8B221830A400D15A72 /* space.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = space.gif; sourceTree = "<group>"; };
+		5E2D1F8D221830BA00D15A72 /* botanyGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = botanyGif.gif; sourceTree = "<group>"; };
 		5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewController.swift; sourceTree = "<group>"; };
 		5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewCell.swift; sourceTree = "<group>"; };
+		5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanySelectionViewController.swift; sourceTree = "<group>"; };
+		5EA99EC7221402A400895595 /* BotanyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyCollectionViewCell.swift; sourceTree = "<group>"; };
+		5EA99EC922140FD400895595 /* BotanyARSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyARSceneController.swift; sourceTree = "<group>"; };
+		5ED1B5962215E4D800099671 /* RunGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunGif.swift; path = ../../Xcode_Projects/BotanyModel/BotanyModel/RunGif.swift; sourceTree = "<group>"; };
+		5ED1B5982215E4E600099671 /* GifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GifViewController.swift; path = ../../Xcode_Projects/BotanyModel/BotanyModel/GifViewController.swift; sourceTree = "<group>"; };
 		EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		EE968C8521B92F9300AAA6C1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +132,9 @@
 			children = (
 				EE968C8421B92F6100AAA6C1 /* Quiz */,
 				095637AD2196A7F100FC724A /* Models */,
+				5E2D1F8E221831C000D15A72 /* Gifs */,
 				3C6A098A2173793A005E69E4 /* AppDelegate.swift */,
+				5E2D1F892218300300D15A72 /* Assets.xcassets */,
 				3C6A098C2173793A005E69E4 /* art.scnassets */,
 				3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */,
 				09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */,
@@ -129,14 +144,27 @@
 				097A6E1121B6BA3E001908C3 /* cellClass.swift */,
 				3C6A09A421738FFF005E69E4 /* ViewControllers3.swift */,
 				3C6A09902173793A005E69E4 /* Main.storyboard */,
-				3C6A09932173793A005E69E4 /* Assets.xcassets */,
 				3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */,
 				3C6A09982173793A005E69E4 /* Info.plist */,
 				EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */,
 				5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */,
+				5ED1B5962215E4D800099671 /* RunGif.swift */,
 				5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */,
+				5ED1B5982215E4E600099671 /* GifViewController.swift */,
+				5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */,
+				5EA99EC7221402A400895595 /* BotanyCollectionViewCell.swift */,
+				5EA99EC922140FD400895595 /* BotanyARSceneController.swift */,
 			);
 			path = Learn;
+			sourceTree = "<group>";
+		};
+		5E2D1F8E221831C000D15A72 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				5E2D1F8B221830A400D15A72 /* space.gif */,
+				5E2D1F8D221830BA00D15A72 /* botanyGif.gif */,
+			);
+			path = Gifs;
 			sourceTree = "<group>";
 		};
 		EE968C8421B92F6100AAA6C1 /* Quiz */ = {
@@ -208,9 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C6A098D2173793A005E69E4 /* art.scnassets in Resources */,
+				5E2D1F8C221830A400D15A72 /* space.gif in Resources */,
 				095637B72196C1F400FC724A /* sunFlare.scnp in Resources */,
 				3C6A09972173793A005E69E4 /* LaunchScreen.storyboard in Resources */,
-				3C6A09942173793A005E69E4 /* Assets.xcassets in Resources */,
+				5E2D1F8A2218300300D15A72 /* Assets.xcassets in Resources */,
 				095637B62196C1F400FC724A /* spark.png in Resources */,
 				095637B22196B20C00FC724A /* Stars.scnp in Resources */,
 				3C6A09922173793A005E69E4 /* Main.storyboard in Resources */,
@@ -226,15 +255,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA99EC62214024A00895595 /* BotanySelectionViewController.swift in Sources */,
 				097A6E1421B6BB39001908C3 /* CollectionViewController.swift in Sources */,
 				5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */,
 				EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */,
 				097A6E1221B6BA3E001908C3 /* cellClass.swift in Sources */,
 				3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */,
 				096FF3A421A3FC4500634093 /* TableViewController.swift in Sources */,
+				5ED1B5992215E4E600099671 /* GifViewController.swift in Sources */,
 				09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */,
+				5ED1B5972215E4D800099671 /* RunGif.swift in Sources */,
 				3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */,
 				5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */,
+				5EA99ECA22140FD400895595 /* BotanyARSceneController.swift in Sources */,
+				5EA99EC8221402A400895595 /* BotanyCollectionViewCell.swift in Sources */,
 				3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */,
 				3C6A09A521738FFF005E69E4 /* ViewControllers3.swift in Sources */,
 				EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */,
@@ -381,11 +415,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9K9J6T8MWH;
+				DEVELOPMENT_TEAM = C4T5BU85HG;
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.firzok.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shiza.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -399,11 +433,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9K9J6T8MWH;
+				DEVELOPMENT_TEAM = C4T5BU85HG;
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.firzok.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shiza.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
