@@ -12,9 +12,11 @@
 		095637B32196B20C00FC724A /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 095637B12196B20C00FC724A /* star.png */; };
 		095637B62196C1F400FC724A /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 095637B42196C1F400FC724A /* spark.png */; };
 		095637B72196C1F400FC724A /* sunFlare.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 095637B52196C1F400FC724A /* sunFlare.scnp */; };
+		095A0903221854F70022206B /* PlantInfo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 095A0902221854F70022206B /* PlantInfo.sks */; };
 		096FF3A421A3FC4500634093 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096FF3A321A3FC4500634093 /* TableViewController.swift */; };
 		097A6E1221B6BA3E001908C3 /* cellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A6E1121B6BA3E001908C3 /* cellClass.swift */; };
 		097A6E1421B6BB39001908C3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A6E1321B6BB39001908C3 /* CollectionViewController.swift */; };
+		09A306A1221804FB003341DE /* BotanyDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A306A0221804FB003341DE /* BotanyDetectionViewController.swift */; };
 		09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 09BDF63321ADABAE00BC541A /* planetOrbit.scnp */; };
 		09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */; };
 		3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A098A2173793A005E69E4 /* AppDelegate.swift */; };
@@ -27,14 +29,6 @@
 		3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A62173934E005E69E4 /* ViewController2.swift */; };
 		5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */; };
 		5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */; };
-		5E629B92221C162C00C5C63A /* RunGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E629B90221C162C00C5C63A /* RunGif.swift */; };
-		5E629B93221C162C00C5C63A /* GifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E629B91221C162C00C5C63A /* GifViewController.swift */; };
-		5E629B95221C16DE00C5C63A /* space.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5E629B94221C16DE00C5C63A /* space.gif */; };
-		5E629B97221C174C00C5C63A /* botanyGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5E629B96221C174C00C5C63A /* botanyGif.gif */; };
-		5E629B99221C17C900C5C63A /* anatomyGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5E629B98221C17C900C5C63A /* anatomyGif.gif */; };
-		5E629B9D221C180500C5C63A /* BotanySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E629B9A221C180400C5C63A /* BotanySelectionViewController.swift */; };
-		5E629B9E221C180500C5C63A /* BotanyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E629B9B221C180400C5C63A /* BotanyCollectionViewCell.swift */; };
-		5E629B9F221C180500C5C63A /* BotanyARSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E629B9C221C180400C5C63A /* BotanyARSceneController.swift */; };
 		EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */; };
 		EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE968C8521B92F9300AAA6C1 /* Question.swift */; };
 /* End PBXBuildFile section */
@@ -45,9 +39,11 @@
 		095637B12196B20C00FC724A /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		095637B42196C1F400FC724A /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		095637B52196C1F400FC724A /* sunFlare.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = sunFlare.scnp; sourceTree = "<group>"; };
+		095A0902221854F70022206B /* PlantInfo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlantInfo.sks; sourceTree = "<group>"; };
 		096FF3A321A3FC4500634093 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		097A6E1121B6BA3E001908C3 /* cellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellClass.swift; sourceTree = "<group>"; };
 		097A6E1321B6BB39001908C3 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		09A306A0221804FB003341DE /* BotanyDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyDetectionViewController.swift; sourceTree = "<group>"; };
 		09BDF63321ADABAE00BC541A /* planetOrbit.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = planetOrbit.scnp; sourceTree = "<group>"; };
 		09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAnatomyViewController.swift; sourceTree = "<group>"; };
 		3C6A09872173793A005E69E4 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,14 +58,6 @@
 		3C6A09A62173934E005E69E4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewController.swift; sourceTree = "<group>"; };
 		5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewCell.swift; sourceTree = "<group>"; };
-		5E629B90221C162C00C5C63A /* RunGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunGif.swift; sourceTree = "<group>"; };
-		5E629B91221C162C00C5C63A /* GifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifViewController.swift; sourceTree = "<group>"; };
-		5E629B94221C16DE00C5C63A /* space.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = space.gif; sourceTree = "<group>"; };
-		5E629B96221C174C00C5C63A /* botanyGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = botanyGif.gif; sourceTree = "<group>"; };
-		5E629B98221C17C900C5C63A /* anatomyGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = anatomyGif.gif; sourceTree = "<group>"; };
-		5E629B9A221C180400C5C63A /* BotanySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotanySelectionViewController.swift; sourceTree = "<group>"; };
-		5E629B9B221C180400C5C63A /* BotanyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotanyCollectionViewCell.swift; sourceTree = "<group>"; };
-		5E629B9C221C180400C5C63A /* BotanyARSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotanyARSceneController.swift; sourceTree = "<group>"; };
 		EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		EE968C8521B92F9300AAA6C1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +95,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		09A306A2221831F1003341DE /* Botany */ = {
+			isa = PBXGroup;
+			children = (
+				09A306A0221804FB003341DE /* BotanyDetectionViewController.swift */,
+				095A0902221854F70022206B /* PlantInfo.sks */,
+			);
+			path = Botany;
+			sourceTree = "<group>";
+		};
 		09AB072F219C189600ACADE5 /* HumanAnatomy */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,14 +114,6 @@
 		3C6A097E2173793A005E69E4 = {
 			isa = PBXGroup;
 			children = (
-				5E629B9C221C180400C5C63A /* BotanyARSceneController.swift */,
-				5E629B9B221C180400C5C63A /* BotanyCollectionViewCell.swift */,
-				5E629B9A221C180400C5C63A /* BotanySelectionViewController.swift */,
-				5E629B98221C17C900C5C63A /* anatomyGif.gif */,
-				5E629B96221C174C00C5C63A /* botanyGif.gif */,
-				5E629B94221C16DE00C5C63A /* space.gif */,
-				5E629B91221C162C00C5C63A /* GifViewController.swift */,
-				5E629B90221C162C00C5C63A /* RunGif.swift */,
 				3C6A09892173793A005E69E4 /* Learn */,
 				3C6A09882173793A005E69E4 /* Products */,
 			);
@@ -146,6 +135,7 @@
 				3C6A098A2173793A005E69E4 /* AppDelegate.swift */,
 				3C6A098C2173793A005E69E4 /* art.scnassets */,
 				3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */,
+				09A306A2221831F1003341DE /* Botany */,
 				09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */,
 				097A6E1321B6BB39001908C3 /* CollectionViewController.swift */,
 				3C6A09A62173934E005E69E4 /* ViewController2.swift */,
@@ -232,17 +222,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C6A098D2173793A005E69E4 /* art.scnassets in Resources */,
-				5E629B99221C17C900C5C63A /* anatomyGif.gif in Resources */,
-				5E629B95221C16DE00C5C63A /* space.gif in Resources */,
 				095637B72196C1F400FC724A /* sunFlare.scnp in Resources */,
 				3C6A09972173793A005E69E4 /* LaunchScreen.storyboard in Resources */,
 				3C6A09942173793A005E69E4 /* Assets.xcassets in Resources */,
 				095637B62196C1F400FC724A /* spark.png in Resources */,
 				095637B22196B20C00FC724A /* Stars.scnp in Resources */,
-				5E629B97221C174C00C5C63A /* botanyGif.gif in Resources */,
 				3C6A09922173793A005E69E4 /* Main.storyboard in Resources */,
 				09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */,
 				095637B32196B20C00FC724A /* star.png in Resources */,
+				095A0903221854F70022206B /* PlantInfo.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,23 +241,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E629B9D221C180500C5C63A /* BotanySelectionViewController.swift in Sources */,
 				097A6E1421B6BB39001908C3 /* CollectionViewController.swift in Sources */,
 				5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */,
 				EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */,
 				097A6E1221B6BA3E001908C3 /* cellClass.swift in Sources */,
-				5E629B9E221C180500C5C63A /* BotanyCollectionViewCell.swift in Sources */,
 				3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */,
 				096FF3A421A3FC4500634093 /* TableViewController.swift in Sources */,
 				09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */,
+				09A306A1221804FB003341DE /* BotanyDetectionViewController.swift in Sources */,
 				3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */,
-				5E629B92221C162C00C5C63A /* RunGif.swift in Sources */,
 				5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */,
-				5E629B93221C162C00C5C63A /* GifViewController.swift in Sources */,
 				3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */,
 				3C6A09A521738FFF005E69E4 /* ViewControllers3.swift in Sources */,
 				EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */,
-				5E629B9F221C180500C5C63A /* BotanyARSceneController.swift in Sources */,
 				095637AF2196A83400FC724A /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,11 +397,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C4T5BU85HG;
+				DEVELOPMENT_TEAM = 584KM2K64C;
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shiza.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faatehjarree.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -431,11 +415,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C4T5BU85HG;
+				DEVELOPMENT_TEAM = 584KM2K64C;
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shiza.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faatehjarree.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
