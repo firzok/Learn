@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eOu-Dy-Fpd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xMB-lE-4Z4">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -570,6 +570,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jnn-lI-s6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1147.8515625" y="65.625"/>
+        </scene>
+        <!--Botany Detection View Controller-->
+        <scene sceneID="1Ro-61-Mfk">
+            <objects>
+                <viewController id="xMB-lE-4Z4" customClass="BotanyDetectionViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9c2-wc-3d2">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9E-OL-Gvh">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="oU4-5y-GZd" appends="YES" id="uHK-oe-VYK"/>
+                                </connections>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g9E-OL-Gvh" firstAttribute="bottom" secondItem="bvl-zv-EuZ" secondAttribute="bottom" id="2ev-VF-uzm"/>
+                            <constraint firstItem="g9E-OL-Gvh" firstAttribute="leading" secondItem="bvl-zv-EuZ" secondAttribute="leading" id="MF3-JR-uyw"/>
+                            <constraint firstItem="g9E-OL-Gvh" firstAttribute="trailing" secondItem="bvl-zv-EuZ" secondAttribute="trailing" id="Q8d-Vf-Wew"/>
+                            <constraint firstItem="g9E-OL-Gvh" firstAttribute="top" secondItem="bvl-zv-EuZ" secondAttribute="top" constant="-20" id="RRT-xH-nxn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bvl-zv-EuZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="g9E-OL-Gvh" id="pP9-3e-4dB"/>
+                        <outlet property="tapRec" destination="oU4-5y-GZd" id="Pbm-eM-feg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3yO-r5-iAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oU4-5y-GZd"/>
+            </objects>
+            <point key="canvasLocation" x="1152.5390625" y="1319.53125"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="cjn-f0-MEX">
