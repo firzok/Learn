@@ -138,7 +138,6 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
             textGeometry.firstMaterial?.diffuse.contents = UIColor.green
         }
         else {
-            
             textGeometry.firstMaterial?.diffuse.contents = UIColor.red
         }
         
