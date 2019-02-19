@@ -15,7 +15,7 @@ class ModelSelectionViewController : UIViewController, UICollectionViewDataSourc
     let modelNames = ["Astronomy", "Anatomy", "Botany"]
 //    let modelImages = [UIImage(named: "Astronomy"),UIImage(named: "Astronomy"),UIImage(named: "Botany")]
     
-    var arrayOfIDs = ["SolarSystemView", "CollectionViewController"]
+    var arrayOfIDs = ["SolarSystemView", "CollectionViewController", "BotanySelectionViewController"]
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
