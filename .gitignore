@@ -1,0 +1,13 @@
+*.xcuserdatad
+Learn.xcodeproj/project.pbxproj
+Learn/.DS_Store
+.DS_Store
+Learn.xcodeproj/project.xcworkspace/xcuserdata/shiza.xcuserdatad/
+Learn.xcodeproj/xcuserdata/shiza.xcuserdatad/
+Learn/art.scnassets/.DS_Store
+Learn/art.scnassets/Botany/.DS_Store
+Learn/art.scnassets/Botany/thumbnails/.DS_Store
+Learn/art.scnassets/HumanAnatomy/.DS_Store
+Learn/art.scnassets/HumanAnatomy/AnatomyModels/.DS_Store
+Learn/art.scnassets/HumanAnatomy/AnatomyThumbnails/.DS_Store
+
