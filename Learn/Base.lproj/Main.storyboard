@@ -655,9 +655,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2hr-cd-n2J"/>
                     </view>
-                    <connections>
-                        <segue destination="Ykl-Ka-u94" kind="show" identifier="toHomescreen" id="0PX-8c-7xd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTr-15-Q4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
