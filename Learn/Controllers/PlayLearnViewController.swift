@@ -11,7 +11,7 @@ import AVFoundation
 
 
 var backgroundPlayer = AVAudioPlayer()
-class ViewControllers3: UIViewController {
+class PlayLearnViewController: UIViewController {
 
     
     

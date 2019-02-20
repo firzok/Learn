@@ -9,7 +9,7 @@
 import UIKit
 import QuickLook
 
-class CollectionViewController: UIViewController {
+class HumanAnatomySelectionViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -43,7 +43,7 @@ class CollectionViewController: UIViewController {
     
     @IBAction func backToModel(_ sender: UIButton) {
         
-        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "GifViewController")
+        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "ModelSelectViewController")
         navigationController?.pushViewController(modelSelectionController!, animated: true)
     }
     
@@ -56,7 +56,7 @@ class CollectionViewController: UIViewController {
     
 }
 
-extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HumanAnatomySelectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return models.count
@@ -64,7 +64,7 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? cellClass
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? HumanAnatomySelectionViewCell
         
         if let cell = cell {
             cell.modelThumbnail.image = thumbnails[indexPath.item]
@@ -87,7 +87,7 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
     
 }
 
-extension CollectionViewController: QLPreviewControllerDelegate, QLPreviewControllerDataSource{
+extension HumanAnatomySelectionViewController: QLPreviewControllerDelegate, QLPreviewControllerDataSource{
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
         return 1
     }

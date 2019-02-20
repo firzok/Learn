@@ -8,7 +8,7 @@
 
 import UIKit
 
-class cellClass: UICollectionViewCell {
+class HumanAnatomySelectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var modelThumbnail: UIImageView!
     @IBOutlet weak var modelTitle: UILabel!

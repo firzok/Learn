@@ -25,7 +25,7 @@ class BotanySelectionViewController: UIViewController, UICollectionViewDelegate,
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        gifImage.loadGif(name: "2HYf")
+        gifImage.loadGif(name: "botanyGif")
         collectionView.reloadData()
         
         for model in botanyModelNames{
@@ -36,7 +36,7 @@ class BotanySelectionViewController: UIViewController, UICollectionViewDelegate,
     }
     @IBAction func backToModel(_ sender: UIButton) {
         print("INSIDE BACK BTN")
-        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "GifViewController")
+        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "ModelSelectViewController")
         navigationController?.pushViewController(modelSelectionController!, animated: true)
     
     }
@@ -53,6 +53,7 @@ class BotanySelectionViewController: UIViewController, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+    
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? BotanyCollectionViewCell
         
         if let cell = cell {

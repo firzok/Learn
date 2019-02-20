@@ -23,7 +23,7 @@ class BotanyARSceneController: UIViewController, ARSCNViewDelegate {
     var modelName: String?
     
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,8 +54,8 @@ class BotanyARSceneController: UIViewController, ARSCNViewDelegate {
             
             if let modelNode = modelScene.rootNode.childNodes.first {
                 if modelName == "Flower"{
-//                    modelNode.position.z = -15.0
-//                    modelNode.position.y = -2.0
+                    //                    modelNode.position.z = -15.0
+                    //                    modelNode.position.y = -2.0
                     modelNode.name = modelName
                     sceneView.scene = modelScene
                 }
@@ -66,8 +66,8 @@ class BotanyARSceneController: UIViewController, ARSCNViewDelegate {
                 }
                 
                 
-//                modelNode.name = modelName
-//                sceneView.scene = modelScene
+                //                modelNode.name = modelName
+                //                sceneView.scene = modelScene
             }
         }
         

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xMB-lE-4Z4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eOu-Dy-Fpd">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Human Anatomy Selection View Controller-->
         <scene sceneID="bWh-zg-ZiM">
             <objects>
-                <viewController storyboardIdentifier="CollectionViewController" id="qyb-7y-OOS" customClass="CollectionViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HumanAnatomySelectionViewController" id="qyb-7y-OOS" customClass="HumanAnatomySelectionViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ihV-M0-Sz2">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +33,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="qKP-jQ-HLp" customClass="cellClass" customModule="Learn" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="qKP-jQ-HLp" customClass="HumanAnatomySelectionViewCell" customModule="Learn" customModuleProvider="target">
                                         <rect key="frame" x="20" y="40" width="150" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -441,10 +441,10 @@
             </objects>
             <point key="canvasLocation" x="1344.7265625" y="-1127.34375"/>
         </scene>
-        <!--View Controllers3-->
+        <!--Play Learn View Controller-->
         <scene sceneID="XmA-n9-MRb">
             <objects>
-                <viewController id="eOu-Dy-Fpd" customClass="ViewControllers3" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eOu-Dy-Fpd" customClass="PlayLearnViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d6C-Gf-Xxw">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -499,77 +499,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELD-Aj-qLI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="428.90625" y="65.625"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="hBf-z6-2Qd">
-            <objects>
-                <viewController id="aZJ-fB-gdb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3xO-yV-ads">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back2" translatesAutoresizingMaskIntoConstraints="NO" id="Uqj-Qg-FPS">
-                                <rect key="frame" x="0.0" y="0.0" width="1327" height="768"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iv3-Jc-uAb">
-                                <rect key="frame" x="455" y="595" width="115" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="PROCEED">
-                                    <color key="titleColor" red="0.59496437823834203" green="0.055490980183522116" blue="0.066241652483328306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Select Model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQB-eK-khH">
-                                <rect key="frame" x="353" y="49" width="319" height="27.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                <color key="textColor" red="0.64272992227979275" green="0.1703186515438776" blue="0.057724153356119239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BU-r5-sN2">
-                                <rect key="frame" x="455" y="662" width="115" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="BACK">
-                                    <color key="titleColor" red="0.59496437820000003" green="0.055490980180000003" blue="0.066241652479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" placeholder="Sun, Solar Panel, Water" translatesAutoresizingMaskIntoConstraints="NO" id="stI-tc-n7G">
-                                <rect key="frame" x="37" y="116" width="950" height="50"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W21-Yc-3gZ">
-                                <rect key="frame" x="20" y="193" width="64" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <state key="normal" title="Sun">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="8BU-r5-sN2" firstAttribute="top" secondItem="Iv3-Jc-uAb" secondAttribute="bottom" constant="31" id="5Ba-Ms-Oyv"/>
-                            <constraint firstItem="stI-tc-n7G" firstAttribute="top" secondItem="rQB-eK-khH" secondAttribute="bottom" constant="39.5" id="5Zy-9d-cGg"/>
-                            <constraint firstItem="stI-tc-n7G" firstAttribute="trailing" secondItem="wCs-sn-TXU" secondAttribute="trailing" id="96G-3G-uPa"/>
-                            <constraint firstItem="rQB-eK-khH" firstAttribute="top" secondItem="wCs-sn-TXU" secondAttribute="top" constant="29" id="DCS-Jt-aDl"/>
-                            <constraint firstItem="rQB-eK-khH" firstAttribute="leading" secondItem="wCs-sn-TXU" secondAttribute="leading" constant="353" id="Ess-zF-QFH"/>
-                            <constraint firstItem="Iv3-Jc-uAb" firstAttribute="top" secondItem="stI-tc-n7G" secondAttribute="bottom" constant="429" id="L1i-pg-MkK"/>
-                            <constraint firstItem="wCs-sn-TXU" firstAttribute="trailing" secondItem="8BU-r5-sN2" secondAttribute="trailing" constant="454" id="Nof-3G-9fs"/>
-                            <constraint firstItem="wCs-sn-TXU" firstAttribute="bottom" secondItem="8BU-r5-sN2" secondAttribute="bottom" constant="70" id="Ri8-oT-HOt"/>
-                            <constraint firstItem="Iv3-Jc-uAb" firstAttribute="top" secondItem="stI-tc-n7G" secondAttribute="bottom" constant="429" id="UGf-1L-GAY"/>
-                            <constraint firstItem="8BU-r5-sN2" firstAttribute="top" secondItem="Iv3-Jc-uAb" secondAttribute="bottom" constant="31" id="Z2z-mm-AxU"/>
-                            <constraint firstItem="wCs-sn-TXU" firstAttribute="trailing" secondItem="rQB-eK-khH" secondAttribute="trailing" constant="352" id="dYA-Cd-yL5"/>
-                            <constraint firstItem="8BU-r5-sN2" firstAttribute="leading" secondItem="wCs-sn-TXU" secondAttribute="leading" constant="455" id="ddd-Ot-K9l"/>
-                            <constraint firstItem="wCs-sn-TXU" firstAttribute="trailing" secondItem="Iv3-Jc-uAb" secondAttribute="trailing" constant="454" id="vpd-0c-keX"/>
-                            <constraint firstItem="stI-tc-n7G" firstAttribute="top" secondItem="rQB-eK-khH" secondAttribute="bottom" constant="34" id="wi0-QV-PEm"/>
-                            <constraint firstItem="Iv3-Jc-uAb" firstAttribute="leading" secondItem="wCs-sn-TXU" secondAttribute="leading" constant="455" id="xlm-dT-r8J"/>
-                            <constraint firstItem="stI-tc-n7G" firstAttribute="leading" secondItem="wCs-sn-TXU" secondAttribute="leading" id="zEI-vE-Q6r"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="wCs-sn-TXU"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jnn-lI-s6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1147.8515625" y="65.625"/>
         </scene>
         <!--Botany Detection View Controller-->
         <scene sceneID="1Ro-61-Mfk">
@@ -781,10 +710,10 @@
             </objects>
             <point key="canvasLocation" x="2068.9453125" y="-1854.6875"/>
         </scene>
-        <!--Gif View Controller-->
+        <!--Model Select View Controller-->
         <scene sceneID="xyc-VI-TED">
             <objects>
-                <viewController storyboardIdentifier="GifViewController" id="fkB-ca-xku" customClass="GifViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModelSelectViewController" id="fkB-ca-xku" customClass="ModelSelectViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="091-T1-c8t">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

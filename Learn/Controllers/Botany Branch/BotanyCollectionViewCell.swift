@@ -2,7 +2,7 @@
 //  BotanyCollectionViewCell.swift
 //  Learn
 //
-//  Created by Shiza Siddique on 2/13/19.
+//  Created by Faateh Jarree on 2/20/19.
 //  Copyright © 2019 Mani. All rights reserved.
 //
 
@@ -14,6 +14,7 @@ class BotanyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var modelName: UILabel!
     @IBOutlet weak var modelThumbnail: UIImageView!
     //    @IBOutlet weak var modelName: UILabel!
-//    @IBOutlet weak var modelThumbnail: UIImageView!
-
+    //    @IBOutlet weak var modelThumbnail: UIImageView!
+    
 }
+
