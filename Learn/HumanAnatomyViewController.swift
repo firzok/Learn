@@ -71,6 +71,9 @@ class HumanAnatomyViewController: UIViewController, ARSCNViewDelegate {
                 else if modelName == "Eyes"{
                     modelNode.position.z = -10.0
                 }
+                else if modelName == "Teeth"{
+                    modelNode.position.z = 0.0
+                }
                 else{
                     modelNode.position.z = -1.5
                 }
@@ -105,6 +108,13 @@ class HumanAnatomyViewController: UIViewController, ARSCNViewDelegate {
             desc = info+"The brain is the control centre for your body and it sits in your skull at the top of your spinal cord. Your brain is more powerful, more complex and more clever than any computer ever built. It gets the messages from your senses - seeing, hearing, tasting, smelling, touching and moving. The messages travel from nerve cells all over the body. They travel along nerve fibres to nerve cells in the brain.\n" + "Fun Facts:  The left side of your brain is usually better at problem solving, maths and writing. The right side of the brain is creative and helps you to be good at art or music."
             break
             
+        case "Teeth":
+            
+            desc = info + """
+            \nLet's take a tour of your teeth\n
+            The part of the tooth you can see, which is not covered by the gum (your gums are the pink, fleshy part), is called the crown.
+            """
+            
         default:
             break
             
@@ -115,8 +125,7 @@ class HumanAnatomyViewController: UIViewController, ARSCNViewDelegate {
         
     }
     
-    
-    
+  
     
 //    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
 //

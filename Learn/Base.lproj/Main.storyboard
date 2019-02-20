@@ -28,6 +28,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="20" minY="40" maxX="20" maxY="20"/>
                                 </collectionViewFlowLayout>
+                                <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Peu-0Y-Ph0">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="661"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="qKP-jQ-HLp" customClass="cellClass" customModule="Learn" customModuleProvider="target">
                                         <rect key="frame" x="20" y="40" width="150" height="200"/>
@@ -75,25 +79,97 @@
                                 <state key="normal" image="back_btn">
                                     <color key="titleColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="backToModel:" destination="qyb-7y-OOS" eventType="touchUpInside" id="lRI-lI-KvM"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Anatomy Models" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kou-Hb-k3x">
-                                <rect key="frame" x="367" y="47" width="290" height="45"/>
+                                <rect key="frame" x="394" y="39" width="290" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.2259720616" green="0.45293640280000003" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.1143538281" green="0.45878362659999999" blue="0.50560271739999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="IG7-cU-6gW"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="adC-D8-ReF" id="AHb-QJ-8Pd"/>
+                        <outlet property="gifImage" destination="Peu-0Y-Ph0" id="hMO-uv-FgP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OOq-PP-hWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636.5234375" y="-1879.6875"/>
+            <point key="canvasLocation" x="3162.890625" y="-1916.40625"/>
+        </scene>
+        <!--BotanyAR Scene Controller-->
+        <scene sceneID="UJD-gD-sBm">
+            <objects>
+                <viewController storyboardIdentifier="botanyArView" id="a8m-z4-iDt" customClass="BotanyARSceneController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Fc-Ir-LNd">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZG3-ir-yga">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Wmj-47-W7E" appends="YES" id="cn0-4a-m5J"/>
+                                </connections>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckq-Rx-llL">
+                                <rect key="frame" x="20" y="37" width="70" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.76379437169999997" blue="1" alpha="0.1007063356" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="back_btn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uu0-ek-i3h" kind="show" id="oUc-Tv-XHK"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MMi-Yi-Zmo">
+                                <rect key="frame" x="0.0" y="576" width="1024" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYi-ox-fKY">
+                                        <rect key="frame" x="0.0" y="-13" width="1024" height="205"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="DRm-Ky-yFs">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="205"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h2D-87-tgS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="205"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </view>
+                                        <blurEffect style="dark"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6YM-5l-qdR"/>
+                    </view>
+                    <connections>
+                        <outlet property="botanyDetailText" destination="h2D-87-tgS" id="GzH-Q0-S9d"/>
+                        <outlet property="gestureRecognizer" destination="Wmj-47-W7E" id="WZR-FH-Z3c"/>
+                        <outlet property="sceneView" destination="ZG3-ir-yga" id="nRh-HW-bh7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0lU-LG-pdm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Wmj-47-W7E"/>
+            </objects>
+            <point key="canvasLocation" x="2263" y="-2914"/>
         </scene>
         <!--Human Anatomy View Controller-->
         <scene sceneID="FHd-SS-9ut">
@@ -166,7 +242,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qQ-eQ-LZr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="26v-jf-x1V"/>
             </objects>
-            <point key="canvasLocation" x="3226.7578125" y="-1177.34375"/>
+            <point key="canvasLocation" x="2439" y="-809"/>
         </scene>
         <!--Solar System View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -211,7 +287,7 @@
                                     <color key="titleColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fZr-qj-ix8" kind="show" id="RLv-Ih-J3Y"/>
+                                    <segue destination="PDj-SG-cDb" kind="show" id="Zk5-VY-Lou"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcd-Pb-Niw">
@@ -293,7 +369,7 @@
         <!--Model Selection View Controller-->
         <scene sceneID="aOU-CW-7LZ">
             <objects>
-                <viewController id="fZr-qj-ix8" customClass="ModelSelectionViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModelSelectionViewController" id="fZr-qj-ix8" customClass="ModelSelectionViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S27-TO-UdD">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -408,7 +484,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9h8-px-A3k" kind="show" id="M0r-NT-JUa"/>
+                                    <segue destination="PDj-SG-cDb" kind="show" id="82U-uF-qAq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -444,7 +520,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Select Model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQB-eK-khH">
-                                <rect key="frame" x="353" y="53" width="319" height="27.5"/>
+                                <rect key="frame" x="353" y="49" width="319" height="27.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" red="0.64272992227979275" green="0.1703186515438776" blue="0.057724153356119239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -604,7 +680,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dr0-LK-TOh" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="E02-Ea-cbl"/>
             </objects>
-            <point key="canvasLocation" x="-358" y="927"/>
+            <point key="canvasLocation" x="429" y="1309"/>
+        </scene>
+        <!--Botany Selection View Controller-->
+        <scene sceneID="Mrn-Ow-qEU">
+            <objects>
+                <viewController storyboardIdentifier="BotanySelectionViewController" id="uu0-ek-i3h" customClass="BotanySelectionViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5qq-oy-KcD">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kge-Te-JYP">
+                                <rect key="frame" x="0.0" y="115" width="1024" height="653"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="6Xd-q2-aS6">
+                                    <size key="itemSize" width="150" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="40" maxX="20" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="jKf-Yu-9eN">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="653"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="5aj-kF-fvf" customClass="BotanyCollectionViewCell" customModule="Learn" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="40" width="150" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-VO-wzX">
+                                                    <rect key="frame" x="9" y="159" width="132" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j0d-hk-uVE">
+                                                    <rect key="frame" x="10" y="15" width="130" height="130"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="modelName" destination="7sH-VO-wzX" id="by9-aH-VaN"/>
+                                            <outlet property="modelThumbnail" destination="j0d-hk-uVE" id="0Kr-5d-RGY"/>
+                                            <segue destination="a8m-z4-iDt" kind="show" identifier="ArViewSegue" id="JbC-LN-SGx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Botany Models" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phj-Gt-mGf">
+                                <rect key="frame" x="384" y="35" width="256" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhR-Tk-fIr">
+                                <rect key="frame" x="20" y="35" width="70" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back_btn">
+                                    <color key="titleColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToModel:" destination="uu0-ek-i3h" eventType="touchUpInside" id="alR-dR-hzt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1143538281" green="0.45878362659999999" blue="0.50560271739999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="CNA-ef-g0t"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="kge-Te-JYP" id="B5Y-9u-JNI"/>
+                        <outlet property="gifImage" destination="jKf-Yu-9eN" id="ZBE-LM-Hic"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LEU-S5-8Pv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136" y="-2968"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9vL-ga-3Hm">
@@ -617,25 +774,121 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="fZr-qj-ix8" kind="relationship" relationship="rootViewController" id="qv8-Fd-yeI"/>
+                        <segue destination="fZr-qj-ix8" kind="show" id="2j8-Ty-rXi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvO-Ka-Hhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620.5078125" y="-1127.34375"/>
+            <point key="canvasLocation" x="2068.9453125" y="-1854.6875"/>
+        </scene>
+        <!--Gif View Controller-->
+        <scene sceneID="xyc-VI-TED">
+            <objects>
+                <viewController storyboardIdentifier="GifViewController" id="fkB-ca-xku" customClass="GifViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="091-T1-c8t">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QdD-fq-tJX">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGL-P3-unT">
+                                <rect key="frame" x="373" y="84" width="279" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="anatomy">
+                                    <color key="titleColor" red="0.1143538281" green="0.45878362659999999" blue="0.50560271739999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qyb-7y-OOS" kind="show" id="HjN-8d-fMd"/>
+                                </connections>
+                            </button>
+                            <button clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3v-rl-T85">
+                                <rect key="frame" x="725" y="329" width="279" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="botany">
+                                    <color key="titleColor" red="0.1143538281" green="0.45878362659999999" blue="0.50560271739999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uu0-ek-i3h" kind="show" id="LVV-0Q-eke"/>
+                                </connections>
+                            </button>
+                            <button clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-y3-mqZ">
+                                <rect key="frame" x="20" y="329" width="279" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="solar">
+                                    <color key="titleColor" red="0.1143538281" green="0.45878362659999999" blue="0.50560271739999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="jTI-N8-dFs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpl-PL-OZX">
+                                <rect key="frame" x="20" y="33" width="88" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2259720616" green="0.45293640280000003" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="back_btn">
+                                    <color key="titleColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="eOu-Dy-Fpd" kind="show" id="BfJ-Z5-ZcX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Wmv-mf-Nu3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lgF-0N-kl2"/>
+                    <connections>
+                        <outlet property="gifImage" destination="QdD-fq-tJX" id="lgz-hS-2Mp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EeE-CK-gZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136.1328125" y="-2019.53125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gs2-ae-ScQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="PDj-SG-cDb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="urO-Tr-8IP">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fkB-ca-xku" kind="relationship" relationship="rootViewController" id="XfC-wf-jJa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ZG-08-QEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="411.9140625" y="-2019.53125"/>
         </scene>
     </scenes>
     <resources>
+        <image name="anatomy" width="512" height="512"/>
         <image name="back1" width="1440" height="2560"/>
         <image name="back2" width="1500" height="844"/>
         <image name="back_btn" width="34" height="30"/>
+        <image name="botany" width="512" height="512"/>
         <image name="learnBck" width="600" height="988"/>
         <image name="learnImg" width="650" height="862"/>
         <image name="playImg" width="341" height="341"/>
+        <image name="solar" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VtD-A8-koO"/>
-        <segue reference="ze7-L7-ycc"/>
-        <segue reference="RLv-Ih-J3Y"/>
+        <segue reference="82U-uF-qAq"/>
+        <segue reference="LVV-0Q-eke"/>
+        <segue reference="BfJ-Z5-ZcX"/>
+        <segue reference="HjN-8d-fMd"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -13,7 +13,8 @@ class CollectionViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let models = ["Heart","Body","Brain","Muscle","Eyes"]
+    @IBOutlet weak var gifImage: UIImageView!
+    let models = ["Heart","Body","Brain","Muscle","Eyes","Teeth"]
     var thumbnails = [UIImage] ()
     var thumbnailIndex = 0
     
@@ -21,19 +22,37 @@ class CollectionViewController: UIViewController {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        gifImage.loadGif(name: "anatomyGif")
         collectionView.reloadData()
+        
         
         for model in models{
             if let thumbnail = UIImage(named: "art.scnassets/HumanAnatomy/AnatomyThumbnails/\(model).jpg"){
                 thumbnails.append(thumbnail)
             }
         }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! HumanAnatomyViewController
         destinationVC.modelName = "\(sender.unsafelyUnwrapped)"
     }
+    
+    
+    @IBAction func backToModel(_ sender: UIButton) {
+        
+        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "GifViewController")
+        navigationController?.pushViewController(modelSelectionController!, animated: true)
+    }
+    
+//    @IBAction func backToModel(_ sender: UIButton) {
+//        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "ModelSelectionViewController")
+//        navigationController?.pushViewController(modelSelectionController!, animated: true)
+//        
+//    }
+    
     
 }
 
