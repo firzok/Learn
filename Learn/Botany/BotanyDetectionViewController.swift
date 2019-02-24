@@ -100,8 +100,8 @@ class BotanyDetectionViewController: UIViewController, ARSCNViewDelegate {
         
         if !tappedNode.isEmpty {
             let node = tappedNode[0].node
-            let zoomAction = SCNAction.scale(to: 2, duration: 3)
-            node.runAction(zoomAction)
+            let enlargeAction = SCNAction.scale(to: 2, duration: 3)
+            node.runAction(enlargeAction)
         }
     }
     
