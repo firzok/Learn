@@ -30,7 +30,7 @@ class PlayLearnViewController: UIViewController {
         learnBtn.layer.cornerRadius = 115
         learnBtn.clipsToBounds = true
 
-        playBackgroundMusic(musicFileName: "art.scnassets/leARnBackgroundMusic.WAV")
+        playBackgroundMusic(musicFileName: "art.scnassets/Sounds/leARnBackgroundMusic.WAV")
         // Do any additional setup after loading the view.
     }
 

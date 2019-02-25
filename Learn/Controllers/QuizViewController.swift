@@ -207,7 +207,7 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
             
                 if (node.name! == "\(self.questions[self.questionNumber].solution)"){
                     self.score += self.questions[self.questionNumber].score
-                    self.playBackgroundMusic(musicFileName: "art.scnassets/sound108.wav")
+                    self.playBackgroundMusic(musicFileName: "art.scnassets/Sounds/sound108.wav")
                     self.scoreView.text = "\(self.score)"
                     self.questionNumber += 1
                     
@@ -226,7 +226,7 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
 
                     self.score -= self.questions[self.questionNumber].score
                     self.scoreView.text = "\(self.score)"
-                    self.playBackgroundMusic(musicFileName: "art.scnassets/fail-buzzer-04.wav")
+                    self.playBackgroundMusic(musicFileName: "art.scnassets/Sounds/fail-buzzer-04.wav")
                     node.addChildNode(self.createAnswerCheckNode(checker: "Wrong", planet: node))
 //                    node.childNodes.re
                     

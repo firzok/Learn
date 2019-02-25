@@ -32,18 +32,24 @@ class BotanyARSceneController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
-        sceneView.autoenablesDefaultLighting = true
+//        sceneView.autoenablesDefaultLighting = true
         
         sceneView.allowsCameraControl = true
         //        tapRec = UITapGestureRecognizer(target: self, action: #selector(SolarSystemViewController.handleTap(_:)))
         //        sceneView.addGestureRecognizer(tapRec)
+        
+        print("Botany AR \(modelName!)")
         createModel(modelName: "\(modelName!)")
         setBodyDetailText("\(modelName!)")
     }
     
     
+    @IBAction func backBtnTapped(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func backToModels(_ sender: Any) {
-        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "BotanySelectionViewController")
+        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "PlantStructureViewController")
         navigationController?.pushViewController(modelSelectionController!, animated: true)
         
     }
@@ -53,21 +59,22 @@ class BotanyARSceneController: UIViewController, ARSCNViewDelegate {
         if let modelScene = SCNScene(named: "art.scnassets/Botany/Models/\(modelName).scn") {
             
             if let modelNode = modelScene.rootNode.childNodes.first {
-                if modelName == "Flower"{
-                    //                    modelNode.position.z = -15.0
-                    //                    modelNode.position.y = -2.0
-                    modelNode.name = modelName
-                    sceneView.scene = modelScene
-                }
-                else if modelName == "lilies"{
+                if modelName == "Flowers"{
                     modelNode.position.z = -20.0
-                    modelNode.name = modelName
-                    sceneView.scene = modelScene
+                    print("MAKING FLOWER")
+                    //                    modelNode.position.y = -2.0
+//                    modelNode.name = modelName
+//                    sceneView.scene = modelScene
+                }
+                else if modelName == "Lilies"{
+                    modelNode.position.z = -20.0
+//                    modelNode.name = modelName
+//                    sceneView.scene = modelScene
                 }
                 
                 
-                //                modelNode.name = modelName
-                //                sceneView.scene = modelScene
+                modelNode.name = modelName
+                sceneView.scene = modelScene
             }
         }
         
