@@ -52,6 +52,14 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.run(configuration)
     }
     
+    
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     // Function that creates the solar system
     func createSolarSystem() {
 

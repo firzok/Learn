@@ -32,6 +32,7 @@ class HumanAnatomyViewController: UIViewController, ARSCNViewDelegate {
         sceneView.allowsCameraControl = true
 //        tapRec = UITapGestureRecognizer(target: self, action: #selector(SolarSystemViewController.handleTap(_:)))
 //        sceneView.addGestureRecognizer(tapRec)
+        
         createModel(modelName: "\(modelName!)")
         setBodyDetailText("\(modelName!)")
     }
@@ -83,6 +84,12 @@ class HumanAnatomyViewController: UIViewController, ARSCNViewDelegate {
             }
         }
         
+    }
+    
+    
+    @IBAction func backBtnTapped(_ sender: UIButton) {
+        
+        dismiss(animated: true)
     }
     
     

@@ -12,6 +12,7 @@ import UIKit
 class ModelSelectViewController : UIViewController {
     
 
+   
     @IBOutlet weak var gifImage: UIImageView!
     
     override func viewDidLoad() {
@@ -22,4 +23,10 @@ class ModelSelectViewController : UIViewController {
         }
    
     }
+    
+    @IBAction func backBtnTapped(_ sender: UIButton) {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

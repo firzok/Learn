@@ -36,15 +36,26 @@ class HumanAnatomySelectionViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! HumanAnatomyViewController
-        destinationVC.modelName = "\(sender.unsafelyUnwrapped)"
+        
+       
+        print("PREPARE IS CALLEDDD")
+        if segue.identifier == "ArViewSegue" {
+            if let destinationVC = segue.destination as? HumanAnatomyViewController {
+                print(sender.unsafelyUnwrapped)
+                destinationVC.modelName = "\(sender.unsafelyUnwrapped)"
+            }
+        }
+//        let destinationVC = segue.destination as! HumanAnatomyViewController
+//        destinationVC.modelName = "\(sender.unsafelyUnwrapped)"
+        
     }
     
     
     @IBAction func backToModel(_ sender: UIButton) {
         
-        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "ModelSelectViewController")
-        navigationController?.pushViewController(modelSelectionController!, animated: true)
+        dismiss(animated: true, completion: nil)
+//        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "ModelSelectViewController")
+//        navigationController?.pushViewController(modelSelectionController!, animated: true)
     }
     
 //    @IBAction func backToModel(_ sender: UIButton) {
@@ -76,8 +87,10 @@ extension HumanAnatomySelectionViewController: UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        print("model name \(models[indexPath.item])")
         
         self.performSegue(withIdentifier: "ArViewSegue", sender: models[indexPath.item])
+        
 //        thumbnailIndex = indexPath.item
 //        let previewController = QLPreviewController()
 //        previewController.dataSource = self
@@ -87,18 +100,18 @@ extension HumanAnatomySelectionViewController: UICollectionViewDelegate, UIColle
     
 }
 
-extension HumanAnatomySelectionViewController: QLPreviewControllerDelegate, QLPreviewControllerDataSource{
-    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
-        return 1
-    }
-    
-    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-        print(models[thumbnailIndex])
-        let url = Bundle.main.url(forResource: models[thumbnailIndex], withExtension: "usdz")!
-        
-        return url as QLPreviewItem
-    }
-    
-    
-}
+//extension HumanAnatomySelectionViewController: QLPreviewControllerDelegate, QLPreviewControllerDataSource{
+//    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+//        return 1
+//    }
+//
+//    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+//        print(models[thumbnailIndex])
+//        let url = Bundle.main.url(forResource: models[thumbnailIndex], withExtension: "usdz")!
+//
+//        return url as QLPreviewItem
+//    }
+//
+//
+//}
 
