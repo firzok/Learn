@@ -286,9 +286,6 @@
                                 <state key="normal" image="back_btn">
                                     <color key="titleColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <segue destination="PDj-SG-cDb" kind="show" id="Zk5-VY-Lou"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcd-Pb-Niw">
                                 <rect key="frame" x="506" y="374" width="13" height="21"/>
@@ -483,9 +480,6 @@
                                 <state key="normal" title="LEARN">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="PDj-SG-cDb" kind="show" id="82U-uF-qAq"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -692,24 +686,6 @@
             </objects>
             <point key="canvasLocation" x="1136" y="-2968"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="9vL-ga-3Hm">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9h8-px-A3k" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7N2-Q0-41d">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="fZr-qj-ix8" kind="show" id="2j8-Ty-rXi"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qvO-Ka-Hhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2068.9453125" y="-1854.6875"/>
-        </scene>
         <!--Model Select View Controller-->
         <scene sceneID="xyc-VI-TED">
             <objects>
@@ -744,9 +720,6 @@
                                 <state key="normal" backgroundImage="botany">
                                     <color key="titleColor" red="0.1143538281" green="0.45878362659999999" blue="0.50560271739999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="YN6-LJ-7XN" kind="show" id="oic-P5-YTQ"/>
-                                </connections>
                             </button>
                             <button clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-y3-mqZ">
                                 <rect key="frame" x="373" y="54" width="279" height="271"/>
@@ -969,23 +942,6 @@
             </objects>
             <point key="canvasLocation" x="316.9921875" y="-2976.5625"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Gs2-ae-ScQ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="PDj-SG-cDb" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="urO-Tr-8IP">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="fkB-ca-xku" kind="relationship" relationship="rootViewController" id="XfC-wf-jJa"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9ZG-08-QEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="411.9140625" y="-2019.53125"/>
-        </scene>
     </scenes>
     <resources>
         <image name="anatomy" width="512" height="512"/>
@@ -1000,7 +956,6 @@
         <image name="solar" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="82U-uF-qAq"/>
         <segue reference="BfJ-Z5-ZcX"/>
         <segue reference="v4a-1W-LNl"/>
         <segue reference="HjN-8d-fMd"/>
