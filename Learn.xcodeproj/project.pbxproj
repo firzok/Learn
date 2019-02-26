@@ -140,15 +140,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		0906AF25221D489C00D60C2A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				3C6A09902173793A005E69E4 /* Main.storyboard */,
-				3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		095637AC2196A7DA00FC724A /* Galaxy */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,7 +196,8 @@
 				09A306A2221831F1003341DE /* Botany */,
 				095637AD2196A7F100FC724A /* Models */,
 				0906AF24221D487E00D60C2A /* Controllers */,
-				0906AF25221D489C00D60C2A /* Views */,
+				3C6A09902173793A005E69E4 /* Main.storyboard */,
+				3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */,
 				3C6A09982173793A005E69E4 /* Info.plist */,
 				0906AF22221D47E500D60C2A /* Supporting Classes */,
 			);
