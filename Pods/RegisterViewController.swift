@@ -44,6 +44,7 @@ class RegisterUserViewController: UIViewController{
                     if error == nil{
                         print("User display name changed.")
                         self.dismiss(animated: true, completion: nil)
+                        
                     }else{
                         print("Error changing display name for user: \(error!.localizedDescription)")
                     }

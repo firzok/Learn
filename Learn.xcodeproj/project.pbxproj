@@ -24,13 +24,14 @@
 		3C6A09942173793A005E69E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A09932173793A005E69E4 /* Assets.xcassets */; };
 		3C6A09972173793A005E69E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */; };
 		3C6A09A521738FFF005E69E4 /* ViewControllers3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A421738FFF005E69E4 /* ViewControllers3.swift */; };
-		3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A62173934E005E69E4 /* ViewController2.swift */; };
+		3C6A09A72173934E005E69E4 /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A62173934E005E69E4 /* SelectUserViewController.swift */; };
 		5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */; };
 		5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */; };
 		D99043FFFD62D6111657B4B8 /* Pods_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F7786F49CCCC4E6861CCB5 /* Pods_Learn.framework */; };
-		EE1B1CEC220F6A7400B7090F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B1CEB220F6A7400B7090F /* MainViewController.swift */; };
+		EE1B1CEC220F6A7400B7090F /* LoginOrRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B1CEB220F6A7400B7090F /* LoginOrRegisterViewController.swift */; };
 		EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */; };
 		EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE968C8521B92F9300AAA6C1 /* Question.swift */; };
+		EEC4B0AB22259F6600200A1A /* AddKidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B0AA22259F6600200A1A /* AddKidViewController.swift */; };
 		EEE9D6DC2210343100091471 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEE9D6DB2210343100091471 /* GoogleService-Info.plist */; };
 		EEE9D6DE2210373100091471 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9D6DD2210373100091471 /* RegisterViewController.swift */; };
 		EEE9D6E022103DA000091471 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9D6DF22103DA000091471 /* LoginViewController.swift */; };
@@ -59,12 +60,13 @@
 		3C6A09962173793A005E69E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C6A09982173793A005E69E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C6A09A421738FFF005E69E4 /* ViewControllers3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers3.swift; sourceTree = "<group>"; };
-		3C6A09A62173934E005E69E4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		3C6A09A62173934E005E69E4 /* SelectUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
 		5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewController.swift; sourceTree = "<group>"; };
 		5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewCell.swift; sourceTree = "<group>"; };
-		EE1B1CEB220F6A7400B7090F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EE1B1CEB220F6A7400B7090F /* LoginOrRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterViewController.swift; sourceTree = "<group>"; };
 		EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		EE968C8521B92F9300AAA6C1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		EEC4B0AA22259F6600200A1A /* AddKidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddKidViewController.swift; sourceTree = "<group>"; };
 		EEE9D6DB2210343100091471 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEE9D6DD2210373100091471 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Pods/RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
 		EEE9D6DF22103DA000091471 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -139,12 +141,13 @@
 				3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */,
 				09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */,
 				097A6E1321B6BB39001908C3 /* CollectionViewController.swift */,
-				3C6A09A62173934E005E69E4 /* ViewController2.swift */,
+				3C6A09A62173934E005E69E4 /* SelectUserViewController.swift */,
 				096FF3A321A3FC4500634093 /* TableViewController.swift */,
 				097A6E1121B6BA3E001908C3 /* cellClass.swift */,
 				3C6A09A421738FFF005E69E4 /* ViewControllers3.swift */,
 				3C6A09902173793A005E69E4 /* Main.storyboard */,
-				EE1B1CEB220F6A7400B7090F /* MainViewController.swift */,
+				EEC4B0AA22259F6600200A1A /* AddKidViewController.swift */,
+				EE1B1CEB220F6A7400B7090F /* LoginOrRegisterViewController.swift */,
 				3C6A09932173793A005E69E4 /* Assets.xcassets */,
 				3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */,
 				3C6A09982173793A005E69E4 /* Info.plist */,
@@ -317,6 +320,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -325,6 +329,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,11 +348,12 @@
 				5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */,
 				EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */,
 				097A6E1221B6BA3E001908C3 /* cellClass.swift in Sources */,
-				3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */,
+				3C6A09A72173934E005E69E4 /* SelectUserViewController.swift in Sources */,
 				096FF3A421A3FC4500634093 /* TableViewController.swift in Sources */,
 				EEE9D6DE2210373100091471 /* RegisterViewController.swift in Sources */,
 				09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */,
-				EE1B1CEC220F6A7400B7090F /* MainViewController.swift in Sources */,
+				EE1B1CEC220F6A7400B7090F /* LoginOrRegisterViewController.swift in Sources */,
+				EEC4B0AB22259F6600200A1A /* AddKidViewController.swift in Sources */,
 				3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */,
 				5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */,
 				3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */,
