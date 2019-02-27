@@ -33,6 +33,11 @@
 		5E2D1F8C221830A400D15A72 /* space.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5E2D1F8B221830A400D15A72 /* space.gif */; };
 		5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */; };
 		5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */; };
+		5E38D99D2226461300FE8471 /* PlantStructureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38D99C2226461300FE8471 /* PlantStructureViewController.swift */; };
+		5E8185E522267E4800E25652 /* SelectQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8185E422267E4800E25652 /* SelectQuizViewController.swift */; };
+		5E9667C422265B8000E0A648 /* Explode.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 5E9667C322265B8000E0A648 /* Explode.scnp */; };
+		5E9667CE22265DC700E0A648 /* AnatomyQuizPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9667CD22265DC700E0A648 /* AnatomyQuizPlayController.swift */; };
+		5E9667D022265E7D00E0A648 /* AnatomyQuizARShooting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9667CF22265E7D00E0A648 /* AnatomyQuizARShooting.swift */; };
 		5EA99EC62214024A00895595 /* BotanySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */; };
 		EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */; };
 		EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE968C8521B92F9300AAA6C1 /* Question.swift */; };
@@ -68,6 +73,11 @@
 		5E2D1F8D221830BA00D15A72 /* botanyGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = botanyGif.gif; sourceTree = "<group>"; };
 		5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewController.swift; sourceTree = "<group>"; };
 		5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewCell.swift; sourceTree = "<group>"; };
+		5E38D99C2226461300FE8471 /* PlantStructureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantStructureViewController.swift; sourceTree = "<group>"; };
+		5E8185E422267E4800E25652 /* SelectQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuizViewController.swift; sourceTree = "<group>"; };
+		5E9667C322265B8000E0A648 /* Explode.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Explode.scnp; sourceTree = "<group>"; };
+		5E9667CD22265DC700E0A648 /* AnatomyQuizPlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyQuizPlayController.swift; sourceTree = "<group>"; };
+		5E9667CF22265E7D00E0A648 /* AnatomyQuizARShooting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnatomyQuizARShooting.swift; sourceTree = "<group>"; };
 		5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanySelectionViewController.swift; sourceTree = "<group>"; };
 		EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		EE968C8521B92F9300AAA6C1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -87,6 +97,7 @@
 		0906AF20221D42AB00D60C2A /* Botany Branch */ = {
 			isa = PBXGroup;
 			children = (
+				5E38D99C2226461300FE8471 /* PlantStructureViewController.swift */,
 				0906AF1C221D3F5A00D60C2A /* BotanyCollectionViewCell.swift */,
 				0906AF1E221D3F9100D60C2A /* BotanyARSceneController.swift */,
 				5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */,
@@ -132,7 +143,7 @@
 				3C6A09A62173934E005E69E4 /* ViewController2.swift */,
 				3C6A09A421738FFF005E69E4 /* PlayLearnViewController.swift */,
 				0906AF19221D3C9600D60C2A /* ModelSelectViewController.swift */,
-				EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */,
+				5E8FA4D32226AACF00AB0E21 /* Quiz Path */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -147,6 +158,7 @@
 		095637AC2196A7DA00FC724A /* Galaxy */ = {
 			isa = PBXGroup;
 			children = (
+				5E9667C322265B8000E0A648 /* Explode.scnp */,
 				095637B02196B20C00FC724A /* Stars.scnp */,
 				095637B12196B20C00FC724A /* star.png */,
 				095637B42196C1F400FC724A /* spark.png */,
@@ -216,6 +228,17 @@
 				5E2D1F8D221830BA00D15A72 /* botanyGif.gif */,
 			);
 			path = Gifs;
+			sourceTree = "<group>";
+		};
+		5E8FA4D32226AACF00AB0E21 /* Quiz Path */ = {
+			isa = PBXGroup;
+			children = (
+				EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */,
+				5E9667CF22265E7D00E0A648 /* AnatomyQuizARShooting.swift */,
+				5E9667CD22265DC700E0A648 /* AnatomyQuizPlayController.swift */,
+				5E8185E422267E4800E25652 /* SelectQuizViewController.swift */,
+			);
+			path = "Quiz Path";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +312,7 @@
 				09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */,
 				095637B32196B20C00FC724A /* star.png in Resources */,
 				095A0903221854F70022206B /* PlantInfo.sks in Resources */,
+				5E9667C422265B8000E0A648 /* Explode.scnp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,13 +332,17 @@
 				3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */,
 				0906AF1F221D3F9100D60C2A /* BotanyARSceneController.swift in Sources */,
 				09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */,
+				5E9667CE22265DC700E0A648 /* AnatomyQuizPlayController.swift in Sources */,
 				09A306A1221804FB003341DE /* BotanyDetectionViewController.swift in Sources */,
 				3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */,
 				0906AF1B221D3C9700D60C2A /* ModelSelectViewController.swift in Sources */,
 				5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */,
 				0906AF1D221D3F5A00D60C2A /* BotanyCollectionViewCell.swift in Sources */,
 				3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */,
+				5E38D99D2226461300FE8471 /* PlantStructureViewController.swift in Sources */,
+				5E8185E522267E4800E25652 /* SelectQuizViewController.swift in Sources */,
 				3C6A09A521738FFF005E69E4 /* PlayLearnViewController.swift in Sources */,
+				5E9667D022265E7D00E0A648 /* AnatomyQuizARShooting.swift in Sources */,
 				EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */,
 				095637AF2196A83400FC724A /* Planet.swift in Sources */,
 			);
@@ -459,11 +487,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 584KM2K64C;
+				DEVELOPMENT_TEAM = C4T5BU85HG;
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.faatehjarree.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shiza.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -477,11 +505,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 584KM2K64C;
+				DEVELOPMENT_TEAM = C4T5BU85HG;
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.faatehjarree.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shiza.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
