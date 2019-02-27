@@ -25,7 +25,7 @@ class BotanySelectionViewController: UIViewController, UICollectionViewDelegate,
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        gifImage.loadGif(name: "botanyGif")
+//        gifImage.loadGif(name: "botanyGif")
         collectionView.reloadData()
         
         for model in botanyModelNames{

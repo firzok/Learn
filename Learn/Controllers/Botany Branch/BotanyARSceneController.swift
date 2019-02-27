@@ -37,16 +37,18 @@ class BotanyARSceneController: UIViewController, ARSCNViewDelegate {
         sceneView.allowsCameraControl = true
         //        tapRec = UITapGestureRecognizer(target: self, action: #selector(SolarSystemViewController.handleTap(_:)))
         //        sceneView.addGestureRecognizer(tapRec)
+        
+        print("Botany AR \(modelName!)")
         createModel(modelName: "\(modelName!)")
         setBodyDetailText("\(modelName!)")
     }
     
     
-    @IBAction func backToModels(_ sender: Any) {
-        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "BotanySelectionViewController")
-        navigationController?.pushViewController(modelSelectionController!, animated: true)
-        
-    }
+    //    @IBAction func backToModels(_ sender: Any) {
+    //        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "BotanySelectionViewController")
+    //        navigationController?.pushViewController(modelSelectionController!, animated: true)
+    //
+    //    }
     
     func createModel(modelName: String) {
         
@@ -54,20 +56,29 @@ class BotanyARSceneController: UIViewController, ARSCNViewDelegate {
             
             if let modelNode = modelScene.rootNode.childNodes.first {
                 if modelName == "Flower"{
-                    //                    modelNode.position.z = -15.0
-                    //                    modelNode.position.y = -2.0
-                    modelNode.name = modelName
-                    sceneView.scene = modelScene
+                    modelNode.position.z = -20.0
+                    //                        modelNode.position.y = -2.0
+                    //                    modelNode.name = modelName
+                    //                    sceneView.scene = modelScene
                 }
                 else if modelName == "lilies"{
                     modelNode.position.z = -20.0
-                    modelNode.name = modelName
-                    sceneView.scene = modelScene
+                }
+                else if modelName == "Ferns"{
+                    modelNode.position.z = -5.0
+                    modelNode.eulerAngles.x = 40
+                }
+                else if modelName == "Conifers"{
+                    modelNode.position.z = -20.0
+                    modelNode.scale.x = 0.04
+                    modelNode.scale.y = 0.04
+                    modelNode.scale.z = 0.04
                 }
                 
                 
-                //                modelNode.name = modelName
-                //                sceneView.scene = modelScene
+                
+                modelNode.name = modelName
+                sceneView.scene = modelScene
             }
         }
         
@@ -108,6 +119,12 @@ class BotanyARSceneController: UIViewController, ARSCNViewDelegate {
         
         // Pause the view's session
         sceneView.session.pause()
+    }
+    
+    
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        
+        dismiss(animated: true, completion: nil)
     }
     
 }

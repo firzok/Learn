@@ -72,9 +72,6 @@ class HumanAnatomyViewController: UIViewController, ARSCNViewDelegate {
                 else if modelName == "Eyes"{
                     modelNode.position.z = -10.0
                 }
-                else if modelName == "Teeth"{
-                    modelNode.position.z = 0.0
-                }
                 else{
                     modelNode.position.z = -1.5
                 }

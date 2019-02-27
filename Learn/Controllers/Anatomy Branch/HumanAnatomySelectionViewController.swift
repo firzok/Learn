@@ -23,7 +23,7 @@ class HumanAnatomySelectionViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        gifImage.loadGif(name: "anatomyGif")
+//        gifImage.loadGif(name: "anatomyGif")
         collectionView.reloadData()
         
         
