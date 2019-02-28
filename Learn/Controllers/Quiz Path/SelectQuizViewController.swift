@@ -3,8 +3,7 @@
 //  Learn
 //
 //  Created by Shiza Siddique on 2/27/19.
-//  Copyright © 2019 Mani. All rights reserved.
-//
+
 
 import UIKit
 

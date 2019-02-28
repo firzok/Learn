@@ -14,7 +14,7 @@ class HumanAnatomySelectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var gifImage: UIImageView!
-    let models = ["Heart","Body","Brain","Muscle","Eyes","Teeth"]
+    let models = ["Heart","Body","Brain","Muscle","Eyes","Teeth","Skeleton"]
     var thumbnails = [UIImage] ()
     var thumbnailIndex = 0
     
@@ -57,12 +57,7 @@ class HumanAnatomySelectionViewController: UIViewController {
 //        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "ModelSelectViewController")
 //        navigationController?.pushViewController(modelSelectionController!, animated: true)
     }
-    
-//    @IBAction func backToModel(_ sender: UIButton) {
-//        let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "ModelSelectionViewController")
-//        navigationController?.pushViewController(modelSelectionController!, animated: true)
-//        
-//    }
+
     
     
 }
