@@ -121,8 +121,8 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
     //timer
     var timer = Timer()
     
-    //to keep track of whether the timer is on
-    var isTimerRunning = false
+//    //to keep track of whether the timer is on
+//    var isTimerRunning = false
     
     //to run the timer
     func runTimer() {
@@ -133,6 +133,7 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
     @objc func updateTimer() {
         if seconds == 0 {
             timer.invalidate()
+            
             gameOver()
         }else{
             seconds -= 1
@@ -153,6 +154,8 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         //store the score in UserDefaults
         let defaults = UserDefaults.standard
         defaults.set(score, forKey: "score")
+        
+        
         
         //go back to the Home View Controller
         self.dismiss(animated: true, completion: nil)

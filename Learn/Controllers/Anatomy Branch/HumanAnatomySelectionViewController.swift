@@ -76,6 +76,18 @@ extension HumanAnatomySelectionViewController: UICollectionViewDelegate, UIColle
             cell.modelThumbnail.image = thumbnails[indexPath.item]
             let title = models[indexPath.item]
             cell.modelTitle.text = title.capitalized
+            cell.modelThumbnail.layer.masksToBounds = true
+            cell.modelThumbnail.layer.cornerRadius = cell.modelThumbnail.frame.width/2
+            cell.modelThumbnail.layer.borderWidth = 5
+            cell.modelThumbnail.layer.borderColor = #colorLiteral(red: 0, green: 0.1559514105, blue: 0.4227083027, alpha: 1)
+            
+            cell.contentView.layer.cornerRadius = 20.0
+            cell.contentView.layer.borderWidth = 1.0
+            cell.contentView.layer.borderColor = UIColor.clear.cgColor
+            cell.contentView.layer.masksToBounds = true
+
+            cell.layer.masksToBounds = false
+
         }
         return cell!
     }

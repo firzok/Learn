@@ -13,11 +13,22 @@ import ARKit
 class QuizViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var sceneView: ARSCNView!
-    
     @IBOutlet weak var QuestionText: UITextView!
     @IBOutlet var tapRec: UITapGestureRecognizer!
+    
+    //used to display score to player
     @IBOutlet weak var scoreView: UILabel!
     
+    //used to display timer to player
+    @IBOutlet weak var timerView: UILabel!
+    
+    //to store how many sceonds the game is played for
+    var seconds = 30
+    
+    //timer
+    var timer = Timer()
+    
+    //used to store the score
     var score: Int = 0
     var questionNumber: Int = 0
     var array = ["Mercury", "Venus", "Earth", "Mars", "Jupiter",
@@ -67,9 +78,47 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
         // order = merc, venus, earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
         placePlanetsForQuiz()
         
-        backgroundPlayer.stop()
+//        backgroundPlayer.stop()
+        
+        //start tinmer
+        runTimer()
         
     }
+    
+    // Mark: - Game Over and Timer
+    func gameOver(){
+        //store the score in UserDefaults
+        let defaults = UserDefaults.standard
+        defaults.set(score, forKey: "AstronomyScore")
+        
+        //go back to the Home View Controller
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    //to run the timer
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    
+    //decrements seconds by 1, updates the timerLabel and calls gameOver if seconds is 0
+    @objc func updateTimer() {
+        if seconds == 0 {
+            timer.invalidate()
+            gameOver()
+        }else{
+            seconds -= 1
+            timerView.text = "\(seconds)"
+        }
+    }
+    
+//    //resets the timer
+//    func resetTimer(){
+//        timer.invalidate()
+//        seconds = 0
+//        timerView.text = "\(seconds)"
+//    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -207,12 +256,13 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
             
                 if (node.name! == "\(self.questions[self.questionNumber].solution)"){
                     self.score += self.questions[self.questionNumber].score
-                    self.playBackgroundMusic(musicFileName: "art.scnassets/sound108.wav")
+                    self.playBackgroundMusic(musicFileName: "art.scnassets/Sounds/sound108.wav")
                     self.scoreView.text = "\(self.score)"
                     self.questionNumber += 1
                     
                     if (self.questionNumber == 9){
-                        self.resetScene()
+                        self.gameOver()
+//                        self.resetScene()
                         self.questionNumber = 0
                     }
                     else{
@@ -228,7 +278,6 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
                     self.scoreView.text = "\(self.score)"
                     self.playBackgroundMusic(musicFileName: "art.scnassets/Sounds/sound108.wav")
                     node.addChildNode(self.createAnswerCheckNode(checker: "Wrong", planet: node))
-//                    node.childNodes.re
                     
                 }
 

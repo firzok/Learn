@@ -13,12 +13,44 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var counter = 0.0
+    var timer = Timer()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        //Runs timer until the app goes in background/terminated
+        startTimer()
+        
+        print("didFinishLaunchingWithOptions")
+        
+        
         return true
+    }
+    
+    func startTimer(){
+        let defaults = UserDefaults.standard
+        if let timeCount = defaults.value(forKey: "UsingAppTimer"){
+            let time = timeCount as! Double
+            print("score \(time*60)")
+            counter = time*60 //converting back to seconds
+        }
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+    }
+    
+    func endTimer(){
+        timer.invalidate()
+        print("counter \(counter/60)")
+        //store the score in UserDefaults
+        let defaults = UserDefaults.standard
+        defaults.set(counter/60, forKey: "UsingAppTimer")
+    }
+    
+    // called every time interval from the timer
+    @objc func timerAction() {
+        print("timerAction")
+        counter += 1
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -29,6 +61,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        
+        
+        print("applicationDidEnterBackground)")
+        endTimer()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -37,10 +74,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        //start timer again when app comes in foreground
+        startTimer()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        
+        print("applicationWillTerminate")
+        timer.invalidate()
+        print("counter \(counter)")
+        //store the score in UserDefaults
+        let defaults = UserDefaults.standard
+        assert(counter > 0)
+        
+        //storing the time spend on app in minutes
+        defaults.set(counter/60, forKey: "UsingAppTimer")
+        
     }
 
 
