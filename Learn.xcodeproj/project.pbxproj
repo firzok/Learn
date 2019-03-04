@@ -11,6 +11,8 @@
 		0906AF1B221D3C9700D60C2A /* ModelSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906AF19221D3C9600D60C2A /* ModelSelectViewController.swift */; };
 		0906AF1D221D3F5A00D60C2A /* BotanyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906AF1C221D3F5A00D60C2A /* BotanyCollectionViewCell.swift */; };
 		0906AF1F221D3F9100D60C2A /* BotanyARSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906AF1E221D3F9100D60C2A /* BotanyARSceneController.swift */; };
+		09356DE1222AFC7100C83DBA /* BotanyQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09356DE0222AFC7100C83DBA /* BotanyQuizViewController.swift */; };
+		094E9C1F222BDEF600EDD6D8 /* BotanyQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094E9C1E222BDEF600EDD6D8 /* BotanyQuestions.swift */; };
 		095637AF2196A83400FC724A /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095637AE2196A83400FC724A /* Planet.swift */; };
 		095637B22196B20C00FC724A /* Stars.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 095637B02196B20C00FC724A /* Stars.scnp */; };
 		095637B32196B20C00FC724A /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 095637B12196B20C00FC724A /* star.png */; };
@@ -56,6 +58,8 @@
 		0906AF19221D3C9600D60C2A /* ModelSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelSelectViewController.swift; sourceTree = "<group>"; };
 		0906AF1C221D3F5A00D60C2A /* BotanyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyCollectionViewCell.swift; sourceTree = "<group>"; };
 		0906AF1E221D3F9100D60C2A /* BotanyARSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyARSceneController.swift; sourceTree = "<group>"; };
+		09356DE0222AFC7100C83DBA /* BotanyQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyQuizViewController.swift; sourceTree = "<group>"; };
+		094E9C1E222BDEF600EDD6D8 /* BotanyQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyQuestions.swift; sourceTree = "<group>"; };
 		095637AE2196A83400FC724A /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		095637B02196B20C00FC724A /* Stars.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Stars.scnp; sourceTree = "<group>"; };
 		095637B12196B20C00FC724A /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 			children = (
 				095637AE2196A83400FC724A /* Planet.swift */,
 				EE968C8521B92F9300AAA6C1 /* Question.swift */,
+				094E9C1E222BDEF600EDD6D8 /* BotanyQuestions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			children = (
 				09A306A0221804FB003341DE /* BotanyDetectionViewController.swift */,
 				095A0902221854F70022206B /* PlantInfo.sks */,
+				09356DE0222AFC7100C83DBA /* BotanyQuizViewController.swift */,
 			);
 			path = Botany;
 			sourceTree = "<group>";
@@ -470,6 +476,7 @@
 				09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */,
 				5E9667CE22265DC700E0A648 /* AnatomyQuizPlayController.swift in Sources */,
 				09A306A1221804FB003341DE /* BotanyDetectionViewController.swift in Sources */,
+				09356DE1222AFC7100C83DBA /* BotanyQuizViewController.swift in Sources */,
 				3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */,
 				EE3E1E4E2226DB74005E7133 /* LoginViewController.swift in Sources */,
 				0906AF1B221D3C9700D60C2A /* ModelSelectViewController.swift in Sources */,
@@ -483,6 +490,7 @@
 				5E9667D022265E7D00E0A648 /* AnatomyQuizARShooting.swift in Sources */,
 				EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */,
 				095637AF2196A83400FC724A /* Planet.swift in Sources */,
+				094E9C1F222BDEF600EDD6D8 /* BotanyQuestions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,11 +634,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9K9J6T8MWH;
+				DEVELOPMENT_TEAM = 584KM2K64C;
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.firzok.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faatehjarree.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -645,11 +653,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9K9J6T8MWH;
+				DEVELOPMENT_TEAM = 584KM2K64C;
 				INFOPLIST_FILE = Learn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.firzok.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faatehjarree.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
