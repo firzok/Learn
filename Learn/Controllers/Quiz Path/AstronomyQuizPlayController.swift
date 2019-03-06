@@ -29,6 +29,8 @@ class AstronomyQuizPlayController: UIViewController {
         
         if let user = Auth.auth().currentUser{
             
+            self.ref = Database.database().reference()
+            
             let userID = user.uid
             self.ref!.child("score").child(userID).child(currentKid).observeSingleEvent(of: .value, with: { (snapshot) in
                 
