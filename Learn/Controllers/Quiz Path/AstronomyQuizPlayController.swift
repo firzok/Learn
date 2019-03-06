@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class AstronomyQuizPlayController: UIViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
     
+    //Firebase DB ref
+    var ref: DatabaseReference?
     
         
     override func viewDidLoad() {
@@ -21,15 +25,28 @@ class AstronomyQuizPlayController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
-        if let gameScore = defaults.value(forKey: "AstronomyScore"){
-            let score = gameScore as! Int
-            scoreLabel.text = "Score: \(String(score))"
+        let currentKid = defaults.value(forKey: "CurrentKid") as! String
+        
+        if let user = Auth.auth().currentUser{
+            
+            let userID = user.uid
+            self.ref!.child("score").child(userID).child(currentKid).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if let s = snapshot.childSnapshot(forPath: "AstronomyScore").value{
+                    self.scoreLabel.text = "Score: \(s)"
+                } else {
+                    print("ERROR! getting AstronomyScore from Firebase")
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
         }
     }
     
         
     @IBAction func onPlayButton(_ sender: UIButton) {
-        print("clicked")
+//        print("clicked")
         performSegue(withIdentifier: "homeToAstronomyAR", sender: self)
         
     }

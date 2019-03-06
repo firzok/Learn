@@ -38,7 +38,7 @@ class HumanAnatomySelectionViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
        
-        print("PREPARE IS CALLEDDD")
+//        print("PREPARE IS CALLEDDD")
         if segue.identifier == "ArViewSegue" {
             if let destinationVC = segue.destination as? HumanAnatomyViewController {
                 print(sender.unsafelyUnwrapped)
@@ -94,7 +94,7 @@ extension HumanAnatomySelectionViewController: UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        print("model name \(models[indexPath.item])")
+//        print("model name \(models[indexPath.item])")
         
         self.performSegue(withIdentifier: "ArViewSegue", sender: models[indexPath.item])
         

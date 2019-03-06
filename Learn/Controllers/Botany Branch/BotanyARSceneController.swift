@@ -38,7 +38,7 @@ class BotanyARSceneController: UIViewController, ARSCNViewDelegate {
         //        tapRec = UITapGestureRecognizer(target: self, action: #selector(SolarSystemViewController.handleTap(_:)))
         //        sceneView.addGestureRecognizer(tapRec)
         
-        print("Botany AR \(modelName!)")
+//        print("Botany AR \(modelName!)")
         createModel(modelName: "\(modelName!)")
         setBodyDetailText("\(modelName!)")
     }

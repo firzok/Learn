@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eOu-Dy-Fpd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YsI-Lf-hxG">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -1195,7 +1195,7 @@
                                     <color key="titleColor" red="0.99150818630000004" green="1" blue="0.97410906870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eOu-Dy-Fpd" kind="show" id="T3L-Ll-zhB"/>
+                                    <action selector="proceedButtonTapped:" destination="TdR-97-Bb2" eventType="touchUpInside" id="imb-fK-klY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fih-Nz-OGw">
@@ -1223,7 +1223,8 @@
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="BiA-iY-rcW" id="w8t-Ty-iRv"/>
-                        <outlet property="selectedGradeLabel" destination="4qh-4n-aMH" id="ydl-z0-ZeU"/>
+                        <outlet property="selectedKidLabel" destination="4qh-4n-aMH" id="ydl-z0-ZeU"/>
+                        <segue destination="eOu-Dy-Fpd" kind="show" identifier="proceedToApp" id="9YR-E1-4u6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fn-Ry-6qT" userLabel="First Responder" sceneMemberID="firstResponder"/>
