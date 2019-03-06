@@ -36,6 +36,8 @@
 		5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */; };
 		5E38D99D2226461300FE8471 /* PlantStructureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38D99C2226461300FE8471 /* PlantStructureViewController.swift */; };
 		5E3FF61E222F9F5C00652D9C /* LeaderBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3FF61D222F9F5C00652D9C /* LeaderBoardViewController.swift */; };
+		5E41A17022305658005DB105 /* launchScreen.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5E41A16F22305658005DB105 /* launchScreen.gif */; };
+		5E41A1722230567B005DB105 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E41A1712230567B005DB105 /* LaunchScreenViewController.swift */; };
 		5E44AB5B222DA73B00C6562A /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E44AB5A222DA73B00C6562A /* LeaderboardTableViewCell.swift */; };
 		5E44AB5F222DB72F00C6562A /* LeaderboardInsideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E44AB5E222DB72F00C6562A /* LeaderboardInsideCollectionViewCell.swift */; };
 		5E8185E522267E4800E25652 /* SelectQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8185E422267E4800E25652 /* SelectQuizViewController.swift */; };
@@ -93,6 +95,8 @@
 		5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewCell.swift; sourceTree = "<group>"; };
 		5E38D99C2226461300FE8471 /* PlantStructureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantStructureViewController.swift; sourceTree = "<group>"; };
 		5E3FF61D222F9F5C00652D9C /* LeaderBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardViewController.swift; sourceTree = "<group>"; };
+		5E41A16F22305658005DB105 /* launchScreen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = launchScreen.gif; sourceTree = "<group>"; };
+		5E41A1712230567B005DB105 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		5E44AB5A222DA73B00C6562A /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		5E44AB5E222DB72F00C6562A /* LeaderboardInsideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardInsideCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E8185E422267E4800E25652 /* SelectQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuizViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 				5E44AB5A222DA73B00C6562A /* LeaderboardTableViewCell.swift */,
 				5E44AB5E222DB72F00C6562A /* LeaderboardInsideCollectionViewCell.swift */,
 				5E3FF61D222F9F5C00652D9C /* LeaderBoardViewController.swift */,
+				5E41A1712230567B005DB105 /* LaunchScreenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 		5E2D1F8E221831C000D15A72 /* Gifs */ = {
 			isa = PBXGroup;
 			children = (
+				5E41A16F22305658005DB105 /* launchScreen.gif */,
 				5E2D1F8B221830A400D15A72 /* space.gif */,
 				5E2D1F8D221830BA00D15A72 /* botanyGif.gif */,
 			);
@@ -388,6 +394,7 @@
 				095637B32196B20C00FC724A /* star.png in Resources */,
 				095A0903221854F70022206B /* PlantInfo.sks in Resources */,
 				EE3E1E592226DCD2005E7133 /* Podfile in Resources */,
+				5E41A17022305658005DB105 /* launchScreen.gif in Resources */,
 				5E9667C422265B8000E0A648 /* Explode.scnp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +487,7 @@
 				5E293955222B2DBC00BBC2D3 /* AstronomyQuizPlayController.swift in Sources */,
 				097A6E1421B6BB39001908C3 /* HumanAnatomySelectionViewController.swift in Sources */,
 				0906AF1A221D3C9700D60C2A /* RunGif.swift in Sources */,
+				5E41A1722230567B005DB105 /* LaunchScreenViewController.swift in Sources */,
 				5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */,
 				EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */,
 				EE3E1E532226DBAA005E7133 /* AddKidViewController.swift in Sources */,
