@@ -1,688 +1,700 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 48;
-	objects = {
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 48;
+    objects = {
 
 /* Begin PBXBuildFile section */
-		0906AF1A221D3C9700D60C2A /* RunGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906AF18221D3C9600D60C2A /* RunGif.swift */; };
-		0906AF1B221D3C9700D60C2A /* ModelSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906AF19221D3C9600D60C2A /* ModelSelectViewController.swift */; };
-		0906AF1D221D3F5A00D60C2A /* BotanyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906AF1C221D3F5A00D60C2A /* BotanyCollectionViewCell.swift */; };
-		0906AF1F221D3F9100D60C2A /* BotanyARSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906AF1E221D3F9100D60C2A /* BotanyARSceneController.swift */; };
-		095637AF2196A83400FC724A /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095637AE2196A83400FC724A /* Planet.swift */; };
-		095637B22196B20C00FC724A /* Stars.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 095637B02196B20C00FC724A /* Stars.scnp */; };
-		095637B32196B20C00FC724A /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 095637B12196B20C00FC724A /* star.png */; };
-		095637B62196C1F400FC724A /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 095637B42196C1F400FC724A /* spark.png */; };
-		095637B72196C1F400FC724A /* sunFlare.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 095637B52196C1F400FC724A /* sunFlare.scnp */; };
-		095A0903221854F70022206B /* PlantInfo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 095A0902221854F70022206B /* PlantInfo.sks */; };
-		097A6E1221B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A6E1121B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift */; };
-		097A6E1421B6BB39001908C3 /* HumanAnatomySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A6E1321B6BB39001908C3 /* HumanAnatomySelectionViewController.swift */; };
-		09A306A1221804FB003341DE /* BotanyDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A306A0221804FB003341DE /* BotanyDetectionViewController.swift */; };
-		09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 09BDF63321ADABAE00BC541A /* planetOrbit.scnp */; };
-		09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */; };
-		3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A098A2173793A005E69E4 /* AppDelegate.swift */; };
-		3C6A098D2173793A005E69E4 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A098C2173793A005E69E4 /* art.scnassets */; };
-		3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */; };
-		3C6A09922173793A005E69E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A09902173793A005E69E4 /* Main.storyboard */; };
-		3C6A09972173793A005E69E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */; };
-		3C6A09A521738FFF005E69E4 /* PlayLearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A421738FFF005E69E4 /* PlayLearnViewController.swift */; };
-		3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A62173934E005E69E4 /* ViewController2.swift */; };
-		5E293955222B2DBC00BBC2D3 /* AstronomyQuizPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E293954222B2DBC00BBC2D3 /* AstronomyQuizPlayController.swift */; };
-		5E2D1F8A2218300300D15A72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E2D1F892218300300D15A72 /* Assets.xcassets */; };
-		5E2D1F8C221830A400D15A72 /* space.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5E2D1F8B221830A400D15A72 /* space.gif */; };
-		5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */; };
-		5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */; };
-		5E38D99D2226461300FE8471 /* PlantStructureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38D99C2226461300FE8471 /* PlantStructureViewController.swift */; };
-		5E8185E522267E4800E25652 /* SelectQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8185E422267E4800E25652 /* SelectQuizViewController.swift */; };
-		5E9667C422265B8000E0A648 /* Explode.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 5E9667C322265B8000E0A648 /* Explode.scnp */; };
-		5E9667CE22265DC700E0A648 /* AnatomyQuizPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9667CD22265DC700E0A648 /* AnatomyQuizPlayController.swift */; };
-		5E9667D022265E7D00E0A648 /* AnatomyQuizARShooting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9667CF22265E7D00E0A648 /* AnatomyQuizARShooting.swift */; };
-		5EA99EC62214024A00895595 /* BotanySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */; };
-		80D6B9A24298F104D3C3B5A8 /* Pods_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E6D845416AA9508C2EC832 /* Pods_Learn.framework */; };
-		EE3E1E4C2226DB58005E7133 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E1E4B2226DB58005E7133 /* RegisterViewController.swift */; };
-		EE3E1E4E2226DB74005E7133 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E1E4D2226DB73005E7133 /* LoginViewController.swift */; };
-		EE3E1E512226DBA1005E7133 /* LoginOrRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E1E502226DBA1005E7133 /* LoginOrRegisterViewController.swift */; };
-		EE3E1E532226DBAA005E7133 /* AddKidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E1E522226DBAA005E7133 /* AddKidViewController.swift */; };
-		EE3E1E552226DBBE005E7133 /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E1E542226DBBE005E7133 /* SelectUserViewController.swift */; };
-		EE3E1E572226DCCB005E7133 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE3E1E562226DCCB005E7133 /* GoogleService-Info.plist */; };
-		EE3E1E592226DCD2005E7133 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = EE3E1E582226DCD2005E7133 /* Podfile */; };
-		EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */; };
-		EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE968C8521B92F9300AAA6C1 /* Question.swift */; };
+        0906AF1A221D3C9700D60C2A /* RunGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906AF18221D3C9600D60C2A /* RunGif.swift */; };
+        0906AF1B221D3C9700D60C2A /* ModelSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906AF19221D3C9600D60C2A /* ModelSelectViewController.swift */; };
+        0906AF1D221D3F5A00D60C2A /* BotanyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906AF1C221D3F5A00D60C2A /* BotanyCollectionViewCell.swift */; };
+        0906AF1F221D3F9100D60C2A /* BotanyARSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906AF1E221D3F9100D60C2A /* BotanyARSceneController.swift */; };
+        09356DE1222AFC7100C83DBA /* BotanyQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09356DE0222AFC7100C83DBA /* BotanyQuizViewController.swift */; };
+        094E9C1F222BDEF600EDD6D8 /* BotanyQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094E9C1E222BDEF600EDD6D8 /* BotanyQuestions.swift */; };
+        095637AF2196A83400FC724A /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095637AE2196A83400FC724A /* Planet.swift */; };
+        095637B22196B20C00FC724A /* Stars.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 095637B02196B20C00FC724A /* Stars.scnp */; };
+        095637B32196B20C00FC724A /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 095637B12196B20C00FC724A /* star.png */; };
+        095637B62196C1F400FC724A /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 095637B42196C1F400FC724A /* spark.png */; };
+        095637B72196C1F400FC724A /* sunFlare.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 095637B52196C1F400FC724A /* sunFlare.scnp */; };
+        095A0903221854F70022206B /* PlantInfo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 095A0902221854F70022206B /* PlantInfo.sks */; };
+        097A6E1221B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A6E1121B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift */; };
+        097A6E1421B6BB39001908C3 /* HumanAnatomySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A6E1321B6BB39001908C3 /* HumanAnatomySelectionViewController.swift */; };
+        0986EDFE223030D000B71C5A /* ToastClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0986EDFD223030D000B71C5A /* ToastClass.swift */; };
+        09A306A1221804FB003341DE /* BotanyDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A306A0221804FB003341DE /* BotanyDetectionViewController.swift */; };
+        09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 09BDF63321ADABAE00BC541A /* planetOrbit.scnp */; };
+        09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */; };
+        3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A098A2173793A005E69E4 /* AppDelegate.swift */; };
+        3C6A098D2173793A005E69E4 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A098C2173793A005E69E4 /* art.scnassets */; };
+        3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */; };
+        3C6A09922173793A005E69E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A09902173793A005E69E4 /* Main.storyboard */; };
+        3C6A09972173793A005E69E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */; };
+        3C6A09A521738FFF005E69E4 /* PlayLearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A421738FFF005E69E4 /* PlayLearnViewController.swift */; };
+        3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A09A62173934E005E69E4 /* ViewController2.swift */; };
+        5E293955222B2DBC00BBC2D3 /* AstronomyQuizPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E293954222B2DBC00BBC2D3 /* AstronomyQuizPlayController.swift */; };
+        5E2D1F8A2218300300D15A72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E2D1F892218300300D15A72 /* Assets.xcassets */; };
+        5E2D1F8C221830A400D15A72 /* space.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5E2D1F8B221830A400D15A72 /* space.gif */; };
+        5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */; };
+        5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */; };
+        5E38D99D2226461300FE8471 /* PlantStructureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38D99C2226461300FE8471 /* PlantStructureViewController.swift */; };
+        5E8185E522267E4800E25652 /* SelectQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8185E422267E4800E25652 /* SelectQuizViewController.swift */; };
+        5E9667C422265B8000E0A648 /* Explode.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 5E9667C322265B8000E0A648 /* Explode.scnp */; };
+        5E9667CE22265DC700E0A648 /* AnatomyQuizPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9667CD22265DC700E0A648 /* AnatomyQuizPlayController.swift */; };
+        5E9667D022265E7D00E0A648 /* AnatomyQuizARShooting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9667CF22265E7D00E0A648 /* AnatomyQuizARShooting.swift */; };
+        5EA99EC62214024A00895595 /* BotanySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */; };
+        80D6B9A24298F104D3C3B5A8 /* Pods_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E6D845416AA9508C2EC832 /* Pods_Learn.framework */; };
+        EE3E1E4C2226DB58005E7133 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E1E4B2226DB58005E7133 /* RegisterViewController.swift */; };
+        EE3E1E4E2226DB74005E7133 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E1E4D2226DB73005E7133 /* LoginViewController.swift */; };
+        EE3E1E512226DBA1005E7133 /* LoginOrRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E1E502226DBA1005E7133 /* LoginOrRegisterViewController.swift */; };
+        EE3E1E532226DBAA005E7133 /* AddKidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E1E522226DBAA005E7133 /* AddKidViewController.swift */; };
+        EE3E1E552226DBBE005E7133 /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E1E542226DBBE005E7133 /* SelectUserViewController.swift */; };
+        EE3E1E572226DCCB005E7133 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE3E1E562226DCCB005E7133 /* GoogleService-Info.plist */; };
+        EE3E1E592226DCD2005E7133 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = EE3E1E582226DCD2005E7133 /* Podfile */; };
+        EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */; };
+        EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE968C8521B92F9300AAA6C1 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0906AF18221D3C9600D60C2A /* RunGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunGif.swift; sourceTree = "<group>"; };
-		0906AF19221D3C9600D60C2A /* ModelSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelSelectViewController.swift; sourceTree = "<group>"; };
-		0906AF1C221D3F5A00D60C2A /* BotanyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyCollectionViewCell.swift; sourceTree = "<group>"; };
-		0906AF1E221D3F9100D60C2A /* BotanyARSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyARSceneController.swift; sourceTree = "<group>"; };
-		095637AE2196A83400FC724A /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
-		095637B02196B20C00FC724A /* Stars.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Stars.scnp; sourceTree = "<group>"; };
-		095637B12196B20C00FC724A /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
-		095637B42196C1F400FC724A /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
-		095637B52196C1F400FC724A /* sunFlare.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = sunFlare.scnp; sourceTree = "<group>"; };
-		095A0902221854F70022206B /* PlantInfo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlantInfo.sks; sourceTree = "<group>"; };
-		097A6E1121B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAnatomySelectionViewCell.swift; sourceTree = "<group>"; };
-		097A6E1321B6BB39001908C3 /* HumanAnatomySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAnatomySelectionViewController.swift; sourceTree = "<group>"; };
-		09A306A0221804FB003341DE /* BotanyDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyDetectionViewController.swift; sourceTree = "<group>"; };
-		09BDF63321ADABAE00BC541A /* planetOrbit.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = planetOrbit.scnp; sourceTree = "<group>"; };
-		09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAnatomyViewController.swift; sourceTree = "<group>"; };
-		2EE5C8CE1ECBCA9AF5DEABE8 /* Pods-Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Learn/Pods-Learn.release.xcconfig"; sourceTree = "<group>"; };
-		33E6D845416AA9508C2EC832 /* Pods_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C6A09872173793A005E69E4 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C6A098A2173793A005E69E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3C6A098C2173793A005E69E4 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemViewController.swift; sourceTree = "<group>"; };
-		3C6A09912173793A005E69E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3C6A09962173793A005E69E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3C6A09982173793A005E69E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C6A09A421738FFF005E69E4 /* PlayLearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayLearnViewController.swift; sourceTree = "<group>"; };
-		3C6A09A62173934E005E69E4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
-		5231CDF33D66A2A6B86FCCFD /* Pods-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Learn/Pods-Learn.debug.xcconfig"; sourceTree = "<group>"; };
-		5E293954222B2DBC00BBC2D3 /* AstronomyQuizPlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyQuizPlayController.swift; sourceTree = "<group>"; };
-		5E2D1F892218300300D15A72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5E2D1F8B221830A400D15A72 /* space.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = space.gif; sourceTree = "<group>"; };
-		5E2D1F8D221830BA00D15A72 /* botanyGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = botanyGif.gif; sourceTree = "<group>"; };
-		5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewController.swift; sourceTree = "<group>"; };
-		5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewCell.swift; sourceTree = "<group>"; };
-		5E38D99C2226461300FE8471 /* PlantStructureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantStructureViewController.swift; sourceTree = "<group>"; };
-		5E8185E422267E4800E25652 /* SelectQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuizViewController.swift; sourceTree = "<group>"; };
-		5E9667C322265B8000E0A648 /* Explode.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Explode.scnp; sourceTree = "<group>"; };
-		5E9667CD22265DC700E0A648 /* AnatomyQuizPlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyQuizPlayController.swift; sourceTree = "<group>"; };
-		5E9667CF22265E7D00E0A648 /* AnatomyQuizARShooting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnatomyQuizARShooting.swift; sourceTree = "<group>"; };
-		5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanySelectionViewController.swift; sourceTree = "<group>"; };
-		EE3E1E4B2226DB58005E7133 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		EE3E1E4D2226DB73005E7133 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		EE3E1E502226DBA1005E7133 /* LoginOrRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterViewController.swift; sourceTree = "<group>"; };
-		EE3E1E522226DBAA005E7133 /* AddKidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddKidViewController.swift; sourceTree = "<group>"; };
-		EE3E1E542226DBBE005E7133 /* SelectUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
-		EE3E1E562226DCCB005E7133 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EE3E1E582226DCD2005E7133 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
-		EE968C8521B92F9300AAA6C1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+        0906AF18221D3C9600D60C2A /* RunGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunGif.swift; sourceTree = "<group>"; };
+        0906AF19221D3C9600D60C2A /* ModelSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelSelectViewController.swift; sourceTree = "<group>"; };
+        0906AF1C221D3F5A00D60C2A /* BotanyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyCollectionViewCell.swift; sourceTree = "<group>"; };
+        0906AF1E221D3F9100D60C2A /* BotanyARSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyARSceneController.swift; sourceTree = "<group>"; };
+        09356DE0222AFC7100C83DBA /* BotanyQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyQuizViewController.swift; sourceTree = "<group>"; };
+        094E9C1E222BDEF600EDD6D8 /* BotanyQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyQuestions.swift; sourceTree = "<group>"; };
+        095637AE2196A83400FC724A /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+        095637B02196B20C00FC724A /* Stars.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Stars.scnp; sourceTree = "<group>"; };
+        095637B12196B20C00FC724A /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+        095637B42196C1F400FC724A /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+        095637B52196C1F400FC724A /* sunFlare.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = sunFlare.scnp; sourceTree = "<group>"; };
+        095A0902221854F70022206B /* PlantInfo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlantInfo.sks; sourceTree = "<group>"; };
+        097A6E1121B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAnatomySelectionViewCell.swift; sourceTree = "<group>"; };
+        097A6E1321B6BB39001908C3 /* HumanAnatomySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAnatomySelectionViewController.swift; sourceTree = "<group>"; };
+        0986EDFD223030D000B71C5A /* ToastClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastClass.swift; sourceTree = "<group>"; };
+        09A306A0221804FB003341DE /* BotanyDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyDetectionViewController.swift; sourceTree = "<group>"; };
+        09BDF63321ADABAE00BC541A /* planetOrbit.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = planetOrbit.scnp; sourceTree = "<group>"; };
+        09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAnatomyViewController.swift; sourceTree = "<group>"; };
+        2EE5C8CE1ECBCA9AF5DEABE8 /* Pods-Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Learn/Pods-Learn.release.xcconfig"; sourceTree = "<group>"; };
+        33E6D845416AA9508C2EC832 /* Pods_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+        3C6A09872173793A005E69E4 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        3C6A098A2173793A005E69E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+        3C6A098C2173793A005E69E4 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+        3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemViewController.swift; sourceTree = "<group>"; };
+        3C6A09912173793A005E69E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+        3C6A09962173793A005E69E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+        3C6A09982173793A005E69E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+        3C6A09A421738FFF005E69E4 /* PlayLearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayLearnViewController.swift; sourceTree = "<group>"; };
+        3C6A09A62173934E005E69E4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+        5231CDF33D66A2A6B86FCCFD /* Pods-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Learn/Pods-Learn.debug.xcconfig"; sourceTree = "<group>"; };
+        5E293954222B2DBC00BBC2D3 /* AstronomyQuizPlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyQuizPlayController.swift; sourceTree = "<group>"; };
+        5E2D1F892218300300D15A72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+        5E2D1F8B221830A400D15A72 /* space.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = space.gif; sourceTree = "<group>"; };
+        5E2D1F8D221830BA00D15A72 /* botanyGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = botanyGif.gif; sourceTree = "<group>"; };
+        5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewController.swift; sourceTree = "<group>"; };
+        5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewCell.swift; sourceTree = "<group>"; };
+        5E38D99C2226461300FE8471 /* PlantStructureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantStructureViewController.swift; sourceTree = "<group>"; };
+        5E8185E422267E4800E25652 /* SelectQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuizViewController.swift; sourceTree = "<group>"; };
+        5E9667C322265B8000E0A648 /* Explode.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Explode.scnp; sourceTree = "<group>"; };
+        5E9667CD22265DC700E0A648 /* AnatomyQuizPlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyQuizPlayController.swift; sourceTree = "<group>"; };
+        5E9667CF22265E7D00E0A648 /* AnatomyQuizARShooting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnatomyQuizARShooting.swift; sourceTree = "<group>"; };
+        5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanySelectionViewController.swift; sourceTree = "<group>"; };
+        EE3E1E4B2226DB58005E7133 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+        EE3E1E4D2226DB73005E7133 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+        EE3E1E502226DBA1005E7133 /* LoginOrRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterViewController.swift; sourceTree = "<group>"; };
+        EE3E1E522226DBAA005E7133 /* AddKidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddKidViewController.swift; sourceTree = "<group>"; };
+        EE3E1E542226DBBE005E7133 /* SelectUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
+        EE3E1E562226DCCB005E7133 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+        EE3E1E582226DCD2005E7133 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+        EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+        EE968C8521B92F9300AAA6C1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3C6A09842173793A005E69E4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				80D6B9A24298F104D3C3B5A8 /* Pods_Learn.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        3C6A09842173793A005E69E4 /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                80D6B9A24298F104D3C3B5A8 /* Pods_Learn.framework in Frameworks */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0906AF20221D42AB00D60C2A /* Botany Branch */ = {
-			isa = PBXGroup;
-			children = (
-				5E38D99C2226461300FE8471 /* PlantStructureViewController.swift */,
-				0906AF1C221D3F5A00D60C2A /* BotanyCollectionViewCell.swift */,
-				0906AF1E221D3F9100D60C2A /* BotanyARSceneController.swift */,
-				5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */,
-			);
-			path = "Botany Branch";
-			sourceTree = "<group>";
-		};
-		0906AF21221D43B100D60C2A /* Anatomy Branch */ = {
-			isa = PBXGroup;
-			children = (
-				097A6E1121B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift */,
-				09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */,
-				097A6E1321B6BB39001908C3 /* HumanAnatomySelectionViewController.swift */,
-			);
-			path = "Anatomy Branch";
-			sourceTree = "<group>";
-		};
-		0906AF22221D47E500D60C2A /* Supporting Classes */ = {
-			isa = PBXGroup;
-			children = (
-				3C6A098A2173793A005E69E4 /* AppDelegate.swift */,
-				0906AF18221D3C9600D60C2A /* RunGif.swift */,
-				5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */,
-				5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */,
-			);
-			path = "Supporting Classes";
-			sourceTree = "<group>";
-		};
-		0906AF23221D482200D60C2A /* Astronomy Branch */ = {
-			isa = PBXGroup;
-			children = (
-				3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */,
-			);
-			path = "Astronomy Branch";
-			sourceTree = "<group>";
-		};
-		0906AF24221D487E00D60C2A /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				0906AF23221D482200D60C2A /* Astronomy Branch */,
-				0906AF20221D42AB00D60C2A /* Botany Branch */,
-				0906AF21221D43B100D60C2A /* Anatomy Branch */,
-				3C6A09A62173934E005E69E4 /* ViewController2.swift */,
-				3C6A09A421738FFF005E69E4 /* PlayLearnViewController.swift */,
-				0906AF19221D3C9600D60C2A /* ModelSelectViewController.swift */,
-				5E8FA4D32226AACF00AB0E21 /* Quiz Path */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		0906AF25221D489C00D60C2A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		095637AC2196A7DA00FC724A /* Galaxy */ = {
-			isa = PBXGroup;
-			children = (
-				5E9667C322265B8000E0A648 /* Explode.scnp */,
-				095637B02196B20C00FC724A /* Stars.scnp */,
-				095637B12196B20C00FC724A /* star.png */,
-				095637B42196C1F400FC724A /* spark.png */,
-				095637B52196C1F400FC724A /* sunFlare.scnp */,
-				09BDF63321ADABAE00BC541A /* planetOrbit.scnp */,
-			);
-			path = Galaxy;
-			sourceTree = "<group>";
-		};
-		095637AD2196A7F100FC724A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				095637AE2196A83400FC724A /* Planet.swift */,
-				EE968C8521B92F9300AAA6C1 /* Question.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		09A306A2221831F1003341DE /* Botany */ = {
-			isa = PBXGroup;
-			children = (
-				09A306A0221804FB003341DE /* BotanyDetectionViewController.swift */,
-				095A0902221854F70022206B /* PlantInfo.sks */,
-			);
-			path = Botany;
-			sourceTree = "<group>";
-		};
-		3C6A097E2173793A005E69E4 = {
-			isa = PBXGroup;
-			children = (
-				3C6A09892173793A005E69E4 /* Learn */,
-				3C6A09882173793A005E69E4 /* Products */,
-				E6720305EFEAC47A2266C60E /* Pods */,
-				5A9E3624E54917D14B90B5A6 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		3C6A09882173793A005E69E4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3C6A09872173793A005E69E4 /* Learn.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3C6A09892173793A005E69E4 /* Learn */ = {
-			isa = PBXGroup;
-			children = (
-				5E2D1F892218300300D15A72 /* Assets.xcassets */,
-				3C6A098C2173793A005E69E4 /* art.scnassets */,
-				095637AC2196A7DA00FC724A /* Galaxy */,
-				5E2D1F8E221831C000D15A72 /* Gifs */,
-				09A306A2221831F1003341DE /* Botany */,
-				095637AD2196A7F100FC724A /* Models */,
-				3C6A09902173793A005E69E4 /* Main.storyboard */,
-				EE3E1E562226DCCB005E7133 /* GoogleService-Info.plist */,
-				EE3E1E582226DCD2005E7133 /* Podfile */,
-				EE3E1E4F2226DB84005E7133 /* UserProfiles */,
-				3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */,
-				0906AF24221D487E00D60C2A /* Controllers */,
-				0906AF25221D489C00D60C2A /* Views */,
-				3C6A09982173793A005E69E4 /* Info.plist */,
-				0906AF22221D47E500D60C2A /* Supporting Classes */,
-			);
-			path = Learn;
-			sourceTree = "<group>";
-		};
-		5A9E3624E54917D14B90B5A6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				33E6D845416AA9508C2EC832 /* Pods_Learn.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5E2D1F8E221831C000D15A72 /* Gifs */ = {
-			isa = PBXGroup;
-			children = (
-				5E2D1F8B221830A400D15A72 /* space.gif */,
-				5E2D1F8D221830BA00D15A72 /* botanyGif.gif */,
-			);
-			path = Gifs;
-			sourceTree = "<group>";
-		};
-		5E8FA4D32226AACF00AB0E21 /* Quiz Path */ = {
-			isa = PBXGroup;
-			children = (
-				EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */,
-				5E9667CF22265E7D00E0A648 /* AnatomyQuizARShooting.swift */,
-				5E9667CD22265DC700E0A648 /* AnatomyQuizPlayController.swift */,
-				5E8185E422267E4800E25652 /* SelectQuizViewController.swift */,
-				5E293954222B2DBC00BBC2D3 /* AstronomyQuizPlayController.swift */,
-			);
-			path = "Quiz Path";
-			sourceTree = "<group>";
-		};
-		E6720305EFEAC47A2266C60E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5231CDF33D66A2A6B86FCCFD /* Pods-Learn.debug.xcconfig */,
-				2EE5C8CE1ECBCA9AF5DEABE8 /* Pods-Learn.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		EE3E1E4F2226DB84005E7133 /* UserProfiles */ = {
-			isa = PBXGroup;
-			children = (
-				EE3E1E542226DBBE005E7133 /* SelectUserViewController.swift */,
-				EE3E1E522226DBAA005E7133 /* AddKidViewController.swift */,
-				EE3E1E502226DBA1005E7133 /* LoginOrRegisterViewController.swift */,
-				EE3E1E4B2226DB58005E7133 /* RegisterViewController.swift */,
-				EE3E1E4D2226DB73005E7133 /* LoginViewController.swift */,
-			);
-			path = UserProfiles;
-			sourceTree = "<group>";
-		};
+        0906AF20221D42AB00D60C2A /* Botany Branch */ = {
+            isa = PBXGroup;
+            children = (
+                5E38D99C2226461300FE8471 /* PlantStructureViewController.swift */,
+                0906AF1C221D3F5A00D60C2A /* BotanyCollectionViewCell.swift */,
+                0906AF1E221D3F9100D60C2A /* BotanyARSceneController.swift */,
+                5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */,
+            );
+            path = "Botany Branch";
+            sourceTree = "<group>";
+        };
+        0906AF21221D43B100D60C2A /* Anatomy Branch */ = {
+            isa = PBXGroup;
+            children = (
+                097A6E1121B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift */,
+                09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */,
+                097A6E1321B6BB39001908C3 /* HumanAnatomySelectionViewController.swift */,
+            );
+            path = "Anatomy Branch";
+            sourceTree = "<group>";
+        };
+        0906AF22221D47E500D60C2A /* Supporting Classes */ = {
+            isa = PBXGroup;
+            children = (
+                3C6A098A2173793A005E69E4 /* AppDelegate.swift */,
+                0906AF18221D3C9600D60C2A /* RunGif.swift */,
+                5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */,
+                5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */,
+            );
+            path = "Supporting Classes";
+            sourceTree = "<group>";
+        };
+        0906AF23221D482200D60C2A /* Astronomy Branch */ = {
+            isa = PBXGroup;
+            children = (
+                3C6A098E2173793A005E69E4 /* SolarSystemViewController.swift */,
+            );
+            path = "Astronomy Branch";
+            sourceTree = "<group>";
+        };
+        0906AF24221D487E00D60C2A /* Controllers */ = {
+            isa = PBXGroup;
+            children = (
+                0906AF23221D482200D60C2A /* Astronomy Branch */,
+                0906AF20221D42AB00D60C2A /* Botany Branch */,
+                0906AF21221D43B100D60C2A /* Anatomy Branch */,
+                3C6A09A62173934E005E69E4 /* ViewController2.swift */,
+                3C6A09A421738FFF005E69E4 /* PlayLearnViewController.swift */,
+                0906AF19221D3C9600D60C2A /* ModelSelectViewController.swift */,
+                5E8FA4D32226AACF00AB0E21 /* Quiz Path */,
+            );
+            path = Controllers;
+            sourceTree = "<group>";
+        };
+        0906AF25221D489C00D60C2A /* Views */ = {
+            isa = PBXGroup;
+            children = (
+            );
+            path = Views;
+            sourceTree = "<group>";
+        };
+        095637AC2196A7DA00FC724A /* Galaxy */ = {
+            isa = PBXGroup;
+            children = (
+                5E9667C322265B8000E0A648 /* Explode.scnp */,
+                095637B02196B20C00FC724A /* Stars.scnp */,
+                095637B12196B20C00FC724A /* star.png */,
+                095637B42196C1F400FC724A /* spark.png */,
+                095637B52196C1F400FC724A /* sunFlare.scnp */,
+                09BDF63321ADABAE00BC541A /* planetOrbit.scnp */,
+            );
+            path = Galaxy;
+            sourceTree = "<group>";
+        };
+        095637AD2196A7F100FC724A /* Models */ = {
+            isa = PBXGroup;
+            children = (
+                095637AE2196A83400FC724A /* Planet.swift */,
+                EE968C8521B92F9300AAA6C1 /* Question.swift */,
+                094E9C1E222BDEF600EDD6D8 /* BotanyQuestions.swift */,
+            );
+            path = Models;
+            sourceTree = "<group>";
+        };
+        09A306A2221831F1003341DE /* Botany */ = {
+            isa = PBXGroup;
+            children = (
+                09A306A0221804FB003341DE /* BotanyDetectionViewController.swift */,
+                095A0902221854F70022206B /* PlantInfo.sks */,
+                09356DE0222AFC7100C83DBA /* BotanyQuizViewController.swift */,
+                0986EDFD223030D000B71C5A /* ToastClass.swift */,
+            );
+            path = Botany;
+            sourceTree = "<group>";
+        };
+        3C6A097E2173793A005E69E4 = {
+            isa = PBXGroup;
+            children = (
+                3C6A09892173793A005E69E4 /* Learn */,
+                3C6A09882173793A005E69E4 /* Products */,
+                E6720305EFEAC47A2266C60E /* Pods */,
+                5A9E3624E54917D14B90B5A6 /* Frameworks */,
+            );
+            sourceTree = "<group>";
+        };
+        3C6A09882173793A005E69E4 /* Products */ = {
+            isa = PBXGroup;
+            children = (
+                3C6A09872173793A005E69E4 /* Learn.app */,
+            );
+            name = Products;
+            sourceTree = "<group>";
+        };
+        3C6A09892173793A005E69E4 /* Learn */ = {
+            isa = PBXGroup;
+            children = (
+                5E2D1F892218300300D15A72 /* Assets.xcassets */,
+                3C6A098C2173793A005E69E4 /* art.scnassets */,
+                095637AC2196A7DA00FC724A /* Galaxy */,
+                5E2D1F8E221831C000D15A72 /* Gifs */,
+                09A306A2221831F1003341DE /* Botany */,
+                095637AD2196A7F100FC724A /* Models */,
+                3C6A09902173793A005E69E4 /* Main.storyboard */,
+                EE3E1E562226DCCB005E7133 /* GoogleService-Info.plist */,
+                EE3E1E582226DCD2005E7133 /* Podfile */,
+                EE3E1E4F2226DB84005E7133 /* UserProfiles */,
+                3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */,
+                0906AF24221D487E00D60C2A /* Controllers */,
+                0906AF25221D489C00D60C2A /* Views */,
+                3C6A09982173793A005E69E4 /* Info.plist */,
+                0906AF22221D47E500D60C2A /* Supporting Classes */,
+            );
+            path = Learn;
+            sourceTree = "<group>";
+        };
+        5A9E3624E54917D14B90B5A6 /* Frameworks */ = {
+            isa = PBXGroup;
+            children = (
+                33E6D845416AA9508C2EC832 /* Pods_Learn.framework */,
+            );
+            name = Frameworks;
+            sourceTree = "<group>";
+        };
+        5E2D1F8E221831C000D15A72 /* Gifs */ = {
+            isa = PBXGroup;
+            children = (
+                5E2D1F8B221830A400D15A72 /* space.gif */,
+                5E2D1F8D221830BA00D15A72 /* botanyGif.gif */,
+            );
+            path = Gifs;
+            sourceTree = "<group>";
+        };
+        5E8FA4D32226AACF00AB0E21 /* Quiz Path */ = {
+            isa = PBXGroup;
+            children = (
+                EE6C9CBB21B7A9B600599ACE /* QuizViewController.swift */,
+                5E9667CF22265E7D00E0A648 /* AnatomyQuizARShooting.swift */,
+                5E9667CD22265DC700E0A648 /* AnatomyQuizPlayController.swift */,
+                5E8185E422267E4800E25652 /* SelectQuizViewController.swift */,
+                5E293954222B2DBC00BBC2D3 /* AstronomyQuizPlayController.swift */,
+            );
+            path = "Quiz Path";
+            sourceTree = "<group>";
+        };
+        E6720305EFEAC47A2266C60E /* Pods */ = {
+            isa = PBXGroup;
+            children = (
+                5231CDF33D66A2A6B86FCCFD /* Pods-Learn.debug.xcconfig */,
+                2EE5C8CE1ECBCA9AF5DEABE8 /* Pods-Learn.release.xcconfig */,
+            );
+            name = Pods;
+            sourceTree = "<group>";
+        };
+        EE3E1E4F2226DB84005E7133 /* UserProfiles */ = {
+            isa = PBXGroup;
+            children = (
+                EE3E1E542226DBBE005E7133 /* SelectUserViewController.swift */,
+                EE3E1E522226DBAA005E7133 /* AddKidViewController.swift */,
+                EE3E1E502226DBA1005E7133 /* LoginOrRegisterViewController.swift */,
+                EE3E1E4B2226DB58005E7133 /* RegisterViewController.swift */,
+                EE3E1E4D2226DB73005E7133 /* LoginViewController.swift */,
+            );
+            path = UserProfiles;
+            sourceTree = "<group>";
+        };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3C6A09862173793A005E69E4 /* Learn */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3C6A099B2173793A005E69E4 /* Build configuration list for PBXNativeTarget "Learn" */;
-			buildPhases = (
-				952F446DFF885DAC7616B079 /* [CP] Check Pods Manifest.lock */,
-				3C6A09832173793A005E69E4 /* Sources */,
-				3C6A09842173793A005E69E4 /* Frameworks */,
-				3C6A09852173793A005E69E4 /* Resources */,
-				5C7F575F8BDDE4EB429407AA /* [CP] Embed Pods Frameworks */,
-				114667F599B4DA49D59C0940 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Learn;
-			productName = Learn;
-			productReference = 3C6A09872173793A005E69E4 /* Learn.app */;
-			productType = "com.apple.product-type.application";
-		};
+        3C6A09862173793A005E69E4 /* Learn */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = 3C6A099B2173793A005E69E4 /* Build configuration list for PBXNativeTarget "Learn" */;
+            buildPhases = (
+                952F446DFF885DAC7616B079 /* [CP] Check Pods Manifest.lock */,
+                3C6A09832173793A005E69E4 /* Sources */,
+                3C6A09842173793A005E69E4 /* Frameworks */,
+                3C6A09852173793A005E69E4 /* Resources */,
+                5C7F575F8BDDE4EB429407AA /* [CP] Embed Pods Frameworks */,
+                114667F599B4DA49D59C0940 /* [CP] Copy Pods Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+            );
+            name = Learn;
+            productName = Learn;
+            productReference = 3C6A09872173793A005E69E4 /* Learn.app */;
+            productType = "com.apple.product-type.application";
+        };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3C6A097F2173793A005E69E4 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = Mani;
-				TargetAttributes = {
-					3C6A09862173793A005E69E4 = {
-						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1000;
-						ProvisioningStyle = Automatic;
-					};
-				};
-			};
-			buildConfigurationList = 3C6A09822173793A005E69E4 /* Build configuration list for PBXProject "Learn" */;
-			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = en;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 3C6A097E2173793A005E69E4;
-			productRefGroup = 3C6A09882173793A005E69E4 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				3C6A09862173793A005E69E4 /* Learn */,
-			);
-		};
+        3C6A097F2173793A005E69E4 /* Project object */ = {
+            isa = PBXProject;
+            attributes = {
+                LastSwiftUpdateCheck = 0920;
+                LastUpgradeCheck = 1000;
+                ORGANIZATIONNAME = Mani;
+                TargetAttributes = {
+                    3C6A09862173793A005E69E4 = {
+                        CreatedOnToolsVersion = 9.2;
+                        LastSwiftMigration = 1000;
+                        ProvisioningStyle = Automatic;
+                    };
+                };
+            };
+            buildConfigurationList = 3C6A09822173793A005E69E4 /* Build configuration list for PBXProject "Learn" */;
+            compatibilityVersion = "Xcode 8.0";
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en,
+                Base,
+            );
+            mainGroup = 3C6A097E2173793A005E69E4;
+            productRefGroup = 3C6A09882173793A005E69E4 /* Products */;
+            projectDirPath = "";
+            projectRoot = "";
+            targets = (
+                3C6A09862173793A005E69E4 /* Learn */,
+            );
+        };
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3C6A09852173793A005E69E4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EE3E1E572226DCCB005E7133 /* GoogleService-Info.plist in Resources */,
-				3C6A098D2173793A005E69E4 /* art.scnassets in Resources */,
-				5E2D1F8C221830A400D15A72 /* space.gif in Resources */,
-				095637B72196C1F400FC724A /* sunFlare.scnp in Resources */,
-				3C6A09972173793A005E69E4 /* LaunchScreen.storyboard in Resources */,
-				5E2D1F8A2218300300D15A72 /* Assets.xcassets in Resources */,
-				095637B62196C1F400FC724A /* spark.png in Resources */,
-				095637B22196B20C00FC724A /* Stars.scnp in Resources */,
-				3C6A09922173793A005E69E4 /* Main.storyboard in Resources */,
-				09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */,
-				095637B32196B20C00FC724A /* star.png in Resources */,
-				095A0903221854F70022206B /* PlantInfo.sks in Resources */,
-				EE3E1E592226DCD2005E7133 /* Podfile in Resources */,
-				5E9667C422265B8000E0A648 /* Explode.scnp in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        3C6A09852173793A005E69E4 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                EE3E1E572226DCCB005E7133 /* GoogleService-Info.plist in Resources */,
+                3C6A098D2173793A005E69E4 /* art.scnassets in Resources */,
+                5E2D1F8C221830A400D15A72 /* space.gif in Resources */,
+                095637B72196C1F400FC724A /* sunFlare.scnp in Resources */,
+                3C6A09972173793A005E69E4 /* LaunchScreen.storyboard in Resources */,
+                5E2D1F8A2218300300D15A72 /* Assets.xcassets in Resources */,
+                095637B62196C1F400FC724A /* spark.png in Resources */,
+                095637B22196B20C00FC724A /* Stars.scnp in Resources */,
+                3C6A09922173793A005E69E4 /* Main.storyboard in Resources */,
+                09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */,
+                095637B32196B20C00FC724A /* star.png in Resources */,
+                095A0903221854F70022206B /* PlantInfo.sks in Resources */,
+                EE3E1E592226DCD2005E7133 /* Podfile in Resources */,
+                5E9667C422265B8000E0A648 /* Explode.scnp in Resources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		114667F599B4DA49D59C0940 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5C7F575F8BDDE4EB429407AA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		952F446DFF885DAC7616B079 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Learn-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
+        114667F599B4DA49D59C0940 /* [CP] Copy Pods Resources */ = {
+            isa = PBXShellScriptBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            inputFileListPaths = (
+            );
+            inputPaths = (
+                "${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-resources.sh",
+                "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+            );
+            name = "[CP] Copy Pods Resources";
+            outputFileListPaths = (
+            );
+            outputPaths = (
+                "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+            shellPath = /bin/sh;
+            shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-resources.sh\"\n";
+            showEnvVarsInLog = 0;
+        };
+        5C7F575F8BDDE4EB429407AA /* [CP] Embed Pods Frameworks */ = {
+            isa = PBXShellScriptBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            inputFileListPaths = (
+            );
+            inputPaths = (
+                "${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-frameworks.sh",
+                "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+                "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+                "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+                "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+            );
+            name = "[CP] Embed Pods Frameworks";
+            outputFileListPaths = (
+            );
+            outputPaths = (
+                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+            shellPath = /bin/sh;
+            shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-frameworks.sh\"\n";
+            showEnvVarsInLog = 0;
+        };
+        952F446DFF885DAC7616B079 /* [CP] Check Pods Manifest.lock */ = {
+            isa = PBXShellScriptBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            inputFileListPaths = (
+            );
+            inputPaths = (
+                "${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+                "${PODS_ROOT}/Manifest.lock",
+            );
+            name = "[CP] Check Pods Manifest.lock";
+            outputFileListPaths = (
+            );
+            outputPaths = (
+                "$(DERIVED_FILE_DIR)/Pods-Learn-checkManifestLockResult.txt",
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+            shellPath = /bin/sh;
+            shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+            showEnvVarsInLog = 0;
+        };
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3C6A09832173793A005E69E4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5EA99EC62214024A00895595 /* BotanySelectionViewController.swift in Sources */,
-				5E293955222B2DBC00BBC2D3 /* AstronomyQuizPlayController.swift in Sources */,
-				097A6E1421B6BB39001908C3 /* HumanAnatomySelectionViewController.swift in Sources */,
-				0906AF1A221D3C9700D60C2A /* RunGif.swift in Sources */,
-				5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */,
-				EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */,
-				EE3E1E532226DBAA005E7133 /* AddKidViewController.swift in Sources */,
-				097A6E1221B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift in Sources */,
-				EE3E1E512226DBA1005E7133 /* LoginOrRegisterViewController.swift in Sources */,
-				3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */,
-				EE3E1E552226DBBE005E7133 /* SelectUserViewController.swift in Sources */,
-				0906AF1F221D3F9100D60C2A /* BotanyARSceneController.swift in Sources */,
-				09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */,
-				5E9667CE22265DC700E0A648 /* AnatomyQuizPlayController.swift in Sources */,
-				09A306A1221804FB003341DE /* BotanyDetectionViewController.swift in Sources */,
-				3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */,
-				EE3E1E4E2226DB74005E7133 /* LoginViewController.swift in Sources */,
-				0906AF1B221D3C9700D60C2A /* ModelSelectViewController.swift in Sources */,
-				5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */,
-				EE3E1E4C2226DB58005E7133 /* RegisterViewController.swift in Sources */,
-				0906AF1D221D3F5A00D60C2A /* BotanyCollectionViewCell.swift in Sources */,
-				3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */,
-				5E38D99D2226461300FE8471 /* PlantStructureViewController.swift in Sources */,
-				5E8185E522267E4800E25652 /* SelectQuizViewController.swift in Sources */,
-				3C6A09A521738FFF005E69E4 /* PlayLearnViewController.swift in Sources */,
-				5E9667D022265E7D00E0A648 /* AnatomyQuizARShooting.swift in Sources */,
-				EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */,
-				095637AF2196A83400FC724A /* Planet.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        3C6A09832173793A005E69E4 /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                5EA99EC62214024A00895595 /* BotanySelectionViewController.swift in Sources */,
+                5E293955222B2DBC00BBC2D3 /* AstronomyQuizPlayController.swift in Sources */,
+                097A6E1421B6BB39001908C3 /* HumanAnatomySelectionViewController.swift in Sources */,
+                0906AF1A221D3C9700D60C2A /* RunGif.swift in Sources */,
+                5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */,
+                EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */,
+                EE3E1E532226DBAA005E7133 /* AddKidViewController.swift in Sources */,
+                0986EDFE223030D000B71C5A /* ToastClass.swift in Sources */,
+                097A6E1221B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift in Sources */,
+                EE3E1E512226DBA1005E7133 /* LoginOrRegisterViewController.swift in Sources */,
+                3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */,
+                EE3E1E552226DBBE005E7133 /* SelectUserViewController.swift in Sources */,
+                0906AF1F221D3F9100D60C2A /* BotanyARSceneController.swift in Sources */,
+                09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */,
+                5E9667CE22265DC700E0A648 /* AnatomyQuizPlayController.swift in Sources */,
+                09A306A1221804FB003341DE /* BotanyDetectionViewController.swift in Sources */,
+                09356DE1222AFC7100C83DBA /* BotanyQuizViewController.swift in Sources */,
+                3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */,
+                EE3E1E4E2226DB74005E7133 /* LoginViewController.swift in Sources */,
+                0906AF1B221D3C9700D60C2A /* ModelSelectViewController.swift in Sources */,
+                5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */,
+                EE3E1E4C2226DB58005E7133 /* RegisterViewController.swift in Sources */,
+                0906AF1D221D3F5A00D60C2A /* BotanyCollectionViewCell.swift in Sources */,
+                3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */,
+                5E38D99D2226461300FE8471 /* PlantStructureViewController.swift in Sources */,
+                5E8185E522267E4800E25652 /* SelectQuizViewController.swift in Sources */,
+                3C6A09A521738FFF005E69E4 /* PlayLearnViewController.swift in Sources */,
+                5E9667D022265E7D00E0A648 /* AnatomyQuizARShooting.swift in Sources */,
+                EE968C8621B92F9300AAA6C1 /* Question.swift in Sources */,
+                095637AF2196A83400FC724A /* Planet.swift in Sources */,
+                094E9C1F222BDEF600EDD6D8 /* BotanyQuestions.swift in Sources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3C6A09902173793A005E69E4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C6A09912173793A005E69E4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C6A09962173793A005E69E4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
+        3C6A09902173793A005E69E4 /* Main.storyboard */ = {
+            isa = PBXVariantGroup;
+            children = (
+                3C6A09912173793A005E69E4 /* Base */,
+            );
+            name = Main.storyboard;
+            sourceTree = "<group>";
+        };
+        3C6A09952173793A005E69E4 /* LaunchScreen.storyboard */ = {
+            isa = PBXVariantGroup;
+            children = (
+                3C6A09962173793A005E69E4 /* Base */,
+            );
+            name = LaunchScreen.storyboard;
+            sourceTree = "<group>";
+        };
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3C6A09992173793A005E69E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		3C6A099A2173793A005E69E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		3C6A099C2173793A005E69E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5231CDF33D66A2A6B86FCCFD /* Pods-Learn.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C4T5BU85HG;
-				INFOPLIST_FILE = Learn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shiza.Learn;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		3C6A099D2173793A005E69E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EE5C8CE1ECBCA9AF5DEABE8 /* Pods-Learn.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C4T5BU85HG;
-				INFOPLIST_FILE = Learn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shiza.Learn;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
+        3C6A09992173793A005E69E4 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+                CLANG_CXX_LIBRARY = "libc++";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                CODE_SIGN_IDENTITY = "iPhone Developer";
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = dwarf;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                ENABLE_TESTABILITY = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_DYNAMIC_NO_PIC = NO;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_OPTIMIZATION_LEVEL = 0;
+                GCC_PREPROCESSOR_DEFINITIONS = (
+                    "DEBUG=1",
+                    "$(inherited)",
+                );
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+                MTL_ENABLE_DEBUG_INFO = YES;
+                ONLY_ACTIVE_ARCH = YES;
+                SDKROOT = iphoneos;
+                SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+            };
+            name = Debug;
+        };
+        3C6A099A2173793A005E69E4 /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+                CLANG_CXX_LIBRARY = "libc++";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                CODE_SIGN_IDENTITY = "iPhone Developer";
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+                ENABLE_NS_ASSERTIONS = NO;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+                MTL_ENABLE_DEBUG_INFO = NO;
+                SDKROOT = iphoneos;
+                SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+                VALIDATE_PRODUCT = YES;
+            };
+            name = Release;
+        };
+        3C6A099C2173793A005E69E4 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = 5231CDF33D66A2A6B86FCCFD /* Pods-Learn.debug.xcconfig */;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                CODE_SIGN_IDENTITY = "iPhone Developer";
+                CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 584KM2K64C;
+                INFOPLIST_FILE = Learn/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+                LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.faatehjarree.Learn;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                PROVISIONING_PROFILE_SPECIFIER = "";
+                SWIFT_VERSION = 4.2;
+                TARGETED_DEVICE_FAMILY = "1,2";
+            };
+            name = Debug;
+        };
+        3C6A099D2173793A005E69E4 /* Release */ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = 2EE5C8CE1ECBCA9AF5DEABE8 /* Pods-Learn.release.xcconfig */;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                CODE_SIGN_IDENTITY = "iPhone Developer";
+                CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 584KM2K64C;
+                INFOPLIST_FILE = Learn/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+                LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.faatehjarree.Learn;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                PROVISIONING_PROFILE_SPECIFIER = "";
+                SWIFT_VERSION = 4.2;
+                TARGETED_DEVICE_FAMILY = "1,2";
+            };
+            name = Release;
+        };
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3C6A09822173793A005E69E4 /* Build configuration list for PBXProject "Learn" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3C6A09992173793A005E69E4 /* Debug */,
-				3C6A099A2173793A005E69E4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3C6A099B2173793A005E69E4 /* Build configuration list for PBXNativeTarget "Learn" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3C6A099C2173793A005E69E4 /* Debug */,
-				3C6A099D2173793A005E69E4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
+        3C6A09822173793A005E69E4 /* Build configuration list for PBXProject "Learn" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                3C6A09992173793A005E69E4 /* Debug */,
+                3C6A099A2173793A005E69E4 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        3C6A099B2173793A005E69E4 /* Build configuration list for PBXNativeTarget "Learn" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                3C6A099C2173793A005E69E4 /* Debug */,
+                3C6A099D2173793A005E69E4 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
 /* End XCConfigurationList section */
-	};
-	rootObject = 3C6A097F2173793A005E69E4 /* Project object */;
+    };
+    rootObject = 3C6A097F2173793A005E69E4 /* Project object */;
 }
