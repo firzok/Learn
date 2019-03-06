@@ -12,6 +12,10 @@ class PlayLearnViewController: UIViewController {
 
     
     
+  
+    
+    @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var logoutPane: UIButton!
     @IBOutlet var learnBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     
@@ -20,6 +24,8 @@ class PlayLearnViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        logoutPane.isHidden = true
+        iconImage.isHidden = true
         
         playBtn.layer.cornerRadius = 115
         playBtn.clipsToBounds = true
@@ -28,9 +34,22 @@ class PlayLearnViewController: UIViewController {
         learnBtn.clipsToBounds = true
 
         playBackgroundMusic(musicFileName: "art.scnassets/Sounds/leARnBackgroundMusic.WAV")
-        // Do any additional setup after loading the view.
+       
+        
+        
     }
 
+    @IBAction func UserIconBtn(_ sender: UIButton) {
+        logoutPane.isHidden = false
+        iconImage.isHidden  = false
+    }
+    
+    @IBAction func logoutBtn(_ sender: Any) {
+        print("logout btn working GREAT")
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
