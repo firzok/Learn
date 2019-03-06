@@ -11,4 +11,6 @@ pod 'Firebase/Core'
 pod 'FirebaseUI/Auth'
 pod 'Firebase/Database'
 
+pod 'Charts'
+
 end

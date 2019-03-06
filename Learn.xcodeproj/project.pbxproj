@@ -35,11 +35,16 @@
 		5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */; };
 		5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */; };
 		5E38D99D2226461300FE8471 /* PlantStructureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38D99C2226461300FE8471 /* PlantStructureViewController.swift */; };
+		5E3FF61E222F9F5C00652D9C /* LeaderBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3FF61D222F9F5C00652D9C /* LeaderBoardViewController.swift */; };
+		5E44AB5B222DA73B00C6562A /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E44AB5A222DA73B00C6562A /* LeaderboardTableViewCell.swift */; };
+		5E44AB5F222DB72F00C6562A /* LeaderboardInsideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E44AB5E222DB72F00C6562A /* LeaderboardInsideCollectionViewCell.swift */; };
 		5E8185E522267E4800E25652 /* SelectQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8185E422267E4800E25652 /* SelectQuizViewController.swift */; };
 		5E9667C422265B8000E0A648 /* Explode.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 5E9667C322265B8000E0A648 /* Explode.scnp */; };
 		5E9667CE22265DC700E0A648 /* AnatomyQuizPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9667CD22265DC700E0A648 /* AnatomyQuizPlayController.swift */; };
 		5E9667D022265E7D00E0A648 /* AnatomyQuizARShooting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9667CF22265E7D00E0A648 /* AnatomyQuizARShooting.swift */; };
 		5EA99EC62214024A00895595 /* BotanySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */; };
+		5EF7FEF9222D46D70051A896 /* GraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF7FEF8222D46D70051A896 /* GraphsViewController.swift */; };
+		5EF7FEFB222D47DB0051A896 /* ChartStringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF7FEFA222D47DB0051A896 /* ChartStringFormatter.swift */; };
 		80D6B9A24298F104D3C3B5A8 /* Pods_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E6D845416AA9508C2EC832 /* Pods_Learn.framework */; };
 		EE3E1E4C2226DB58005E7133 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E1E4B2226DB58005E7133 /* RegisterViewController.swift */; };
 		EE3E1E4E2226DB74005E7133 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E1E4D2226DB73005E7133 /* LoginViewController.swift */; };
@@ -87,11 +92,16 @@
 		5E2F5D2F21BA131B00F1DD8E /* ModelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewController.swift; sourceTree = "<group>"; };
 		5E2F5D3121BA136700F1DD8E /* ModelSelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionViewCell.swift; sourceTree = "<group>"; };
 		5E38D99C2226461300FE8471 /* PlantStructureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantStructureViewController.swift; sourceTree = "<group>"; };
+		5E3FF61D222F9F5C00652D9C /* LeaderBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardViewController.swift; sourceTree = "<group>"; };
+		5E44AB5A222DA73B00C6562A /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
+		5E44AB5E222DB72F00C6562A /* LeaderboardInsideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardInsideCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E8185E422267E4800E25652 /* SelectQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuizViewController.swift; sourceTree = "<group>"; };
 		5E9667C322265B8000E0A648 /* Explode.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Explode.scnp; sourceTree = "<group>"; };
 		5E9667CD22265DC700E0A648 /* AnatomyQuizPlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyQuizPlayController.swift; sourceTree = "<group>"; };
 		5E9667CF22265E7D00E0A648 /* AnatomyQuizARShooting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnatomyQuizARShooting.swift; sourceTree = "<group>"; };
 		5EA99EC52214024A00895595 /* BotanySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanySelectionViewController.swift; sourceTree = "<group>"; };
+		5EF7FEF8222D46D70051A896 /* GraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsViewController.swift; sourceTree = "<group>"; };
+		5EF7FEFA222D47DB0051A896 /* ChartStringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartStringFormatter.swift; sourceTree = "<group>"; };
 		EE3E1E4B2226DB58005E7133 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		EE3E1E4D2226DB73005E7133 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EE3E1E502226DBA1005E7133 /* LoginOrRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +175,11 @@
 				3C6A09A421738FFF005E69E4 /* PlayLearnViewController.swift */,
 				0906AF19221D3C9600D60C2A /* ModelSelectViewController.swift */,
 				5E8FA4D32226AACF00AB0E21 /* Quiz Path */,
+				5EF7FEF8222D46D70051A896 /* GraphsViewController.swift */,
+				5EF7FEFA222D47DB0051A896 /* ChartStringFormatter.swift */,
+				5E44AB5A222DA73B00C6562A /* LeaderboardTableViewCell.swift */,
+				5E44AB5E222DB72F00C6562A /* LeaderboardInsideCollectionViewCell.swift */,
+				5E3FF61D222F9F5C00652D9C /* LeaderBoardViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -411,6 +426,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Learn/Pods-Learn-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -420,6 +436,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -472,16 +489,21 @@
 				EE3E1E552226DBBE005E7133 /* SelectUserViewController.swift in Sources */,
 				0906AF1F221D3F9100D60C2A /* BotanyARSceneController.swift in Sources */,
 				09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */,
+				5E3FF61E222F9F5C00652D9C /* LeaderBoardViewController.swift in Sources */,
 				5E9667CE22265DC700E0A648 /* AnatomyQuizPlayController.swift in Sources */,
 				09A306A1221804FB003341DE /* BotanyDetectionViewController.swift in Sources */,
 				3C6A098F2173793A005E69E4 /* SolarSystemViewController.swift in Sources */,
+				5E44AB5B222DA73B00C6562A /* LeaderboardTableViewCell.swift in Sources */,
 				EE3E1E4E2226DB74005E7133 /* LoginViewController.swift in Sources */,
+				5E44AB5F222DB72F00C6562A /* LeaderboardInsideCollectionViewCell.swift in Sources */,
 				0906AF1B221D3C9700D60C2A /* ModelSelectViewController.swift in Sources */,
 				5E2F5D3021BA131B00F1DD8E /* ModelSelectionViewController.swift in Sources */,
 				EE3E1E4C2226DB58005E7133 /* RegisterViewController.swift in Sources */,
 				0906AF1D221D3F5A00D60C2A /* BotanyCollectionViewCell.swift in Sources */,
 				3C6A098B2173793A005E69E4 /* AppDelegate.swift in Sources */,
 				5E38D99D2226461300FE8471 /* PlantStructureViewController.swift in Sources */,
+				5EF7FEF9222D46D70051A896 /* GraphsViewController.swift in Sources */,
+				5EF7FEFB222D47DB0051A896 /* ChartStringFormatter.swift in Sources */,
 				5E8185E522267E4800E25652 /* SelectQuizViewController.swift in Sources */,
 				3C6A09A521738FFF005E69E4 /* PlayLearnViewController.swift in Sources */,
 				5E9667D022265E7D00E0A648 /* AnatomyQuizARShooting.swift in Sources */,
