@@ -540,24 +540,23 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rU0-2o-fuN">
-                                            <rect key="frame" x="0.0" y="46" width="257" height="48"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="tintColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="40"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-Lh-sLK">
-                                            <rect key="frame" x="139" y="200" width="747" height="259"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-Lh-sLK">
+                                            <rect key="frame" x="139" y="167" width="747" height="354"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="textColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You scored out of 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zB-Rv-hm1">
+                                            <rect key="frame" x="178" y="360" width="669" height="48"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
+                                            <color key="textColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cQ-Rc-vLr">
-                                            <rect key="frame" x="445" y="644" width="135" height="53"/>
+                                            <rect key="frame" x="272" y="647" width="481" height="53"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                                             <color key="tintColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -566,6 +565,19 @@
                                             </state>
                                             <connections>
                                                 <action selector="submitAnswerButtonTapped:" destination="kkW-em-R2m" eventType="touchUpInside" id="v8j-zy-vMf"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qI-FO-Sph">
+                                            <rect key="frame" x="272" y="647" width="481" height="53"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                            <color key="tintColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <state key="normal" title="SUBMIT RESULT">
+                                                <color key="titleColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="submitAnswerButtonTapped:" destination="kkW-em-R2m" eventType="touchUpInside" id="rWE-zo-wR6"/>
+                                                <action selector="submitResultButtonTapped:" destination="kkW-em-R2m" eventType="touchUpInside" id="Vmi-Zz-maT"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -594,7 +606,11 @@
                         <outlet property="answerChoicesSegments" destination="65r-Up-6sp" id="a1x-gf-Hh3"/>
                         <outlet property="questionInformation" destination="BrB-Lh-sLK" id="Pxg-Pn-TzZ"/>
                         <outlet property="questionNumber" destination="tcL-X6-9P8" id="Ntb-cO-Xt2"/>
+                        <outlet property="quizEndScoreLabel" destination="5zB-Rv-hm1" id="PoB-jo-6Ay"/>
                         <outlet property="scoreLabel" destination="oXR-1z-sVx" id="bTN-Er-WI7"/>
+                        <outlet property="submitButton" destination="0cQ-Rc-vLr" id="Z1j-pw-zh8"/>
+                        <outlet property="submitResultButtonLabel" destination="8qI-FO-Sph" id="zdq-et-dAy"/>
+                        <segue destination="DMn-rX-qkv" kind="show" identifier="Return To Play Screen" id="ClY-ng-fnb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1v-hN-Qfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1617,5 +1633,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UcB-Ei-Dao"/>
+        <segue reference="ClY-ng-fnb"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -21,6 +21,7 @@
 		095A0903221854F70022206B /* PlantInfo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 095A0902221854F70022206B /* PlantInfo.sks */; };
 		097A6E1221B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A6E1121B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift */; };
 		097A6E1421B6BB39001908C3 /* HumanAnatomySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A6E1321B6BB39001908C3 /* HumanAnatomySelectionViewController.swift */; };
+		0986EDFE223030D000B71C5A /* ToastClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0986EDFD223030D000B71C5A /* ToastClass.swift */; };
 		09A306A1221804FB003341DE /* BotanyDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A306A0221804FB003341DE /* BotanyDetectionViewController.swift */; };
 		09BDF63421ADABAE00BC541A /* planetOrbit.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 09BDF63321ADABAE00BC541A /* planetOrbit.scnp */; };
 		09E2B3AB21B6B2530015265A /* HumanAnatomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */; };
@@ -68,6 +69,7 @@
 		095A0902221854F70022206B /* PlantInfo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlantInfo.sks; sourceTree = "<group>"; };
 		097A6E1121B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAnatomySelectionViewCell.swift; sourceTree = "<group>"; };
 		097A6E1321B6BB39001908C3 /* HumanAnatomySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAnatomySelectionViewController.swift; sourceTree = "<group>"; };
+		0986EDFD223030D000B71C5A /* ToastClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastClass.swift; sourceTree = "<group>"; };
 		09A306A0221804FB003341DE /* BotanyDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotanyDetectionViewController.swift; sourceTree = "<group>"; };
 		09BDF63321ADABAE00BC541A /* planetOrbit.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = planetOrbit.scnp; sourceTree = "<group>"; };
 		09E2B3AA21B6B2530015265A /* HumanAnatomyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAnatomyViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				09A306A0221804FB003341DE /* BotanyDetectionViewController.swift */,
 				095A0902221854F70022206B /* PlantInfo.sks */,
 				09356DE0222AFC7100C83DBA /* BotanyQuizViewController.swift */,
+				0986EDFD223030D000B71C5A /* ToastClass.swift */,
 			);
 			path = Botany;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				5E2F5D3221BA136700F1DD8E /* ModelSelectionViewCell.swift in Sources */,
 				EE6C9CBC21B7A9B600599ACE /* QuizViewController.swift in Sources */,
 				EE3E1E532226DBAA005E7133 /* AddKidViewController.swift in Sources */,
+				0986EDFE223030D000B71C5A /* ToastClass.swift in Sources */,
 				097A6E1221B6BA3E001908C3 /* HumanAnatomySelectionViewCell.swift in Sources */,
 				EE3E1E512226DBA1005E7133 /* LoginOrRegisterViewController.swift in Sources */,
 				3C6A09A72173934E005E69E4 /* ViewController2.swift in Sources */,
