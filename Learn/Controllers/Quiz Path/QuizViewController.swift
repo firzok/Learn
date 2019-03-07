@@ -9,8 +9,13 @@
 import UIKit
 import SceneKit
 import ARKit
+import Firebase
+import FirebaseDatabase
 
 class QuizViewController: UIViewController, ARSCNViewDelegate {
+    
+    //Firebase DB ref
+    var ref: DatabaseReference?
     
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var QuestionText: UITextView!
@@ -42,6 +47,9 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
         
         super.viewDidLoad()
 
+        self.ref = Database.database().reference()
+        
+        
         scoreView.text = "\(score)"
         
         questions.append(Question(question: "Find and Tap on Mars.", solution: "Mars", score: 10))
@@ -78,22 +86,64 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
         // order = merc, venus, earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
         placePlanetsForQuiz()
         
-//        backgroundPlayer.stop()
+        backgroundPlayer.stop()
         
         //start tinmer
         runTimer()
         
     }
     
-    // Mark: - Game Over and Timer
+    
+    
+//     MARK: - game over
     func gameOver(){
         //store the score in UserDefaults
         let defaults = UserDefaults.standard
-        defaults.set(score, forKey: "AstronomyScore")
+        let kidName = defaults.value(forKey: "CurrentKid") as! String?
+        defaults.set(score, forKey: "AstronomyLastScore"+(kidName ?? ""))
+        
+        if let userID = Auth.auth().currentUser?.uid, let kidName = defaults.value(forKey: "CurrentKid") as! String?{
+            
+            self.ref!.child("score").child(userID).child(kidName).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if let s = snapshot.childSnapshot(forPath: "AstronomyScore").value{
+                    
+                    if let firebaseScore = s as? Int {
+                        if firebaseScore < self.score{
+                            self.ref!.child("score").child(userID).child(kidName).updateChildValues(["AstronomyScore": self.score])
+                        }
+                        
+                    } else {
+                        self.ref!.child("score").child(userID).child(kidName).updateChildValues(["AstronomyScore": self.score])
+                    }
+                    
+                } else {
+                    print("ERROR! getting AstronomyScore from Firebase while trying to save new score")
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+            
+            
+            
+        } else {
+            print("ERROR! Unable to save AstronomyScore to Firebase")
+        }
         
         //go back to the Home View Controller
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     //to run the timer
     func runTimer() {

@@ -5,12 +5,13 @@ import FirebaseDatabase
 
 class SelectUserViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
-    @IBOutlet var selectedGradeLabel: UILabel!
+    @IBOutlet var selectedKidLabel: UILabel!
     @IBOutlet var pickerView: UIPickerView!
     
+    var currentKid: String?
+    
+    //Firebase DB ref
     var ref: DatabaseReference?
-    
-    
     
     var kidArray:[String]  = []
     
@@ -28,7 +29,7 @@ class SelectUserViewController: UIViewController, UIPickerViewDataSource, UIPick
                 let name = snap.childSnapshot(forPath: "displayName").value
                 
                 self.kidArray.append(name as! String)
-                
+                self.currentKid = self.kidArray[0]
             }
             
         }) { (error) in
@@ -78,7 +79,8 @@ class SelectUserViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedGradeLabel.text = "Hi: " + kidArray[row]
+        selectedKidLabel.text = "Hi: " + kidArray[row]
+        currentKid = kidArray[row]
     }
 
     
@@ -87,5 +89,14 @@ class SelectUserViewController: UIViewController, UIPickerViewDataSource, UIPick
         self.dismiss(animated: true, completion: nil)
         
     }
+    
+    @IBAction func proceedButtonTapped(_ sender: Any) {
+        
+        let defaults = UserDefaults.standard
+        defaults.set(currentKid ?? kidArray[0], forKey: "CurrentKid")
+        
+        self.performSegue(withIdentifier: "proceedToApp", sender: sender)
+    }
+    
     
 }

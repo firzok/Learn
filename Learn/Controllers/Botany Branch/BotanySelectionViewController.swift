@@ -35,7 +35,7 @@ class BotanySelectionViewController: UIViewController, UICollectionViewDelegate,
         }
     }
     @IBAction func backToModel(_ sender: UIButton) {
-        print("INSIDE BACK BTN")
+//        print("INSIDE BACK BTN")
         let modelSelectionController = storyboard?.instantiateViewController(withIdentifier: "ModelSelectViewController")
         navigationController?.pushViewController(modelSelectionController!, animated: true)
     

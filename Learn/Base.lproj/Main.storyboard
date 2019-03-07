@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eOu-Dy-Fpd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YsI-Lf-hxG">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -1246,11 +1246,19 @@
                                     <action selector="onPlayButton:" destination="uFh-KU-bMv" eventType="touchUpInside" id="SgW-KL-Egx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1K-Sm-HoQ">
+                                <rect key="frame" x="303" y="236" width="419" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="45"/>
+                                <color key="textColor" red="0.0" green="0.1529411765" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1640707062" green="0.65951057479999997" blue="0.72746452740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Fxg-UN-ol4"/>
                     </view>
                     <connections>
+                        <outlet property="highScoreLabel" destination="c1K-Sm-HoQ" id="NHy-3p-WJJ"/>
                         <outlet property="scoreLabel" destination="TG8-5L-1qw" id="6Jb-5B-ecA"/>
                         <segue destination="rim-ZV-dMb" kind="show" identifier="homeToGameSegue" id="WZi-ZS-1QH"/>
                     </connections>
@@ -1377,7 +1385,7 @@
                                     <color key="titleColor" red="0.99150818630000004" green="1" blue="0.97410906870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eOu-Dy-Fpd" kind="show" id="T3L-Ll-zhB"/>
+                                    <action selector="proceedButtonTapped:" destination="TdR-97-Bb2" eventType="touchUpInside" id="imb-fK-klY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fih-Nz-OGw">
@@ -1416,7 +1424,8 @@
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="BiA-iY-rcW" id="w8t-Ty-iRv"/>
-                        <outlet property="selectedGradeLabel" destination="4qh-4n-aMH" id="ydl-z0-ZeU"/>
+                        <outlet property="selectedKidLabel" destination="4qh-4n-aMH" id="ydl-z0-ZeU"/>
+                        <segue destination="eOu-Dy-Fpd" kind="show" identifier="proceedToApp" id="9YR-E1-4u6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fn-Ry-6qT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2186,11 +2195,19 @@
                                     <action selector="onPlayButton:" destination="pyl-ZN-hAz" eventType="touchUpInside" id="FCd-y4-oZT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNt-Ch-lif">
+                                <rect key="frame" x="314" y="234" width="397" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="46"/>
+                                <color key="textColor" red="0.048539869487285614" green="0.15458336472511292" blue="0.40786653757095337" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1640707062" green="0.65951057479999997" blue="0.72746452740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="pWk-PG-OFl"/>
                     </view>
                     <connections>
+                        <outlet property="highScoreLabel" destination="mNt-Ch-lif" id="QI7-WM-opS"/>
                         <outlet property="scoreLabel" destination="7HW-g3-d5u" id="6gO-XN-nHR"/>
                     </connections>
                 </viewController>
@@ -2244,18 +2261,26 @@
                                     <action selector="onPlayButton:" destination="zst-sd-SkM" eventType="touchUpInside" id="mwu-WE-YPZ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gat-HV-6no">
+                                <rect key="frame" x="317" y="233" width="391" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="45"/>
+                                <color key="textColor" red="0.0" green="0.1529411765" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1640707062" green="0.65951057479999997" blue="0.72746452740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="5XW-ca-ewV"/>
                     </view>
                     <connections>
+                        <outlet property="highScoreLabel" destination="Gat-HV-6no" id="rZH-f7-JgD"/>
                         <outlet property="scoreLabel" destination="nIk-t0-FsC" id="oR4-DN-JRp"/>
                         <segue destination="yHb-ab-nYE" kind="show" identifier="homeToAstronomyAR" id="AX5-qS-mde"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9H-Gh-1zI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920" y="505"/>
+            <point key="canvasLocation" x="919.92187499999989" y="504.6875"/>
         </scene>
     </scenes>
     <resources>

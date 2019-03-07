@@ -7,11 +7,16 @@
 import UIKit
 import SceneKit
 import ARKit
+import Firebase
+import FirebaseDatabase
 
 class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDelegate {
     
+    //Firebase DB ref
+    var ref: DatabaseReference?
+    
     //MARK: - variables
-
+    
     @IBOutlet weak var questionText: UITextView!
     var questionNumber: Int = 0
     var questions = [Question] ()
@@ -32,13 +37,16 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
     //anatomy models
     let anatomyModels = ["Heart","Brain","Muscle","Eyes","TeethWithoutLabel"]
     
-
+    let vectorX = [-4,-3,-2,2,3,4]
+    let vectorY = [-2,-1,1,2]
+    let vectorZ = [-4,-3,-2,2,3,4]
+    
     
     //Pokemonball button
     @IBAction func fireBallButton(_ sender: Any) {
         fireMissile(type: "Ball")
     }
-
+    
     
     //MARK: - maths
     
@@ -55,10 +63,14 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
     
     //MARK: - view functions
     
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("view did load")
+        
+        self.ref = Database.database().reference()
         // Set the view's delegate
         sceneView.delegate = self
         
@@ -68,30 +80,31 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         //set the physics delegate
         sceneView.scene.physicsWorld.contactDelegate = self
         
-//        sceneView.autoenablesDefaultLighting = true
-//
-//        sceneView.allowsCameraControl = true
+        //        sceneView.autoenablesDefaultLighting = true
+        //
+        //        sceneView.allowsCameraControl = true
         
         //add objects to shoot at
+        backgroundPlayer.stop()
         addTargetNodes()
         QuestionBank()
         questionText.text = questions[questionNumber].question
-        
+
         //play background music
-//        playBackgroundMusic()
-        
+        //        playBackgroundMusic()
+
         //start tinmer
         runTimer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("view will appear in view controller")
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-       
+        
         // Run the view's session
         sceneView.session.run(configuration)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -103,26 +116,26 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
     }
     
     // Mark: Question Bank
-   
+    
     
     func QuestionBank(){
         questions.append(Question(question: "Shoot Heart", solution: "Heart", score: 10))
         questions.append(Question(question: "Shoot Brain", solution: "Brain", score: 10))
         questions.append(Question(question: "Shoot Eyes", solution: "Eyes", score: 10))
         questions.append(Question(question: "Shoot Muscle", solution: "Muscle", score: 10))
-        questions.append(Question(question: "Shoot Teeth", solution: "Teeth", score: 10))
+        questions.append(Question(question: "Shoot Teeth", solution: "TeethWithoutLabel", score: 10))
     }
     
     // MARK: - timer
     
     //to store how many sceonds the game is played for
-    var seconds = 90
+    var seconds = 50
     
     //timer
     var timer = Timer()
     
-//    //to keep track of whether the timer is on
-//    var isTimerRunning = false
+    //    //to keep track of whether the timer is on
+    //    var isTimerRunning = false
     
     //to run the timer
     func runTimer() {
@@ -149,13 +162,44 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
     }
     
     // MARK: - game over
-    
     func gameOver(){
         //store the score in UserDefaults
         let defaults = UserDefaults.standard
-        defaults.set(score, forKey: "score")
+        let kidName = defaults.value(forKey: "CurrentKid") as! String?
+        defaults.set(score, forKey: "AnatomyLastScore"+(kidName ?? ""))
         
         
+        
+        
+        if let userID = Auth.auth().currentUser?.uid, let kidName = defaults.value(forKey: "CurrentKid") as! String?{
+            
+            self.ref!.child("score").child(userID).child(kidName).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if let s = snapshot.childSnapshot(forPath: "AnatomyScore").value{
+                    
+                    
+                    if let firebaseScore = s as? Int {
+                        if firebaseScore < self.score{
+                            self.ref!.child("score").child(userID).child(kidName).updateChildValues(["AnatomyScore": self.score])
+                        }
+                        
+                    } else {
+                         self.ref!.child("score").child(userID).child(kidName).updateChildValues(["AnatomyScore": self.score])
+                    }
+                    
+                } else {
+                    print("ERROR! getting AnatomyScore from Firebase while trying to save new score")
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+            
+            
+        
+        } else {
+            print("ERROR! Unable to save AnatomyScore to Firebase")
+        }
         
         //go back to the Home View Controller
         self.dismiss(animated: true, completion: nil)
@@ -174,10 +218,10 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         node.position = position
         var nodeDirection = SCNVector3()
         nodeDirection  = SCNVector3(direction.x*4,direction.y*4,direction.z*4)
-//        node.scale = SCNVector3(0.02,0.02,0.02)
+        //        node.scale = SCNVector3(0.02,0.02,0.02)
         node.physicsBody?.applyForce(nodeDirection, at: SCNVector3(0.1,0,0), asImpulse: true)
         playBackgroundMusic(musicFileName:"art.scnassets/Sounds/bullet.wav")
-//        playSound(sound: "bullet", format: "wav")
+        //        playSound(sound: "bullet", format: "wav")
         
         //move node
         node.physicsBody?.applyForce(nodeDirection , asImpulse: true)
@@ -191,7 +235,7 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         var node = SCNNode()
         let scene = SCNScene(named: "art.scnassets/PokemonBall.scn")
         node = (scene?.rootNode.childNode(withName: "Sphere001", recursively: true)!)!
-//        node.scale = SCNVector3(0.02,0.02,0.02)
+        //        node.scale = SCNVector3(0.02,0.02,0.02)
         node.name = "fireball"
         
         //the physics body governs how the object interacts with other objects and its environment
@@ -205,68 +249,68 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
     }
     
     //Adds 100 objects to the scene, spins them, and places them at random positions around the player.
-//    func addTargetNodes(){
-//        for index in 1...50 {
-//
-//            var node = SCNNode()
-//
-//            if (index > 9) && (index % 10 == 0) {
-//                let scene = SCNScene(named: "art.scnassets/AnatomyModels/Brain.scn")
-//                node = (scene?.rootNode.childNode(withName: "Brain", recursively: true)!)!
-//                node.scale = SCNVector3(1.5,1.5,1.5)
-//                node.name = "Brain"
-//            }else{
-//                let scene = SCNScene(named: "art.scnassets/AnatomyModels/Heart.scn")
-//                node = (scene?.rootNode.childNode(withName: "Heart", recursively: true)!)!
-//
-//                node.scale = SCNVector3(1.5,1.5,1.5)
-//                node.name = "Heart"
-//            }
-//
-//            node.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
-//            node.physicsBody?.isAffectedByGravity = false
-//
-//            //place randomly, within thresholds
-////            node.position = SCNVector3((Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -10 ..< 10))),
-////                                                (Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -3 ..< 3))),
-////                                                (Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -10 ..< 10))))
-//            node.position = SCNVector3(randomFloat(min: -10, max: 10),randomFloat(min: -4, max: 5),randomFloat(min: -5, max: 5))
-//
-//            //rotate
-//            let action : SCNAction = SCNAction.rotate(by: .pi, around: SCNVector3(0, 1, 0), duration: 1.0)
-//            let forever = SCNAction.repeatForever(action)
-//            node.runAction(forever)
-//
-//            //for the collision detection
-//            node.physicsBody?.categoryBitMask = CollisionCategory.targetCategory.rawValue
-//            node.physicsBody?.contactTestBitMask = CollisionCategory.missileCategory.rawValue
-//
-//            //add to scene
-//            sceneView.scene.rootNode.addChildNode(node)
-//        }
-//
-//
-//    }
+    //    func addTargetNodes(){
+    //        for index in 1...50 {
+    //
+    //            var node = SCNNode()
+    //
+    //            if (index > 9) && (index % 10 == 0) {
+    //                let scene = SCNScene(named: "art.scnassets/AnatomyModels/Brain.scn")
+    //                node = (scene?.rootNode.childNode(withName: "Brain", recursively: true)!)!
+    //                node.scale = SCNVector3(1.5,1.5,1.5)
+    //                node.name = "Brain"
+    //            }else{
+    //                let scene = SCNScene(named: "art.scnassets/AnatomyModels/Heart.scn")
+    //                node = (scene?.rootNode.childNode(withName: "Heart", recursively: true)!)!
+    //
+    //                node.scale = SCNVector3(1.5,1.5,1.5)
+    //                node.name = "Heart"
+    //            }
+    //
+    //            node.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
+    //            node.physicsBody?.isAffectedByGravity = false
+    //
+    //            //place randomly, within thresholds
+    ////            node.position = SCNVector3((Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -10 ..< 10))),
+    ////                                                (Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -3 ..< 3))),
+    ////                                                (Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -10 ..< 10))))
+    //            node.position = SCNVector3(randomFloat(min: -10, max: 10),randomFloat(min: -4, max: 5),randomFloat(min: -5, max: 5))
+    //
+    //            //rotate
+    //            let action : SCNAction = SCNAction.rotate(by: .pi, around: SCNVector3(0, 1, 0), duration: 1.0)
+    //            let forever = SCNAction.repeatForever(action)
+    //            node.runAction(forever)
+    //
+    //            //for the collision detection
+    //            node.physicsBody?.categoryBitMask = CollisionCategory.targetCategory.rawValue
+    //            node.physicsBody?.contactTestBitMask = CollisionCategory.missileCategory.rawValue
+    //
+    //            //add to scene
+    //            sceneView.scene.rootNode.addChildNode(node)
+    //        }
+    //
+    //
+    //    }
     //["Heart","Body","Brain","Muscle","Eyes","Teeth"]
     //Adds 100 objects to the scene, spins them, and places them at random positions around the player.
     func addTargetNodes(){
-
+        
         
         for _ in 1...2 {
-
+            
             for modelName in anatomyModels{
                 print("Add target nodes \(modelName)")
                 //place randomly, within thresholds
-//                let position = SCNVector3(randomFloat(min: -5, max: 10),randomFloat(min: -2, max: 3),randomFloat(min: -10, max: 0))
-//                let position = SCNVector3((Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -10 ..< 10))),
-//                                          (Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -3 ..< 3))),
-//                                          (Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -10 ..< 10))))
+                //                let position = SCNVector3(randomFloat(min: -5, max: 10),randomFloat(min: -2, max: 3),randomFloat(min: -10, max: 0))
+                //                let position = SCNVector3((Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -10 ..< 10))),
+                //                                          (Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -3 ..< 3))),
+                //                                          (Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -10 ..< 10))))
                 //add to scene
                 let node = createNode(from: "\(modelName)")
                 sceneView.scene.rootNode.addChildNode(node)
-
+                
             }
-
+            
         }
     }
     
@@ -278,9 +322,12 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         let scene = SCNScene(named: "art.scnassets/HumanAnatomy/AnatomyModels/\(model).scn")
         print("\(model)")
         node = (scene?.rootNode.childNode(withName: "\(model)", recursively: true)!)!
-//        node = (scene?.rootNode.childNode(withName: "Brain", recursively: true)!)!
-//        node.scale = SCNVector3(1,1,1)
+        //        node = (scene?.rootNode.childNode(withName: "Brain", recursively: true)!)!
+        //        node.scale = SCNVector3(1,1,1)
         node.name = "\(model)"
+        
+//        print(vectorX.randomElement())
+        node.position = SCNVector3(vectorX.randomElement()!,vectorY.randomElement()!,vectorZ.randomElement()!)
         
         if node.name == "Eyes"{
             node.scale.x = 0.1
@@ -301,9 +348,9 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
             node.position.z = -10
         }
         else if node.name == "Heart"{
-            node.scale.x = 2
-            node.scale.y = 2
-            node.scale.z = 2
+            node.scale.x = 2.5
+            node.scale.y = 2.5
+            node.scale.z = 2.5
         }
         else if node.name == "Brain"{
             node.scale.x = 1.5
@@ -313,13 +360,13 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         
         node.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
         node.physicsBody?.isAffectedByGravity = false
-        node.position = SCNVector3(randomFloat(min: -5, max: 5),randomFloat(min: -2, max: 2),randomFloat(min: -10, max: 5))
-//        node.position = position
+       
+        //        node.position = position
         
         //rotate
-//        let action : SCNAction = SCNAction.rotate(by: .pi, around: SCNVector3(0, 1, 0), duration: 1.0)
-//        let forever = SCNAction.repeatForever(action)
-//        node.runAction(forever)
+        //        let action : SCNAction = SCNAction.rotate(by: .pi, around: SCNVector3(0, 1, 0), duration: 1.0)
+        //        let forever = SCNAction.repeatForever(action)
+        //        node.runAction(forever)
         
         //for the collision detection
         node.physicsBody?.categoryBitMask = CollisionCategory.targetCategory.rawValue
@@ -337,8 +384,8 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
-
-
+    
+    
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
         
@@ -360,34 +407,31 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
     
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
         
-        print("questions.count \(questions.count)")
+//        print("questions.count \(questions.count)")
         print("** Collision!! " + contact.nodeA.name! + " hit " + contact.nodeB.name!)
         
         if contact.nodeA.physicsBody?.categoryBitMask == CollisionCategory.targetCategory.rawValue
             || contact.nodeB.physicsBody?.categoryBitMask == CollisionCategory.targetCategory.rawValue {
-            print("blahhhh")
-//            if (contact.nodeA.name! == "shark" || contact.nodeB.name! == "shark") {
-//                score+=5
-//            }else{
-//                score+=1
-//            }
+//            print("blahhhh")
+//            print("nodeA \(contact.nodeA.name)")
+//            print("nodeB \(contact.nodeB.name)")
             if (contact.nodeA.name! == "\(questions[questionNumber].solution)" || contact.nodeB.name! == "\(questions[questionNumber].solution)"){
                 score += questions[questionNumber].score
                 questionNumber += 1
                 
                 print(questionNumber)
                 
-                
+                if(score >= 30)
+                {
+                    playBackgroundMusic(musicFileName:"art.scnassets/Sounds/cheers.wav")
+                }
                 if (self.questionNumber == questions.count){
-                    if(score >= 40)
-                    {
-                        playBackgroundMusic(musicFileName:"art.scnassets/Sounds/cheers.wav")
-                    }
+                    
                     questionNumber = 0
                     gameOver()
                 }
                 
-                questionText.text = questions[questionNumber].question
+                self.questionText.text = questions[questionNumber].question
             }
             else{
                 score -= questions[questionNumber].score
@@ -398,50 +442,19 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
                 self.scoreLabel.text = String(self.score)
             }
             playBackgroundMusic(musicFileName:"art.scnassets/Sounds/explosion.wav")
-//            playSound(sound: "explosion", format: "wav")
+            //            playSound(sound: "explosion", format: "wav")
             let  explosion = SCNParticleSystem(named: "Explode", inDirectory: nil)
             contact.nodeB.addParticleSystem(explosion!)
         }
-//        else
-//        {DispatchQueue.main.async {
-//            contact.nodeA.removeFromParentNode()
-//            contact.nodeB.removeFromParentNode()
-//            self.scoreLabel.text = String(self.score)
-//        }}
-
+        //        else
+        //        {DispatchQueue.main.async {
+        //            contact.nodeA.removeFromParentNode()
+        //            contact.nodeB.removeFromParentNode()
+        //            self.scoreLabel.text = String(self.score)
+        //        }}
+        
         
     }
-    
-    // MARK: - sounds
-    
-//    var player: AVAudioPlayer?
-//
-//    func playSound(sound : String, format: String) {
-//        guard let url = Bundle.main.url(forResource: sound, withExtension: format) else { return }
-//        do {
-//            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-//            try AVAudioSession.sharedInstance().setActive(true)
-//
-//            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-//
-//            guard let player = player else { return }
-//            player.play()
-//        } catch let error {
-//            print(error.localizedDescription)
-//        }
-//    }
-//
-//    func playBackgroundMusic(){
-//        let audioNode = SCNNode()
-//        let audioSource = SCNAudioSource(fileNamed: "overtake.mp3")!
-//        let audioPlayer = SCNAudioPlayer(source: audioSource)
-//
-//        audioNode.addAudioPlayer(audioPlayer)
-//
-//        let play = SCNAction.playAudio(audioSource, waitForCompletion: true)
-//        audioNode.runAction(play)
-//        sceneView.scene.rootNode.addChildNode(audioNode)
-//    }
     
     
     func playBackgroundMusic(musicFileName: String) {

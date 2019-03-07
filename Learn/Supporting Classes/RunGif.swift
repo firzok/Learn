@@ -37,7 +37,7 @@ extension UIImage {
     public class func gif(data: Data) -> UIImage? {
         // Create source from data
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
-            print("SwiftGif: Source for the image does not exist")
+//            print("SwiftGif: Source for the image does not exist")
             return nil
         }
         
@@ -47,13 +47,13 @@ extension UIImage {
     public class func gif(url: String) -> UIImage? {
         // Validate URL
         guard let bundleURL = URL(string: url) else {
-            print("SwiftGif: This image named \"\(url)\" does not exist")
+//            print("SwiftGif: This image named \"\(url)\" does not exist")
             return nil
         }
         
         // Validate data
         guard let imageData = try? Data(contentsOf: bundleURL) else {
-            print("SwiftGif: Cannot turn image named \"\(url)\" into NSData")
+//            print("SwiftGif: Cannot turn image named \"\(url)\" into NSData")
             return nil
         }
         
@@ -64,13 +64,13 @@ extension UIImage {
         // Check for existance of gif
         guard let bundleURL = Bundle.main
             .url(forResource: name, withExtension: "gif") else {
-                print("SwiftGif: This image named \"\(name)\" does not exist")
+//                print("SwiftGif: This image named \"\(name)\" does not exist")
                 return nil
         }
         
         // Validate data
         guard let imageData = try? Data(contentsOf: bundleURL) else {
-            print("SwiftGif: Cannot turn image named \"\(name)\" into NSData")
+//            print("SwiftGif: Cannot turn image named \"\(name)\" into NSData")
             return nil
         }
         
@@ -81,7 +81,7 @@ extension UIImage {
     public class func gif(asset: String) -> UIImage? {
         // Create source from assets catalog
         guard let dataAsset = NSDataAsset(name: asset) else {
-            print("SwiftGif: Cannot turn image named \"\(asset)\" into NSDataAsset")
+//            print("SwiftGif: Cannot turn image named \"\(asset)\" into NSDataAsset")
             return nil
         }
         

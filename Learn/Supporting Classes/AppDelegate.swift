@@ -8,10 +8,16 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
+    //Firebase DB ref
+    var ref: DatabaseReference?
+    
     var window: UIWindow?
     var counter = 0.0
     var timer = Timer()
@@ -41,16 +47,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func endTimer(){
         timer.invalidate()
+        
+        
+        let defaults = UserDefaults.standard
+        
 //        print("counter \(counter/60)")
         //store the score in UserDefaults
-        let defaults = UserDefaults.standard
         defaults.set(counter/60, forKey: "UsingAppTimer")
     }
+    
+    
+    
+    func saveTimeToFirebase() {
+        self.ref = Database.database().reference()
+        
+        let defaults = UserDefaults.standard
+        
+        if let userID = Auth.auth().currentUser?.uid, let kidName = defaults.value(forKey: "CurrentKid") as! String?{
+            
+            self.ref!.child("time").child(userID).child(kidName).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if let timerFirebase = snapshot.childSnapshot(forPath: "UsingAppTimer").value as? Double{
+                    
+                    self.ref!.child("time").child(userID).child(kidName).setValue(["UsingAppTimer": timerFirebase+(self.counter/60)])
+                    
+                } else {
+                    self.ref!.child("time").child(userID).child(kidName).setValue(["UsingAppTimer": (self.counter/60)])
+                    print("ERROR! getting UsingAppTimer from Firebase while trying to save new Timer")
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+            
+            
+            
+        } else {
+            print("ERROR! Unable to save UsingAppTimer to Firebase")
+        }
+    }
+    
+    
     
     // called every time interval from the timer
     @objc func timerAction() {
 //        print("timerAction")
         counter += 1
+        
+        
+        if counter.truncatingRemainder(dividingBy: 60.0) == 0{
+            saveTimeToFirebase()
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -65,7 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
 //        print("applicationDidEnterBackground)")
-        endTimer()
+//        endTimer()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -82,16 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         
-        
-//        print("applicationWillTerminate")
-        timer.invalidate()
-//        print("counter \(counter)")
-        //store the score in UserDefaults
-        let defaults = UserDefaults.standard
-        assert(counter > 0)
-        
-        //storing the time spend on app in minutes
-        defaults.set(counter/60, forKey: "UsingAppTimer")
+        endTimer()
         
     }
 
