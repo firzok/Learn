@@ -35,8 +35,6 @@ class PlayLearnViewController: UIViewController {
 
         playBackgroundMusic(musicFileName: "art.scnassets/Sounds/leARnBackgroundMusic.WAV")
        
-        
-        
     }
 
     @IBAction func UserIconBtn(_ sender: UIButton) {

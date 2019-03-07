@@ -46,7 +46,7 @@ class LeaderBoardViewController: UIViewController,UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         gradient = colorForIndex(index:indexPath.row)
-        cell.backgroundColor = gradient
+//        cell.backgroundColor = gradient
     }
     
     
@@ -148,6 +148,11 @@ class LeaderBoardViewController: UIViewController,UITableViewDataSource, UITable
         
         
         return cell
+    }
+    
+    
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
     

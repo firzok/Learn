@@ -23,7 +23,7 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var timerView: UILabel!
     
     //to store how many sceonds the game is played for
-    var seconds = 30
+    var seconds = 90
     
     //timer
     var timer = Timer()
@@ -158,7 +158,7 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
         let pluto = Planet(name: "Pluto", radius: 0.17, rotation: CGFloat(GLKMathDegreesToRadians(10)), texture: UIImage(named: "\(solarSystemAssetsPath)pluto.jpg")!, distanceFromSun: 8.5, desc: "s")
         
         // The Sun and sunFlare animation
-        let sun = Planet(name: "sun", radius: 0.5, rotation: CGFloat(5), texture: UIImage(named: "\(solarSystemAssetsPath)sun.jpg")!, distanceFromSun: 0, desc: "s")
+        let sun = Planet(name: "Sun", radius: 0.5, rotation: CGFloat(5), texture: UIImage(named: "\(solarSystemAssetsPath)sun.jpg")!, distanceFromSun: 0, desc: "s")
         
         
         // Add planets to Array for ease of use
@@ -167,9 +167,9 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
         // Create Planet nodes and add to Parent Node
         for planet in planets {
             
-            let position = SCNVector3Make((Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -10 ..< 10))),
+            let position = SCNVector3Make((Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -9 ..< 9))),
                                           (Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -3 ..< 3))),
-                                          (Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -10 ..< 10))))
+                                          (Float.random(in: 0.4 ..< 1) * Float(Int.random(in: -8 ..< 8))))
             
             parentNode.addChildNode(createNode(from: planet, position: position))
         }
@@ -253,16 +253,17 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
             
             // DispatchQueue for threading and multi-threaded pooling
             DispatchQueue.main.async {
-            
+                print("node \(node.name!)")
+                print("self.questions[self.questionNumber].solution \(self.questions[self.questionNumber].solution)")
+//                print("\")
                 if (node.name! == "\(self.questions[self.questionNumber].solution)"){
                     self.score += self.questions[self.questionNumber].score
                     self.playBackgroundMusic(musicFileName: "art.scnassets/Sounds/sound108.wav")
                     self.scoreView.text = "\(self.score)"
                     self.questionNumber += 1
                     
-                    if (self.questionNumber == 9){
+                    if (self.questionNumber == self.questions.count){
                         self.gameOver()
-//                        self.resetScene()
                         self.questionNumber = 0
                     }
                     else{
@@ -273,12 +274,11 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
                 }
                 
                 else {
-
+//                    print("wrong","\(node.name!)")
                     self.score -= self.questions[self.questionNumber].score
                     self.scoreView.text = "\(self.score)"
-                    self.playBackgroundMusic(musicFileName: "art.scnassets/Sounds/sound108.wav")
+                    self.playBackgroundMusic(musicFileName: "art.scnassets/Sounds/fail-buzzer-04.wav")
                     node.addChildNode(self.createAnswerCheckNode(checker: "Wrong", planet: node))
-                    
                 }
 
             }

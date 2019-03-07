@@ -1,8 +1,8 @@
 //
-//  ToastClass.swift
+//  Toast.swift
 //  Learn
 //
-//  Created by Faateh Jarree on 3/6/19.
+//  Created by Faateh Jarree on 3/7/19.
 //  Copyright © 2019 Mani. All rights reserved.
 //
 import UIKit
@@ -50,3 +50,4 @@ class Toast {
         })
     }
 }
+

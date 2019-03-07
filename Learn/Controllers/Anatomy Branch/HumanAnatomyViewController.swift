@@ -62,17 +62,19 @@ class HumanAnatomyViewController: UIViewController, ARSCNViewDelegate {
         if let modelScene = SCNScene(named: "art.scnassets/HumanAnatomy/AnatomyModels/\(modelName).scn") {
             
             if let modelNode = modelScene.rootNode.childNodes.first {
-                if modelName == "Body"{
+                if modelName == "Skeleton"{
                     modelNode.position.z = -15.0
                     modelNode.position.y = -2.0
-                }
-                else if modelName == "Muscle"{
+                } else if modelName == "Muscle"{
                     modelNode.position.z = -20.0
-                }
-                else if modelName == "Eyes"{
+                } else if modelName == "Eyes"{
                     modelNode.position.z = -10.0
-                }
-                else{
+                } else if modelName == "Heart"{
+                    modelNode.position.z = -1.0
+                } else if modelName == "Teeth"{
+                    modelNode.position.z = -10.0
+                    modelNode.position.y = -4.0
+                } else{
                     modelNode.position.z = -1.5
                 }
                 

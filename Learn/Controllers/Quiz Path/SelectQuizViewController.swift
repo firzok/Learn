@@ -13,6 +13,7 @@ class SelectQuizViewController: UIViewController {
     
     @IBOutlet weak var BotanyQuizBtn: UIButton!
     
+    @IBOutlet weak var AnatomyQuizBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +28,11 @@ class SelectQuizViewController: UIViewController {
         BotanyQuizBtn.layer.cornerRadius = BotanyQuizBtn.frame.width/2
         BotanyQuizBtn.layer.borderWidth = 5
         BotanyQuizBtn.layer.borderColor = #colorLiteral(red: 0.1143538281, green: 0.4587836266, blue: 0.5056027174, alpha: 1)
+        
+        AnatomyQuizBtn.layer.masksToBounds = true
+        AnatomyQuizBtn.layer.cornerRadius = AnatomyQuizBtn.frame.width/2
+        AnatomyQuizBtn.layer.borderWidth = 5
+        AnatomyQuizBtn.layer.borderColor = #colorLiteral(red: 0.1143538281, green: 0.4587836266, blue: 0.5056027174, alpha: 1)
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
@@ -34,14 +40,6 @@ class SelectQuizViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

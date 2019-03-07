@@ -14,7 +14,7 @@ class HumanAnatomySelectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var gifImage: UIImageView!
-    let models = ["Heart","Body","Brain","Muscle","Eyes","Teeth","Skeleton"]
+    let models = ["Heart","Brain","Muscle","Eyes","Teeth","Skeleton"]
     var thumbnails = [UIImage] ()
     var thumbnailIndex = 0
     

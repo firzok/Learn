@@ -9,7 +9,7 @@
 import UIKit
 
 class BotanyQuizViewController: UIViewController {
-
+    
     private var questionsToAsk = botanyQuestions()
     private var currentAnswer: String?
     
@@ -22,7 +22,8 @@ class BotanyQuizViewController: UIViewController {
     @IBOutlet weak var submitResultButtonLabel: UIButton!
     
     @IBAction func submitResultButtonTapped(_ sender: UIButton) {
-         performSegue(withIdentifier: "Return To Play Screen", sender: sender)
+        dismiss(animated: true)
+//        performSegue(withIdentifier: "Return To Play Screen", sender: sender)
     }
     
     @IBAction func submitAnswerButtonTapped(_ sender: UIButton) {
@@ -75,7 +76,7 @@ class BotanyQuizViewController: UIViewController {
         submitResultButtonLabel.isHidden = true
         updateView()
     }
-
+    
     func updateView() {
         if (questionsToAsk.questionArray.count > 0) {
             let questionToShow = questionsToAsk.questionArray.remove(at: 0)
