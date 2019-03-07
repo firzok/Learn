@@ -65,14 +65,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let userID = Auth.auth().currentUser?.uid, let kidName = defaults.value(forKey: "CurrentKid") as! String?{
             
-            self.ref!.child("time").child(userID).child(kidName).observeSingleEvent(of: .value, with: { (snapshot) in
+            self.ref!.child("score").child(userID).child(kidName).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 if let timerFirebase = snapshot.childSnapshot(forPath: "UsingAppTimer").value as? Double{
-                    
-                    self.ref!.child("time").child(userID).child(kidName).setValue(["UsingAppTimer": timerFirebase+(self.counter/60)])
+                self.ref!.child("score").child(userID).child(kidName).updateChildValues(["UsingAppTimer": timerFirebase+(self.counter/60)])
                     
                 } else {
-                    self.ref!.child("time").child(userID).child(kidName).setValue(["UsingAppTimer": (self.counter/60)])
+                    self.ref!.child("score").child(userID).child(kidName).updateChildValues(["UsingAppTimer": (self.counter/60)])
+                    
                     print("ERROR! getting UsingAppTimer from Firebase while trying to save new Timer")
                 }
                 

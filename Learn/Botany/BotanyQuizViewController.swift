@@ -7,21 +7,65 @@
 //
 
 import UIKit
+import Firebase
+
 
 class BotanyQuizViewController: UIViewController {
+    
+    //Firebase DB ref
+    var ref: DatabaseReference?
     
     private var questionsToAsk = botanyQuestions()
     private var currentAnswer: String?
     
     @IBOutlet weak var quizEndScoreLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var questionNumber: UILabel!
     @IBOutlet weak var questionInformation: UITextView!
     @IBOutlet weak var answerChoicesSegments: UISegmentedControl!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var submitResultButtonLabel: UIButton!
     
+    
+    func gameOver(){
+        //store the score in UserDefaults
+        let defaults = UserDefaults.standard
+        let kidName = defaults.value(forKey: "CurrentKid") as! String?
+        defaults.set(score, forKey: "BotanyLastScore"+(kidName ?? ""))
+        
+        if let userID = Auth.auth().currentUser?.uid, let kidName = defaults.value(forKey: "CurrentKid") as! String?{
+            self.ref!.child("score").child(userID).child(kidName).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let s = snapshot.childSnapshot(forPath: "BotanyScore").value{
+                    
+                    if let firebaseScore = s as? Int {
+                        if firebaseScore < self.score{
+                        self.ref!.child("score").child(userID).child(kidName).updateChildValues(["BotanyScore": self.score])
+                        }
+                    } else {
+                        self.ref!.child("score").child(userID).child(kidName).updateChildValues(["BotanyScore": self.score])
+                    }
+                    
+                } else {
+                    print("ERROR! getting BotanyScore from Firebase while trying to save new score")
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+            
+            
+            
+        } else {
+            print("ERROR! Unable to save BotanyScore to Firebase")
+        }
+        
+    }
+    
+    
+    
     @IBAction func submitResultButtonTapped(_ sender: UIButton) {
+        gameOver()
         dismiss(animated: true)
 //        performSegue(withIdentifier: "Return To Play Screen", sender: sender)
     }
@@ -70,8 +114,10 @@ class BotanyQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.ref = Database.database().reference()
         answerChoicesSegments.selectedSegmentIndex = UISegmentedControl.noSegment
         quizEndScoreLabel.isHidden = true
+        highScoreLabel.isHidden = true
         scoreLabel.textColor = #colorLiteral(red: 1, green: 0.8911997676, blue: 0.9159995317, alpha: 1)
         submitResultButtonLabel.isHidden = true
         updateView()
@@ -85,20 +131,53 @@ class BotanyQuizViewController: UIViewController {
             currentAnswer = questionToShow.answer
         } else if (questionsToAsk.questionArray.count == 0) {
             quizHasEnded()
-            UserDefaults.standard.set(score, forKey: "BotanyQuizScore")
+            UserDefaults.standard.set(score, forKey: "BotanyScore")
         }
     }
     
     func quizHasEnded() {
         answerChoicesSegments.isUserInteractionEnabled = false
         quizEndScoreLabel.isHidden = false
+        highScoreLabel.isHidden = false
         scoreLabel.isHidden = true
         questionNumber.isHidden = true
         questionInformation.isHidden = true
         answerChoicesSegments.isHidden = true
         submitButton.isHidden = true
         submitResultButtonLabel.isHidden = false
-        quizEndScoreLabel.text = "You scored \(score) out of 10"
+        quizEndScoreLabel.text = "Last Score: \(score)"
+        
+        let defaults = UserDefaults.standard
+        let currentKid = defaults.value(forKey: "CurrentKid") as! String
+        
+        if let user = Auth.auth().currentUser{
+            
+            let userID = user.uid
+            self.ref!.child("score").child(userID).child(currentKid).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if let s = snapshot.childSnapshot(forPath: "BotanyScore").value{
+                    if s is NSNull{
+                        self.highScoreLabel.text = "High Score: \(self.score)"
+                    } else{
+                        if s as! Int > self.score{
+                            self.highScoreLabel.text = "High Score: \(s)"
+                        } else {
+                            self.highScoreLabel.text = "High Score: \(self.score)"
+                        }
+                        
+                    }
+                } else {
+                    print("ERROR! getting BotanyScore from Firebase")
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        }
+        
+        
+        
+        
     }
 }
 

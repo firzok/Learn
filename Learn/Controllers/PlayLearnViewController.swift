@@ -5,6 +5,7 @@
 
 import UIKit
 import AVFoundation
+import Firebase
 
 
 var backgroundPlayer = AVAudioPlayer()
@@ -12,7 +13,14 @@ class PlayLearnViewController: UIViewController {
 
     
     
-  
+    //Firebase DB ref
+    var ref: DatabaseReference?
+    
+    //leaderboard vars
+    var u1:[String] = []
+    var numberOfChildren:Int = 0
+    
+    
     
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var logoutPane: UIButton!
@@ -34,6 +42,7 @@ class PlayLearnViewController: UIViewController {
         learnBtn.clipsToBounds = true
 
         playBackgroundMusic(musicFileName: "art.scnassets/Sounds/leARnBackgroundMusic.WAV")
+        loadLeaderBoard()
        
     }
 
@@ -45,12 +54,6 @@ class PlayLearnViewController: UIViewController {
     @IBAction func logoutBtn(_ sender: Any) {
         print("logout btn working GREAT")
         
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func playBackgroundMusic(musicFileName: String) {
@@ -67,6 +70,64 @@ class PlayLearnViewController: UIViewController {
         }
     }
     
+    
+    func loadLeaderBoard(){
+        self.numberOfChildren = 0
+        self.ref = Database.database().reference()
+        
+        self.ref!.child("score").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            
+            for users in snapshot.children{
+                
+                let user = users as! DataSnapshot
+                
+                for child in user.children {
+                    self.numberOfChildren += 1
+                    
+                    let snap = child as! DataSnapshot
+                    
+                    let name = snap.key
+                    
+                    self.u1.append(name)
+                    
+                    if let bs = snap.childSnapshot(forPath: "BotanyScore").value! as? NSNumber, let ass = snap.childSnapshot(forPath: "AstronomyScore").value! as? NSNumber, let ans = snap.childSnapshot(forPath: "AnatomyScore").value! as? NSNumber, let tim = snap.childSnapshot(forPath: "UsingAppTimer").value! as? NSNumber{
+                        
+                        
+                        self.u1.append("\(bs)")
+                        self.u1.append("\(ass)")
+                        self.u1.append("\(ans)")
+                        self.u1.append("\(tim)")
+                        
+                        
+                    }
+                    
+                    
+                    
+                }
+            }
+            
+            
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is LeaderBoardViewController
+        {
+            let vc = segue.destination as? LeaderBoardViewController
+            
+            vc?.numberOfChildren = self.numberOfChildren
+            vc?.u1 = self.u1
+            
+            
+            
+        }
+    }
 
     /*
     // MARK: - Navigation

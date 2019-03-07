@@ -43,7 +43,7 @@ class RegisterUserViewController: UIViewController{
                 changeReguest?.commitChanges {error in
                     if error == nil{
 //                        print("User display name changed.")
-                        self.dismiss(animated: true, completion: nil)
+                        self.performSegue(withIdentifier: "registerToAddKid", sender: self)
                         
                     }else{
                         print("Error changing display name for user: \(error!.localizedDescription)")

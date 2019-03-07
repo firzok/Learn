@@ -9,6 +9,7 @@
 import Foundation
 
 import Firebase
+import FirebaseDatabase
 
 class LoginViewController: UIViewController{
     
@@ -18,8 +19,13 @@ class LoginViewController: UIViewController{
     
     @IBOutlet weak var loginButton: UIButton!
     
+    var ref: DatabaseReference?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.ref = Database.database().reference()
+        
         setLoginButton(enabled: false)
         emailTextfield.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         passwordTextfield.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
@@ -28,6 +34,29 @@ class LoginViewController: UIViewController{
     
     @IBAction func backButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func handleSuccesfullLogin(){
+        
+        
+        if let user = Auth.auth().currentUser{
+            
+            let userID = user.uid
+            self.ref!.child("children").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if snapshot.childrenCount == 0 {
+                    self.performSegue(withIdentifier: "toAddKidScreen", sender: self)
+                    
+                }else{
+                    self.performSegue(withIdentifier: "toSelectKidScreen", sender: self)
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        }
+        
+        
     }
     
     
@@ -40,7 +69,7 @@ class LoginViewController: UIViewController{
         
         Auth.auth().signIn(withEmail: email, password: password){user, error in
             if error == nil && user != nil{
-                self.dismiss(animated: true, completion: nil)
+                self.handleSuccesfullLogin()
             }else{
                 print("Error logging in \(error!.localizedDescription)")
             }

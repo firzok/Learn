@@ -18,6 +18,7 @@ class SelectUserViewController: UIViewController, UIPickerViewDataSource, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         self.ref = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
         
@@ -72,10 +73,32 @@ class SelectUserViewController: UIViewController, UIPickerViewDataSource, UIPick
         return kidArray.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = kidArray[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Helvetica Neue", size: 24.0)!,NSAttributedString.Key.foregroundColor:UIColor.white])
-        return myTitle
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return CGFloat( 90.0)
+    }
+    
+//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+//        let titleData = kidArray[row]
+//        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Helvetica Neue", size: 32.0)!,NSAttributedString.Key.foregroundColor:UIColor.white])
+//        return myTitle
+//    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        var pickerLabel = view as? UILabel;
+        
+        if (pickerLabel == nil)
+        {
+            pickerLabel = UILabel()
+            
+            pickerLabel?.font = UIFont(name: "Helvetica Neue", size: 40)
+            pickerLabel?.textAlignment = NSTextAlignment.center
+            pickerLabel?.textColor = UIColor.white
+        }
+        
+        pickerLabel?.text = kidArray[row]
+        
+        return pickerLabel!
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -86,7 +109,7 @@ class SelectUserViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         try! Auth.auth().signOut()
-        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "unwindToLoginOrRegister", sender: self)
         
     }
     

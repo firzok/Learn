@@ -57,7 +57,7 @@ class AddKidViewController: UIViewController, UITextFieldDelegate {
         alertController.addAction(UIAlertAction(title: "Add More", style: .default))
         
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default){UIAlertAction in
-            self.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "addKidToSelectKidScreen", sender: self)
         })
         
         self.present(alertController, animated: true, completion: nil)
@@ -87,8 +87,7 @@ class AddKidViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         try! Auth.auth().signOut()
-        self.dismiss(animated: true, completion: nil)
-        
+        self.performSegue(withIdentifier: "unwindToLoginOrRegister", sender: self)
     }
     
     

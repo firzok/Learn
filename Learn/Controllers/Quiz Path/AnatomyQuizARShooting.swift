@@ -168,23 +168,16 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         let kidName = defaults.value(forKey: "CurrentKid") as! String?
         defaults.set(score, forKey: "AnatomyLastScore"+(kidName ?? ""))
         
-        
-        
-        
         if let userID = Auth.auth().currentUser?.uid, let kidName = defaults.value(forKey: "CurrentKid") as! String?{
-            
             self.ref!.child("score").child(userID).child(kidName).observeSingleEvent(of: .value, with: { (snapshot) in
-                
                 if let s = snapshot.childSnapshot(forPath: "AnatomyScore").value{
-                    
                     
                     if let firebaseScore = s as? Int {
                         if firebaseScore < self.score{
                             self.ref!.child("score").child(userID).child(kidName).updateChildValues(["AnatomyScore": self.score])
                         }
-                        
                     } else {
-                         self.ref!.child("score").child(userID).child(kidName).updateChildValues(["AnatomyScore": self.score])
+                        self.ref!.child("score").child(userID).child(kidName).updateChildValues(["AnatomyScore": self.score])
                     }
                     
                 } else {

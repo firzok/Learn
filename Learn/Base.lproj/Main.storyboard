@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YsI-Lf-hxG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WsV-iY-LxL">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -454,7 +454,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dw6-En-7Sw" kind="show" id="ayl-wa-dKJ"/>
+                                    <segue destination="dw6-En-7Sw" kind="show" identifier="toLeaderboard" id="ayl-wa-dKJ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user-icon" translatesAutoresizingMaskIntoConstraints="NO" id="1ho-Fh-3i2">
@@ -594,7 +594,7 @@
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You scored out of 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zB-Rv-hm1">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zB-Rv-hm1">
                                             <rect key="frame" x="178" y="360" width="669" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
@@ -626,6 +626,13 @@
                                                 <action selector="submitResultButtonTapped:" destination="kkW-em-R2m" eventType="touchUpInside" id="Vmi-Zz-maT"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cY-5x-Vq3">
+                                            <rect key="frame" x="178" y="260" width="669" height="48"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
+                                            <color key="textColor" red="1" green="0.89587022849999998" blue="0.91627316469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <blurEffect style="dark"/>
@@ -650,6 +657,7 @@
                     </view>
                     <connections>
                         <outlet property="answerChoicesSegments" destination="65r-Up-6sp" id="a1x-gf-Hh3"/>
+                        <outlet property="highScoreLabel" destination="4cY-5x-Vq3" id="ae8-Qh-tbz"/>
                         <outlet property="questionInformation" destination="BrB-Lh-sLK" id="Pxg-Pn-TzZ"/>
                         <outlet property="questionNumber" destination="tcL-X6-9P8" id="Ntb-cO-Xt2"/>
                         <outlet property="quizEndScoreLabel" destination="5zB-Rv-hm1" id="PoB-jo-6Ay"/>
@@ -660,7 +668,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1v-hN-Qfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-264.2578125" y="1946.875"/>
+            <point key="canvasLocation" x="3192" y="-445"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="cjn-f0-MEX">
@@ -1353,7 +1361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9p-4u-XED" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2499.609375" y="258.59375"/>
+            <point key="canvasLocation" x="2505" y="505"/>
         </scene>
         <!--ViewController2-->
         <scene sceneID="3dd-QU-hUM">
@@ -1426,11 +1434,13 @@
                         <outlet property="pickerView" destination="BiA-iY-rcW" id="w8t-Ty-iRv"/>
                         <outlet property="selectedKidLabel" destination="4qh-4n-aMH" id="ydl-z0-ZeU"/>
                         <segue destination="eOu-Dy-Fpd" kind="show" identifier="proceedToApp" id="9YR-E1-4u6"/>
+                        <segue destination="jgG-8u-7YS" kind="unwind" identifier="unwindToLoginOrRegister" unwindAction="unwindToLoginOrRegisterWithSegue:" id="FEo-2A-hlD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fn-Ry-6qT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jgG-8u-7YS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1229.296875" y="179.6875"/>
+            <point key="canvasLocation" x="-1229" y="1149"/>
         </scene>
         <!--Graphs View Controller-->
         <scene sceneID="68w-G2-Z2J">
@@ -1503,7 +1513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6v-JZ-uaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1213.4765625" y="1065.625"/>
+            <point key="canvasLocation" x="-1229" y="2061"/>
         </scene>
         <!--Login Or Register View Controller-->
         <scene sceneID="OY1-c8-8Yy">
@@ -1561,8 +1571,7 @@
                         <viewLayoutGuide key="safeArea" id="D5E-SC-UQk"/>
                     </view>
                     <connections>
-                        <segue destination="TdR-97-Bb2" kind="show" identifier="toSelectKidScreen" id="dsb-5B-Mn4"/>
-                        <segue destination="Ov8-lq-SYT" kind="show" identifier="toAddKidScreen" id="Elw-N8-Uob"/>
+                        <segue destination="Ov8-lq-SYT" kind="show" identifier="toAddKidScreen" id="jwK-yu-WdP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yG-HJ-YM7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1609,6 +1618,7 @@
                                 <connections>
                                     <action selector="backBtnPressed:" destination="2az-5W-MZQ" eventType="touchUpInside" id="6kJ-Lh-gQD"/>
                                     <action selector="backBtnPressed:" destination="DMn-rX-qkv" eventType="touchUpInside" id="9Bj-um-Por"/>
+                                    <action selector="backBtnPressed:" destination="dw6-En-7Sw" eventType="touchUpInside" id="stK-WY-qYz"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leaderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="FFv-7k-D9E">
@@ -1815,12 +1825,12 @@
                         <outlet property="passwordTextfield" destination="0xP-k8-3iB" id="Big-KE-4GR"/>
                         <outlet property="registerButton" destination="5jv-mM-uW4" id="zJe-3o-nms"/>
                         <outlet property="usernameTextfield" destination="3vR-rU-wdS" id="1WS-mS-q76"/>
-                        <segue destination="TdR-97-Bb2" kind="show" identifier="toSelectKidScreen" id="UcB-Ei-Dao"/>
+                        <segue destination="Ov8-lq-SYT" kind="show" identifier="registerToAddKid" id="jOv-zB-6Rj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hf2-tT-fQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1982" y="-704"/>
+            <point key="canvasLocation" x="-2740" y="-1362"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="NsX-1r-hMY">
@@ -1901,11 +1911,13 @@
                         <outlet property="emailTextfield" destination="cQu-2v-HnX" id="8RV-3T-RbG"/>
                         <outlet property="loginButton" destination="b4c-za-1eQ" id="b17-40-n1d"/>
                         <outlet property="passwordTextfield" destination="Jvs-4y-LJ0" id="OCy-w6-eVu"/>
+                        <segue destination="Ov8-lq-SYT" kind="show" identifier="toAddKidScreen" id="Jrc-4U-2yL"/>
+                        <segue destination="TdR-97-Bb2" kind="show" identifier="toSelectKidScreen" id="goK-n7-EW1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBA-oo-OL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1982" y="180"/>
+            <point key="canvasLocation" x="-2740" y="1100"/>
         </scene>
         <!--Launch Screen View Controller-->
         <scene sceneID="anj-pQ-cco">
@@ -1920,14 +1932,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzi-Jh-9yj">
-                                <rect key="frame" x="424" y="656" width="177" height="92"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <state key="normal" title="Continue">
+                                <state key="normal">
                                     <color key="titleColor" red="0.52724093198776245" green="0.064324282109737396" blue="0.40343278646469116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="YsI-Lf-hxG" kind="show" id="W4X-ae-d4U"/>
+                                    <action selector="continueButtonTapped:" destination="WsV-iY-LxL" eventType="touchUpInside" id="6ER-eT-tbe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1936,11 +1948,14 @@
                     </view>
                     <connections>
                         <outlet property="launchGif" destination="58q-rS-XU5" id="h9z-t9-VTo"/>
+                        <segue destination="YsI-Lf-hxG" kind="show" identifier="toLoginRegisterScreen" id="Qk4-bG-Jj8"/>
+                        <segue destination="Ov8-lq-SYT" kind="show" identifier="toAddKidScreen" id="oZ0-SP-IJj"/>
+                        <segue destination="TdR-97-Bb2" kind="show" identifier="toSelectKidScreen" id="1Pv-6z-iOb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cyx-VB-yxO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3520" y="-252"/>
+            <point key="canvasLocation" x="-3967" y="-252"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="dBW-U1-vcH">
@@ -2052,7 +2067,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0m-pM-doR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1229.296875" y="-1524.21875"/>
+            <point key="canvasLocation" x="-1174" y="-3005"/>
         </scene>
         <!--ViewController2-->
         <scene sceneID="CS1-4m-nIr">
@@ -2142,11 +2157,14 @@
                         <outlet property="addButton" destination="S5o-f0-OCX" id="UTa-7f-90B"/>
                         <outlet property="ageTextfield" destination="HfA-uM-9kr" id="oMx-7j-5f2"/>
                         <outlet property="nameTextfield" destination="BD8-gV-ir9" id="vxt-H0-2uj"/>
+                        <segue destination="85n-E0-nCz" kind="unwind" identifier="unwindToLoginOrRegister" unwindAction="unwindToLoginOrRegisterWithSegue:" id="dLW-NC-U1K"/>
+                        <segue destination="TdR-97-Bb2" kind="show" identifier="addKidToSelectKidScreen" id="0xi-jO-bsX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PSg-oe-2AX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="85n-E0-nCz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1229" y="-705"/>
+            <point key="canvasLocation" x="-1229" y="-1362"/>
         </scene>
         <!--Anatomy Quiz Play Controller-->
         <scene sceneID="tMV-xp-dZg">
@@ -2304,6 +2322,7 @@
         <image name="user-icon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UcB-Ei-Dao"/>
+        <segue reference="oZ0-SP-IJj"/>
+        <segue reference="1Pv-6z-iOb"/>
     </inferredMetricsTieBreakers>
 </document>

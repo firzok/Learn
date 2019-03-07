@@ -7,29 +7,71 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class LeaderBoardViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource,UICollectionViewDelegate{
     
+    //Firebase DB ref
+    var ref: DatabaseReference?
     
     @IBOutlet weak var tableView: UITableView!
     var thumbnails = [UIImage] ()
-    let u1 = ["Shiza","400","900","800","120"]
-   
+    var u1:[String] = []
     
     var positionIndex:IndexPath!
     var gradient:UIColor!
     
+    var numberOfChildren:Int?
+    
+    
+    func populateLeaderBoard(){
+        self.ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        
+        self.ref!.child("score").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            self.numberOfChildren = Int(snapshot.childrenCount)
+            for child in snapshot.children {
+                
+                
+                let snap = child as! DataSnapshot
+                
+                let name = snap.key
+                
+                self.u1.append(name)
+                
+                if let bs = snap.childSnapshot(forPath: "BotanyScore").value! as? NSNumber, let ass = snap.childSnapshot(forPath: "AstronomyScore").value! as? NSNumber, let ans = snap.childSnapshot(forPath: "AnatomyScore").value! as? NSNumber{
+                    
+                    
+                    self.u1.append("\(bs)")
+                    self.u1.append("\(ass)")
+                    self.u1.append("\(ans)")
+                    
+                    
+                }
+                
+            }
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
+//        populateLeaderBoard()
         
         
         tableView.layer.cornerRadius = 20
         tableView.layer.borderWidth = 3
         tableView.layer.borderColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
+        super.viewDidLoad()
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return self.numberOfChildren ?? 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,8 +99,6 @@ class LeaderBoardViewController: UIViewController,UITableViewDataSource, UITable
         return UIColor(red: 0, green: color+0.1, blue: color+0.1, alpha: 1)
         
     }
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 6
@@ -143,9 +183,6 @@ class LeaderBoardViewController: UIViewController,UITableViewDataSource, UITable
                 cell.informationLabel?.text = u1[indexPath.item-1]
             }
         }
-        
-        
-        
         
         return cell
     }
