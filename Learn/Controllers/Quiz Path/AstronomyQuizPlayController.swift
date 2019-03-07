@@ -14,6 +14,8 @@ class AstronomyQuizPlayController: UIViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var highScoreLabel: UILabel!
+    
     //Firebase DB ref
     var ref: DatabaseReference?
     
@@ -23,9 +25,16 @@ class AstronomyQuizPlayController: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
         let currentKid = defaults.value(forKey: "CurrentKid") as! String
+        
+        if let gameScore = defaults.value(forKey: "AstronomyLastScore"+currentKid){
+            let score = gameScore as! Int
+            scoreLabel.text = "Last Score: \(String(score))"
+        } else{
+            scoreLabel.text = "Last Score: 0"
+        }
         
         if let user = Auth.auth().currentUser{
             
@@ -35,7 +44,12 @@ class AstronomyQuizPlayController: UIViewController {
             self.ref!.child("score").child(userID).child(currentKid).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 if let s = snapshot.childSnapshot(forPath: "AstronomyScore").value{
-                    self.scoreLabel.text = "Score: \(s)"
+                    if s is NSNull{
+                        self.highScoreLabel.text = "High Score: 0"
+                    } else{
+                        self.highScoreLabel.text = "High Score: \(s)"
+                    }
+                    
                 } else {
                     print("ERROR! getting AstronomyScore from Firebase")
                 }
@@ -44,6 +58,8 @@ class AstronomyQuizPlayController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+        
+        
     }
     
         

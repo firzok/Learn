@@ -86,7 +86,7 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
         // order = merc, venus, earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
         placePlanetsForQuiz()
         
-//        backgroundPlayer.stop()
+        backgroundPlayer.stop()
         
         //start tinmer
         runTimer()
@@ -99,7 +99,8 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
     func gameOver(){
         //store the score in UserDefaults
         let defaults = UserDefaults.standard
-        //        defaults.set(score, forKey: "AnatomyScore")
+        let kidName = defaults.value(forKey: "CurrentKid") as! String?
+        defaults.set(score, forKey: "AstronomyLastScore"+(kidName ?? ""))
         
         if let userID = Auth.auth().currentUser?.uid, let kidName = defaults.value(forKey: "CurrentKid") as! String?{
             
@@ -107,16 +108,17 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
                 
                 if let s = snapshot.childSnapshot(forPath: "AstronomyScore").value{
                     
-                    
                     if let firebaseScore = s as? Int {
                         if firebaseScore < self.score{
-                            self.ref!.child("score").child(userID).child(kidName).setValue(["AstronomyScore": self.score])
+                            self.ref!.child("score").child(userID).child(kidName).updateChildValues(["AstronomyScore": self.score])
                         }
                         
+                    } else {
+                        self.ref!.child("score").child(userID).child(kidName).updateChildValues(["AstronomyScore": self.score])
                     }
                     
                 } else {
-                    print("ERROR! getting AnatomyScore from Firebase while trying to save new score")
+                    print("ERROR! getting AstronomyScore from Firebase while trying to save new score")
                 }
                 
             }) { (error) in
@@ -126,7 +128,7 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
             
             
         } else {
-            print("ERROR! Unable to save AnatomyScore to Firebase")
+            print("ERROR! Unable to save AstronomyScore to Firebase")
         }
         
         //go back to the Home View Controller

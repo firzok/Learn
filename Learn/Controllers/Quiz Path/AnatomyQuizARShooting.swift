@@ -37,6 +37,9 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
     //anatomy models
     let anatomyModels = ["Heart","Brain","Muscle","Eyes","TeethWithoutLabel"]
     
+    let vectorX = [-4,-3,-2,2,3,4]
+    let vectorY = [-2,-1,1,2]
+    let vectorZ = [-4,-3,-2,2,3,4]
     
     
     //Pokemonball button
@@ -60,6 +63,9 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
     
     //MARK: - view functions
     
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -79,13 +85,14 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         //        sceneView.allowsCameraControl = true
         
         //add objects to shoot at
+        backgroundPlayer.stop()
         addTargetNodes()
         QuestionBank()
         questionText.text = questions[questionNumber].question
-        
+
         //play background music
         //        playBackgroundMusic()
-        
+
         //start tinmer
         runTimer()
     }
@@ -97,6 +104,7 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         
         // Run the view's session
         sceneView.session.run(configuration)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -115,13 +123,13 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         questions.append(Question(question: "Shoot Brain", solution: "Brain", score: 10))
         questions.append(Question(question: "Shoot Eyes", solution: "Eyes", score: 10))
         questions.append(Question(question: "Shoot Muscle", solution: "Muscle", score: 10))
-        questions.append(Question(question: "Shoot Teeth", solution: "Teeth", score: 10))
+        questions.append(Question(question: "Shoot Teeth", solution: "TeethWithoutLabel", score: 10))
     }
     
     // MARK: - timer
     
     //to store how many sceonds the game is played for
-    var seconds = 5
+    var seconds = 50
     
     //timer
     var timer = Timer()
@@ -157,7 +165,11 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
     func gameOver(){
         //store the score in UserDefaults
         let defaults = UserDefaults.standard
-//        defaults.set(score, forKey: "AnatomyScore")
+        let kidName = defaults.value(forKey: "CurrentKid") as! String?
+        defaults.set(score, forKey: "AnatomyLastScore"+(kidName ?? ""))
+        
+        
+        
         
         if let userID = Auth.auth().currentUser?.uid, let kidName = defaults.value(forKey: "CurrentKid") as! String?{
             
@@ -168,9 +180,11 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
                     
                     if let firebaseScore = s as? Int {
                         if firebaseScore < self.score{
-                            self.ref!.child("score").child(userID).child(kidName).setValue(["AnatomyScore": self.score])
+                            self.ref!.child("score").child(userID).child(kidName).updateChildValues(["AnatomyScore": self.score])
                         }
                         
+                    } else {
+                         self.ref!.child("score").child(userID).child(kidName).updateChildValues(["AnatomyScore": self.score])
                     }
                     
                 } else {
@@ -312,6 +326,9 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         //        node.scale = SCNVector3(1,1,1)
         node.name = "\(model)"
         
+//        print(vectorX.randomElement())
+        node.position = SCNVector3(vectorX.randomElement()!,vectorY.randomElement()!,vectorZ.randomElement()!)
+        
         if node.name == "Eyes"{
             node.scale.x = 0.1
             node.scale.y = 0.1
@@ -331,9 +348,9 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
             node.position.z = -10
         }
         else if node.name == "Heart"{
-            node.scale.x = 2
-            node.scale.y = 2
-            node.scale.z = 2
+            node.scale.x = 2.5
+            node.scale.y = 2.5
+            node.scale.z = 2.5
         }
         else if node.name == "Brain"{
             node.scale.x = 1.5
@@ -343,7 +360,7 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         
         node.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
         node.physicsBody?.isAffectedByGravity = false
-        node.position = SCNVector3(randomFloat(min: -5, max: 5),randomFloat(min: -2, max: 2),randomFloat(min: -10, max: 5))
+       
         //        node.position = position
         
         //rotate
@@ -390,34 +407,31 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
     
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
         
-        print("questions.count \(questions.count)")
+//        print("questions.count \(questions.count)")
         print("** Collision!! " + contact.nodeA.name! + " hit " + contact.nodeB.name!)
         
         if contact.nodeA.physicsBody?.categoryBitMask == CollisionCategory.targetCategory.rawValue
             || contact.nodeB.physicsBody?.categoryBitMask == CollisionCategory.targetCategory.rawValue {
-            print("blahhhh")
-            //            if (contact.nodeA.name! == "shark" || contact.nodeB.name! == "shark") {
-            //                score+=5
-            //            }else{
-            //                score+=1
-            //            }
+//            print("blahhhh")
+//            print("nodeA \(contact.nodeA.name)")
+//            print("nodeB \(contact.nodeB.name)")
             if (contact.nodeA.name! == "\(questions[questionNumber].solution)" || contact.nodeB.name! == "\(questions[questionNumber].solution)"){
                 score += questions[questionNumber].score
                 questionNumber += 1
                 
                 print(questionNumber)
                 
-                
+                if(score >= 30)
+                {
+                    playBackgroundMusic(musicFileName:"art.scnassets/Sounds/cheers.wav")
+                }
                 if (self.questionNumber == questions.count){
-                    if(score >= 40)
-                    {
-                        playBackgroundMusic(musicFileName:"art.scnassets/Sounds/cheers.wav")
-                    }
+                    
                     questionNumber = 0
                     gameOver()
                 }
                 
-                questionText.text = questions[questionNumber].question
+                self.questionText.text = questions[questionNumber].question
             }
             else{
                 score -= questions[questionNumber].score
@@ -441,37 +455,6 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
         
         
     }
-    
-    // MARK: - sounds
-    
-    //    var player: AVAudioPlayer?
-    //
-    //    func playSound(sound : String, format: String) {
-    //        guard let url = Bundle.main.url(forResource: sound, withExtension: format) else { return }
-    //        do {
-    //            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-    //            try AVAudioSession.sharedInstance().setActive(true)
-    //
-    //            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-    //
-    //            guard let player = player else { return }
-    //            player.play()
-    //        } catch let error {
-    //            print(error.localizedDescription)
-    //        }
-    //    }
-    //
-    //    func playBackgroundMusic(){
-    //        let audioNode = SCNNode()
-    //        let audioSource = SCNAudioSource(fileNamed: "overtake.mp3")!
-    //        let audioPlayer = SCNAudioPlayer(source: audioSource)
-    //
-    //        audioNode.addAudioPlayer(audioPlayer)
-    //
-    //        let play = SCNAction.playAudio(audioSource, waitForCompletion: true)
-    //        audioNode.runAction(play)
-    //        sceneView.scene.rootNode.addChildNode(audioNode)
-    //    }
     
     
     func playBackgroundMusic(musicFileName: String) {
