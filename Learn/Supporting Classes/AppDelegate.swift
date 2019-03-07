@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Runs timer until the app goes in background/terminated
         startTimer()
         
-        print("didFinishLaunchingWithOptions")
+//        print("didFinishLaunchingWithOptions")
         
         
         return true
@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = UserDefaults.standard
         if let timeCount = defaults.value(forKey: "UsingAppTimer"){
             let time = timeCount as! Double
-            print("score \(time*60)")
+//            print("score \(time*60)")
             counter = time*60 //converting back to seconds
         }
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func endTimer(){
         timer.invalidate()
-        print("counter \(counter/60)")
+//        print("counter \(counter/60)")
         //store the score in UserDefaults
         let defaults = UserDefaults.standard
         defaults.set(counter/60, forKey: "UsingAppTimer")
@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // called every time interval from the timer
     @objc func timerAction() {
-        print("timerAction")
+//        print("timerAction")
         counter += 1
     }
 
@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        print("applicationDidEnterBackground)")
+//        print("applicationDidEnterBackground)")
         endTimer()
     }
 
@@ -83,9 +83,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         
         
-        print("applicationWillTerminate")
+//        print("applicationWillTerminate")
         timer.invalidate()
-        print("counter \(counter)")
+//        print("counter \(counter)")
         //store the score in UserDefaults
         let defaults = UserDefaults.standard
         assert(counter > 0)
