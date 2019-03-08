@@ -12,6 +12,7 @@ var backgroundPlayer = AVAudioPlayer()
 class PlayLearnViewController: UIViewController {
 
     
+    @IBOutlet weak var currentKidLabel: UILabel!
     
     //Firebase DB ref
     var ref: DatabaseReference?
@@ -22,19 +23,24 @@ class PlayLearnViewController: UIViewController {
     
     
     
-    @IBOutlet weak var iconImage: UIImageView!
-    @IBOutlet weak var logoutPane: UIButton!
+
     @IBOutlet var learnBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     
 //    var backgroundPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
+        
+        
+        
         super.viewDidLoad()
         
-        logoutPane.isHidden = true
-        iconImage.isHidden = true
         
+        let defaults = UserDefaults.standard
+        let currentKid = defaults.value(forKey: "CurrentKid") as! String
+        
+        currentKidLabel.text = currentKid
+
         playBtn.layer.cornerRadius = 115
         playBtn.clipsToBounds = true
         
@@ -42,19 +48,15 @@ class PlayLearnViewController: UIViewController {
         learnBtn.clipsToBounds = true
 
         playBackgroundMusic(musicFileName: "art.scnassets/Sounds/leARnBackgroundMusic.WAV")
-        loadLeaderBoard()
        
     }
-
-    @IBAction func UserIconBtn(_ sender: UIButton) {
-        logoutPane.isHidden = false
-        iconImage.isHidden  = false
-    }
     
-    @IBAction func logoutBtn(_ sender: Any) {
-        print("logout btn working GREAT")
-        
+    override func viewWillAppear(_ animated: Bool) {
+        loadLeaderBoard()
+        super.viewWillAppear(animated)
     }
+
+
     
     func playBackgroundMusic(musicFileName: String) {
         let url = Bundle.main.url(forResource: musicFileName, withExtension: nil)
@@ -73,6 +75,7 @@ class PlayLearnViewController: UIViewController {
     
     func loadLeaderBoard(){
         self.numberOfChildren = 0
+        self.u1 = []
         self.ref = Database.database().reference()
         
         self.ref!.child("score").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -91,15 +94,25 @@ class PlayLearnViewController: UIViewController {
                     
                     self.u1.append(name)
                     
-                    if let bs = snap.childSnapshot(forPath: "BotanyScore").value! as? NSNumber, let ass = snap.childSnapshot(forPath: "AstronomyScore").value! as? NSNumber, let ans = snap.childSnapshot(forPath: "AnatomyScore").value! as? NSNumber, let tim = snap.childSnapshot(forPath: "UsingAppTimer").value! as? NSNumber{
-                        
-                        
+                    if let bs = snap.childSnapshot(forPath: "BotanyScore").value! as? NSNumber {
                         self.u1.append("\(bs)")
+                    } else {
+                        self.u1.append("\(0)")
+                    }
+                    if let ass = snap.childSnapshot(forPath: "AstronomyScore").value! as? NSNumber{
                         self.u1.append("\(ass)")
+                    } else {
+                        self.u1.append("\(0)")
+                    }
+                    if let ans = snap.childSnapshot(forPath: "AnatomyScore").value! as? NSNumber{
                         self.u1.append("\(ans)")
+                    } else {
+                        self.u1.append("\(0)")
+                    }
+                    if let tim = snap.childSnapshot(forPath: "UsingAppTimer").value! as? NSNumber{
                         self.u1.append("\(tim)")
-                        
-                        
+                    } else {
+                        self.u1.append("\(1)")
                     }
                     
                     

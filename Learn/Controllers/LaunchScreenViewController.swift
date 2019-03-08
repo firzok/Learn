@@ -14,6 +14,7 @@ class LaunchScreenViewController: UIViewController {
 
     var ref: DatabaseReference?
     
+    @IBOutlet weak var continueButton: UIButton!
     var continueSegueID = "toLoginRegisterScreen"
     
     
@@ -24,21 +25,32 @@ class LaunchScreenViewController: UIViewController {
         self.ref = Database.database().reference()
         if let user = Auth.auth().currentUser{
             
-            let userID = user.uid
-            self.ref!.child("children").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-                
-                if snapshot.childrenCount == 0 {
-                    self.continueSegueID = "toAddKidScreen"
-                }else{
-                    self.continueSegueID = "toSelectKidScreen"
+            if user.isAnonymous{
+                self.continueSegueID = "toLoginRegisterScreen"
+                print("TO LOGIN")
+            } else{
+                let userID = user.uid
+                self.ref!.child("children").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    if snapshot.childrenCount == 0 {
+                        self.continueSegueID = "toAddKidScreen"
+                        print("DONE")
+                    }else{
+                        self.continueSegueID = "toSelectKidScreen"
+                        print("DONE")
+                    }
+                    
+                }) { (error) in
+                    print(error.localizedDescription)
                 }
-                
-            }) { (error) in
-                print(error.localizedDescription)
             }
+            
         } else {
             self.continueSegueID = "toLoginRegisterScreen"
+            print("TO LOGIN")
         }
+        
+            
         
         super.viewDidLoad()
 
@@ -48,20 +60,29 @@ class LaunchScreenViewController: UIViewController {
         self.ref = Database.database().reference()
         if let user = Auth.auth().currentUser{
             
-            let userID = user.uid
-            self.ref!.child("children").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-                
-                if snapshot.childrenCount == 0 {
-                    self.continueSegueID = "toAddKidScreen"
-                }else{
-                    self.continueSegueID = "toSelectKidScreen"
+            if user.isAnonymous{
+                self.continueSegueID = "toLoginRegisterScreen"
+                print("TO LOGIN")
+            } else{
+                let userID = user.uid
+                self.ref!.child("children").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    if snapshot.childrenCount == 0 {
+                        self.continueSegueID = "toAddKidScreen"
+                        print("DONE")
+                    }else{
+                        self.continueSegueID = "toSelectKidScreen"
+                        print("DONE")
+                    }
+                    
+                }) { (error) in
+                    print(error.localizedDescription)
                 }
-                
-            }) { (error) in
-                print(error.localizedDescription)
             }
+            
         } else {
             self.continueSegueID = "toLoginRegisterScreen"
+            print("TO LOGIN")
         }
     }
 

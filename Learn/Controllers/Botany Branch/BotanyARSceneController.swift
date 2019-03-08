@@ -55,7 +55,7 @@ class BotanyARSceneController: UIViewController, ARSCNViewDelegate {
                     //                    modelNode.name = modelName
                     //                    sceneView.scene = modelScene
                 }
-                else if modelName == "Lilies"{
+                else if modelName == "lilies"{
                     modelNode.position.z = -20.0
                 }
                 else if modelName == "Ferns"{
@@ -88,7 +88,7 @@ class BotanyARSceneController: UIViewController, ARSCNViewDelegate {
             Flowers are an important evolutionary advance made by flowering plants. Some flowers are dependent upon the wind to move pollen between flowers of the same species. Their pollen grains are light-weight. Many others rely on insects or birds to move pollen. Theirs are heavier. The role of flowers is to produce seeds, which are contained in fruit. Fruits and seeds are a means of dispersal. Plants do not move, but wind, animals and birds spread the plants across the landscape.\n
             """
             
-        case "Lilies":
+        case "lilies":
             desc = info + """
             \n The Lotus plant is an aquatic perennial.\n
             The plant has its roots firmly in the mud and sends out long stems to which their leaves are attached.\n

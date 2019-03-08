@@ -358,7 +358,7 @@ class QuizViewController: UIViewController, ARSCNViewDelegate {
     
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
-        
+        gameOver()
         dismiss(animated: true, completion: nil)
     }
     

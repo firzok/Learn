@@ -26,8 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        //Runs timer until the app goes in background/terminated
-        startTimer()
         
 //        print("didFinishLaunchingWithOptions")
         
@@ -36,13 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func startTimer(){
-        let defaults = UserDefaults.standard
-        if let timeCount = defaults.value(forKey: "UsingAppTimer"){
-            let time = timeCount as! Double
-//            print("score \(time*60)")
-            counter = time*60 //converting back to seconds
-        }
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        counter = 0
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
     func endTimer(){
@@ -53,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        print("counter \(counter/60)")
         //store the score in UserDefaults
-        defaults.set(counter/60, forKey: "UsingAppTimer")
+        defaults.set(counter, forKey: "UsingAppTimer")
     }
     
     
@@ -68,13 +61,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.ref!.child("score").child(userID).child(kidName).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 if let timerFirebase = snapshot.childSnapshot(forPath: "UsingAppTimer").value as? Double{
-                self.ref!.child("score").child(userID).child(kidName).updateChildValues(["UsingAppTimer": timerFirebase+(self.counter/60)])
+                self.ref!.child("score").child(userID).child(kidName).updateChildValues(["UsingAppTimer": timerFirebase+(self.counter)])
                     
                 } else {
-                    self.ref!.child("score").child(userID).child(kidName).updateChildValues(["UsingAppTimer": (self.counter/60)])
+                    self.ref!.child("score").child(userID).child(kidName).updateChildValues(["UsingAppTimer": (self.counter)])
                     
                     print("ERROR! getting UsingAppTimer from Firebase while trying to save new Timer")
                 }
+                self.counter = 0
                 
             }) { (error) in
                 print(error.localizedDescription)
@@ -93,11 +87,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @objc func timerAction() {
 //        print("timerAction")
         counter += 1
-        
-        
-        if counter.truncatingRemainder(dividingBy: 60.0) == 0{
-            saveTimeToFirebase()
-        }
+        saveTimeToFirebase()
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

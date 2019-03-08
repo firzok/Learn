@@ -41,6 +41,31 @@ class SelectUserViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        
+        if self.kidArray.count == 0{
+            self.ref = Database.database().reference()
+            let userID = Auth.auth().currentUser?.uid
+            
+            self.ref!.child("children").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                for child in snapshot.children {
+                    let snap = child as! DataSnapshot
+                    
+                    let name = snap.childSnapshot(forPath: "displayName").value
+                    
+                    self.kidArray.append(name as! String)
+                    self.currentKid = self.kidArray[0]
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        }
+        
+        
+        
+        
         pickerView.reloadAllComponents()
         
         pickerView.reloadInputViews()

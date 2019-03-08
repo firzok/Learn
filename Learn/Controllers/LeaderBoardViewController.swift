@@ -71,7 +71,7 @@ class LeaderBoardViewController: UIViewController,UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.numberOfChildren ?? 5
+        return (self.numberOfChildren ?? 5)+1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -164,23 +164,23 @@ class LeaderBoardViewController: UIViewController,UITableViewDataSource, UITable
             }
             
             if indexPath.item == 1{
-                cell.informationLabel?.text = u1[indexPath.item-1]
+                cell.informationLabel?.text = u1[5*(positionIndex.row-1)+(indexPath.item-1)]
             }
             else if indexPath.item == 2{
                 
-                cell.informationLabel?.text = u1[indexPath.item-1]
+                cell.informationLabel?.text = u1[5*(positionIndex.row-1)+(indexPath.item-1)]
             }
             else if indexPath.item == 3{
                 
-                cell.informationLabel?.text = u1[indexPath.item-1]
+                cell.informationLabel?.text = u1[5*(positionIndex.row-1)+(indexPath.item-1)]
             }
             else if indexPath.item == 4{
                 
-                cell.informationLabel?.text = u1[indexPath.item-1]
+                cell.informationLabel?.text = u1[5*(positionIndex.row-1)+(indexPath.item-1)]
             }
             else if indexPath.item == 5{
                 //            print("sadasd \(indexPath.item)")
-                cell.informationLabel?.text = u1[indexPath.item-1]
+                cell.informationLabel?.text = u1[5*(positionIndex.row-1)+(indexPath.item-1)]
             }
         }
         
