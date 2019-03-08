@@ -152,4 +152,10 @@ class PlayLearnViewController: UIViewController {
     }
     */
 
+    
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
