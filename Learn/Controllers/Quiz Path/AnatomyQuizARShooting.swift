@@ -370,7 +370,7 @@ class AnatomyQuizARShooting: UIViewController, ARSCNViewDelegate, SCNPhysicsCont
     
     //create random float between specified ranges
     func randomFloat(min: Float, max: Float) -> Float {
-        return (Float(arc4random()) / 0xFFFFFFFF) * (max - min) + min
+        return (Float(arc4random()) / 1.0) * (max - min) + min
     }
     
     override func didReceiveMemoryWarning() {
