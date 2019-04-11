@@ -295,7 +295,18 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         case "Venus":
             desc = info+"\nThe second planet from the sun, Venus is terribly hot, even hotter than Mercury. The atmosphere is toxic. The pressure at the surface would crush and kill you. Scientists describe Venus’ situation as a runaway greenhouse effect. Its size and structure are similar to Earth, Venus' thick, toxic atmosphere traps heat in a runaway greenhouse effect. Oddly, Venus spins slowly in the opposite direction of most planets.\nThe Greeks believed Venus was two different objects — one in the morning sky and another in the evening. Because it is often brighter than any other object in the sky — except for the sun and moon — Venus has generated many UFO reports.\nDiscovery: Known to the ancients and visible to the naked eye\nNamed for: Roman goddess of love and beauty\nDiameter: 7,521 miles (12,104 km)\nOrbit: 225 Earth days\nDay: 241 Earth days"
         case "Earth":
-            desc = info+"\nThe third planet from the sun, Earth is a waterworld, with two-thirds of the planet covered by ocean. It’s the only world known to harbor life. Earth’s atmosphere is rich in life-sustaining nitrogen and oxygen. Earth's surface rotates about its axis at 1,532 feet per second (467 meters per second) — slightly more than 1,000 mph (1,600 kph) — at the equator. The planet zips around the sun at more than 18 miles per second (29 km per second)./nDiameter: 7,926 miles (12,760 km)\nOrbit: 365.24 days\nDay: 23 hours, 56 minutes"
+            desc = info+
+            """
+            \n The third planet from the sun, Earth is a waterworld, with two-thirds of the planet covered by ocean. It’s the only world known to harbor life. Earth’s atmosphere is rich in life-sustaining nitrogen and oxygen. The imaginary line on which it rotates is called Orbit.
+            \n                        Rotation                         \n
+            The Earth spins, just like a top, on its axis in an anticlockwise direction. This movement is called rotation. The rotation of Earth on its axis causes day and night. At any time, only half is in shadow. The Earth takes 24 hours to rotate once on its axis. Earth's surface rotates about its axis at 1,532 feet per second (467 meters per second) — slightly more than 1,000 mph (1,600 kph) — at the equator.
+            
+            \n                        Revolution                         \n
+            As the Earth spins on its axis, it also moves around the Sun. This movement is called revolution. Revolution is a movement in which an object moves around another object. The Earth revolves around the Sun, and the Moon revolves around the Earth in a fixed path, called an orbit. The Earth completes one orbit around the Sun in approximately 365 days. This period is called a year. The year is divided up into the four seasons we call spring, winter, fall and summer.
+            
+            """
+            
+            
         case "Mars":
             desc = info+"\nThe fourth planet from the sun, is a cold, dusty place. The dust, an iron oxide, gives the planet its reddish cast. Mars shares similarities with Earth: It is rocky, has mountains and valleys, and storm systems ranging from localized tornado-like dust devils to planet-engulfing dust storms. It snows on Mars. And Mars harbors water ice. Scientists think it was once wet and warm, though today it’s cold and desert-like.\nMars' atmosphere is too thin for liquid water to exist on the surface for any length of time. Scientists think ancient Mars would have had the conditions to support life, and there is hope that signs of past life — possibly even present biology — may exist on the Red Planet.\nDiscovery: Known to the ancients and visible to the naked eye\nNamed for: Roman god of war\nDiameter: 4,217 miles (6,787 km)\nOrbit: 687 Earth days\nDay: Just more than one Earth day (24 hours, 37 minutes)"
         case "Jupiter":

@@ -99,26 +99,48 @@ class HumanAnatomyViewController: UIViewController, ARSCNViewDelegate {
         
         switch info {
         case "Heart":
-            desc = info+" Heart is located a little to the left of the middle of your chest, and it's about the size of your fist. The heart sends blood around your body. The blood provides your body with the oxygen and nutrients it needs. It also carries away waste. Your heart is sort of like a pump, or two pumps in one. The right side of your heart receives blood from the body and pumps it to the lungs. The left side of the heart does the exact opposite: It receives blood from the lungs and pumps it out to the body."
+            desc = info+"\n Heart is located a little to the left of the middle of your chest, and it's about the size of your fist. The heart sends blood around your body. The blood provides your body with the oxygen and nutrients it needs. It also carries away waste. Your heart is sort of like a pump, or two pumps in one. The right side of your heart receives blood from the body and pumps it to the lungs. The left side of the heart does the exact opposite: It receives blood from the lungs and pumps it out to the body."
             break
         case "Body":
-            desc = info+"You have five digits on each hand and each foot, making 10 fingers and 10 toes altogether. Each bit of our body is made up from cells, which are the tiniest form of life – like single Lego pieces. The parts of our body need blood in order to work properly – blood transports the nutrients each cell needs, and takes away any rubbish. Parts of your arm include your hand, wrist and elbow.Parts of your leg include your foot, ankle, shin and thigh. The parts of your body that help your arms twist around are called shoulders – your legs are attached to hips. Your neck allows your head to move from side to side, so you can turn your face to look at something. Your stomach sits inside your body, just below your chest and lungs, and above your intestines. Parts of your face include your forehead, eyes, cheeks, ears, nose and mouth."
+            desc = info+"\n You have five digits on each hand and each foot, making 10 fingers and 10 toes altogether. Each bit of our body is made up from cells, which are the tiniest form of life – like single Lego pieces. The parts of our body need blood in order to work properly – blood transports the nutrients each cell needs, and takes away any rubbish. Parts of your arm include your hand, wrist and elbow.Parts of your leg include your foot, ankle, shin and thigh. The parts of your body that help your arms twist around are called shoulders – your legs are attached to hips. Your neck allows your head to move from side to side, so you can turn your face to look at something. Your stomach sits inside your body, just below your chest and lungs, and above your intestines. Parts of your face include your forehead, eyes, cheeks, ears, nose and mouth."
             break
         case "Muscle":
-            desc = info + "The human body has more than 600 muscles. They do everything from pumping blood throughout the body to helping us lift something heavy. Skeletal muscles are voluntary muscles, which means you can control what they do. Your leg won't bend to kick the soccer ball unless you want it to. "
+            desc = info + "\n The human body has more than 600 muscles. They do everything from pumping blood throughout the body to helping us lift something heavy. Skeletal muscles are voluntary muscles, which means you can control what they do. Your leg won't bend to kick the soccer ball unless you want it to. "
             break
         case "Eyes":
-             desc = info+"Your eyes are at work from the moment you wake up to the moment you close them to go to sleep. They take in tons of information about the world around you — shapes, colors, movements, and more. Then they send the information to your brain for processing so the brain knows what's going on outside of your body. The eye is about as big as a ping-pong ball and sits in a little hollow area (the eye socket) in the skull. The eyelid protects the front part of the eye. The lid helps keep the eye clean and moist by opening and shutting several times a minute. The white part of the eyeball is made of a tough material and has the important job of covering most of the eyeball. "
+             desc = info+"\n Your eyes are at work from the moment you wake up to the moment you close them to go to sleep. They take in tons of information about the world around you — shapes, colors, movements, and more. Then they send the information to your brain for processing so the brain knows what's going on outside of your body. The eye is about as big as a ping-pong ball and sits in a little hollow area (the eye socket) in the skull. The eyelid protects the front part of the eye. The lid helps keep the eye clean and moist by opening and shutting several times a minute. The white part of the eyeball is made of a tough material and has the important job of covering most of the eyeball. "
             break
         case "Brain":
-            desc = info+"The brain is the control centre for your body and it sits in your skull at the top of your spinal cord. Your brain is more powerful, more complex and more clever than any computer ever built. It gets the messages from your senses - seeing, hearing, tasting, smelling, touching and moving. The messages travel from nerve cells all over the body. They travel along nerve fibres to nerve cells in the brain.\n" + "Fun Facts:  The left side of your brain is usually better at problem solving, maths and writing. The right side of the brain is creative and helps you to be good at art or music."
+            desc = info+"\n The brain is the control centre for your body and it sits in your skull at the top of your spinal cord. Your brain is more powerful, more complex and more clever than any computer ever built. It gets the messages from your senses - seeing, hearing, tasting, smelling, touching and moving. The messages travel from nerve cells all over the body. They travel along nerve fibres to nerve cells in the brain.\n" + "Fun Facts:  The left side of your brain is usually better at problem solving, maths and writing. The right side of the brain is creative and helps you to be good at art or music."
             break
             
         case "Teeth":
             
             desc = info + """
-            \nLet's take a tour of your teeth\n
+            \n Let's take a tour of your teeth \n
             The part of the tooth you can see, which is not covered by the gum (your gums are the pink, fleshy part), is called the crown.
+            
+            \n          Tooth Types            \n
+            1) Canine teeth help tear food \n
+            2) Molars help grind food \n
+            3) Premolars help chew food \n
+            4) Incisors help cut and drop food \n
+            """
+            
+        case "Skeleton":
+            
+            desc = info + """
+            \n Without skeleton system, you wounld be able to sit, walk, run, stand, play or don any movement. It is a framework of bones that helps to give strength and support to the body. There are many bones in the human body. An adult body has about 206 bones, while a baby has 300 bones. It is because as we grow older, some of our bones fuse together to make bigger and stronger bones.
+            \n          Skull       \n
+            The skull protects the delicate brain from knocks ad bumps
+            \n          Ribs       \n
+            The ribs form a protective cage around the heart and lungs
+            \n          Spine       \n
+            The spine supports the head and neck
+            \n          Femur       \n
+            The Femur is the longest and strongest bone in the body, because the weight of the upper body rests on these two leg bones.
+            
+            \n The skeleton system consists of bones and joints. A joint is a place in a vertebrate's body where two or more than two bones meet with the help of tissue called ligament.
             """
             
         default:
