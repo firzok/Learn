@@ -135,7 +135,7 @@ class PlayLearnViewController: UIViewController {
             let vc = segue.destination as? LeaderBoardViewController
             
             vc?.numberOfChildren = self.numberOfChildren
-            vc?.u1 = self.u1
+            vc?.leaderboardDataFromFirebase = self.u1
             
             
             

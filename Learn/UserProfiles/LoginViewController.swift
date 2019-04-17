@@ -64,6 +64,23 @@ class LoginViewController: UIViewController{
         
         guard let email = emailTextfield.text else { return }
         guard let password = passwordTextfield.text else { return }
+        guard let passwordLength = passwordTextfield.text?.count else { return }
+        
+        
+        if !email.contains("@") {
+            Toast.show(message: "Invalid Email", controller: self)
+            
+            return
+        }
+        
+        if passwordLength < 6{
+            
+            Toast.show(message: "Password must be atleast 6 characters long", controller: self)
+            
+            return
+        }
+        
+        
         
         setLoginButton(enabled: false)
         
@@ -91,4 +108,7 @@ class LoginViewController: UIViewController{
         let formFilled = email != nil && email != "" && password != nil && password != ""
         setLoginButton(enabled: formFilled)
     }
+    
+    
+    
 }

@@ -15,35 +15,11 @@ class SelectUserViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     var kidArray:[String]  = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        self.ref = Database.database().reference()
-        let userID = Auth.auth().currentUser?.uid
-        
-        self.ref!.child("children").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            for child in snapshot.children {
-                let snap = child as! DataSnapshot
-                
-                let name = snap.childSnapshot(forPath: "displayName").value
-                
-                self.kidArray.append(name as! String)
-                self.currentKid = self.kidArray[0]
-            }
-            
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
-        
-    }
     
-    override func viewWillAppear(_ animated: Bool) {
+    func loadKidArray() {
         
-        
-        if self.kidArray.count == 0{
+        if self.kidArray.count == 0 {
+            
             self.ref = Database.database().reference()
             let userID = Auth.auth().currentUser?.uid
             
@@ -61,10 +37,21 @@ class SelectUserViewController: UIViewController, UIPickerViewDataSource, UIPick
             }) { (error) in
                 print(error.localizedDescription)
             }
+            
         }
         
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+                
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
         
+        loadKidArray()
         
         pickerView.reloadAllComponents()
         

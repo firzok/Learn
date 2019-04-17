@@ -15,43 +15,14 @@ class LaunchScreenViewController: UIViewController {
     var ref: DatabaseReference?
     
     @IBOutlet weak var continueButton: UIButton!
+    
     var continueSegueID = "toLoginRegisterScreen"
     
     
     @IBOutlet weak var launchGif: UIImageView!
     override func viewDidLoad() {
+        self.continueButton.isEnabled = false
         launchGif.loadGif(name: "launchScreen")
-        
-        self.ref = Database.database().reference()
-        if let user = Auth.auth().currentUser{
-            
-            if user.isAnonymous{
-                self.continueSegueID = "toLoginRegisterScreen"
-                print("TO LOGIN")
-            } else{
-                let userID = user.uid
-                self.ref!.child("children").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-                    
-                    if snapshot.childrenCount == 0 {
-                        self.continueSegueID = "toAddKidScreen"
-                        print("DONE")
-                    }else{
-                        self.continueSegueID = "toSelectKidScreen"
-                        print("DONE")
-                    }
-                    
-                }) { (error) in
-                    print(error.localizedDescription)
-                }
-            }
-            
-        } else {
-            self.continueSegueID = "toLoginRegisterScreen"
-            print("TO LOGIN")
-        }
-        
-            
-        
         super.viewDidLoad()
 
     }
@@ -62,6 +33,9 @@ class LaunchScreenViewController: UIViewController {
             
             if user.isAnonymous{
                 self.continueSegueID = "toLoginRegisterScreen"
+                self.continueButton.isEnabled = true
+                self.continueButton.isUserInteractionEnabled = true
+
                 print("TO LOGIN")
             } else{
                 let userID = user.uid
@@ -69,19 +43,30 @@ class LaunchScreenViewController: UIViewController {
                     
                     if snapshot.childrenCount == 0 {
                         self.continueSegueID = "toAddKidScreen"
-                        print("DONE")
+                        self.continueButton.isEnabled = true
+                        self.continueButton.isUserInteractionEnabled = true
+
                     }else{
                         self.continueSegueID = "toSelectKidScreen"
-                        print("DONE")
+                        self.continueButton.isEnabled = true
+                        self.continueButton.isUserInteractionEnabled = true
+
                     }
+                    print("DONE")
+
+                    
                     
                 }) { (error) in
                     print(error.localizedDescription)
                 }
             }
+            self.continueButton.isEnabled = true
+            self.continueButton.isUserInteractionEnabled = true
             
         } else {
             self.continueSegueID = "toLoginRegisterScreen"
+            self.continueButton.isEnabled = true
+            self.continueButton.isUserInteractionEnabled = true
             print("TO LOGIN")
         }
     }

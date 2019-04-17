@@ -25,10 +25,20 @@ class RegisterUserViewController: UIViewController{
     
     @IBAction func registerButtonTapped(_ sender: Any) {
         
-        guard let username = usernameTextfield.text else {return}
-        guard let email = emailTextfield.text else {return}
-        guard let password = passwordTextfield.text else {return}
+        guard let username = usernameTextfield.text else { return }
+        guard let email = emailTextfield.text else { return }
+        guard let password = passwordTextfield.text else { return }
+        guard let passwordLength = passwordTextfield.text?.count else { return }
         
+        
+        if !email.contains("@") {
+            Toast.show(message: "Invalid Email", controller: self)
+            return
+        }
+        if passwordLength < 6 {
+            Toast.show(message: "Password must be atleast 6 characters long", controller: self)
+            return
+        }
         
         
         setRegisterButton(enabled: false)
@@ -77,6 +87,8 @@ class RegisterUserViewController: UIViewController{
         let username = usernameTextfield.text
         let email = emailTextfield.text
         let password = passwordTextfield.text
+        
+        
         let formFilled = email != nil && email != "" && password != nil && password != "" && username != nil && username != ""
         setRegisterButton(enabled: formFilled)
     }

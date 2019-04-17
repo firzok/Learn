@@ -295,8 +295,7 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         case "Venus":
             desc = info+"\nThe second planet from the sun, Venus is terribly hot, even hotter than Mercury. The atmosphere is toxic. The pressure at the surface would crush and kill you. Scientists describe Venus’ situation as a runaway greenhouse effect. Its size and structure are similar to Earth, Venus' thick, toxic atmosphere traps heat in a runaway greenhouse effect. Oddly, Venus spins slowly in the opposite direction of most planets.\nThe Greeks believed Venus was two different objects — one in the morning sky and another in the evening. Because it is often brighter than any other object in the sky — except for the sun and moon — Venus has generated many UFO reports.\nDiscovery: Known to the ancients and visible to the naked eye\nNamed for: Roman goddess of love and beauty\nDiameter: 7,521 miles (12,104 km)\nOrbit: 225 Earth days\nDay: 241 Earth days"
         case "Earth":
-            desc = info+
-            """
+            desc = info+"""
             \n The third planet from the sun, Earth is a waterworld, with two-thirds of the planet covered by ocean. It’s the only world known to harbor life. Earth’s atmosphere is rich in life-sustaining nitrogen and oxygen. The imaginary line on which it rotates is called Orbit.
             \n                        Rotation                         \n
             The Earth spins, just like a top, on its axis in an anticlockwise direction. This movement is called rotation. The rotation of Earth on its axis causes day and night. At any time, only half is in shadow. The Earth takes 24 hours to rotate once on its axis. Earth's surface rotates about its axis at 1,532 feet per second (467 meters per second) — slightly more than 1,000 mph (1,600 kph) — at the equator.

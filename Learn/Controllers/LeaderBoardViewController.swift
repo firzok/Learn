@@ -13,11 +13,11 @@ import FirebaseDatabase
 class LeaderBoardViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource,UICollectionViewDelegate{
     
     //Firebase DB ref
-    var ref: DatabaseReference?
+    var dbReference: DatabaseReference?
     
     @IBOutlet weak var tableView: UITableView!
     var thumbnails = [UIImage] ()
-    var u1:[String] = []
+    var leaderboardDataFromFirebase:[String] = []
     
     var positionIndex:IndexPath!
     var gradient:UIColor!
@@ -26,10 +26,10 @@ class LeaderBoardViewController: UIViewController,UITableViewDataSource, UITable
     
     
     func populateLeaderBoard(){
-        self.ref = Database.database().reference()
+        self.dbReference = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
         
-        self.ref!.child("score").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+        self.dbReference!.child("score").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             self.numberOfChildren = Int(snapshot.childrenCount)
             for child in snapshot.children {
                 
@@ -38,14 +38,14 @@ class LeaderBoardViewController: UIViewController,UITableViewDataSource, UITable
                 
                 let name = snap.key
                 
-                self.u1.append(name)
+                self.leaderboardDataFromFirebase.append(name)
                 
                 if let bs = snap.childSnapshot(forPath: "BotanyScore").value! as? NSNumber, let ass = snap.childSnapshot(forPath: "AstronomyScore").value! as? NSNumber, let ans = snap.childSnapshot(forPath: "AnatomyScore").value! as? NSNumber{
                     
                     
-                    self.u1.append("\(bs)")
-                    self.u1.append("\(ass)")
-                    self.u1.append("\(ans)")
+                    self.leaderboardDataFromFirebase.append("\(bs)")
+                    self.leaderboardDataFromFirebase.append("\(ass)")
+                    self.leaderboardDataFromFirebase.append("\(ans)")
                     
                     
                 }
@@ -71,6 +71,7 @@ class LeaderBoardViewController: UIViewController,UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //+1 is for rank
         return (self.numberOfChildren ?? 5)+1
     }
     
@@ -164,23 +165,23 @@ class LeaderBoardViewController: UIViewController,UITableViewDataSource, UITable
             }
             
             if indexPath.item == 1{
-                cell.informationLabel?.text = u1[5*(positionIndex.row-1)+(indexPath.item-1)]
+                cell.informationLabel?.text = leaderboardDataFromFirebase[5*(positionIndex.row-1)+(indexPath.item-1)]
             }
             else if indexPath.item == 2{
                 
-                cell.informationLabel?.text = u1[5*(positionIndex.row-1)+(indexPath.item-1)]
+                cell.informationLabel?.text = leaderboardDataFromFirebase[5*(positionIndex.row-1)+(indexPath.item-1)]
             }
             else if indexPath.item == 3{
                 
-                cell.informationLabel?.text = u1[5*(positionIndex.row-1)+(indexPath.item-1)]
+                cell.informationLabel?.text = leaderboardDataFromFirebase[5*(positionIndex.row-1)+(indexPath.item-1)]
             }
             else if indexPath.item == 4{
                 
-                cell.informationLabel?.text = u1[5*(positionIndex.row-1)+(indexPath.item-1)]
+                cell.informationLabel?.text = leaderboardDataFromFirebase[5*(positionIndex.row-1)+(indexPath.item-1)]
             }
             else if indexPath.item == 5{
                 //            print("sadasd \(indexPath.item)")
-                cell.informationLabel?.text = u1[5*(positionIndex.row-1)+(indexPath.item-1)]
+                cell.informationLabel?.text = leaderboardDataFromFirebase[5*(positionIndex.row-1)+(indexPath.item-1)]
             }
         }
         

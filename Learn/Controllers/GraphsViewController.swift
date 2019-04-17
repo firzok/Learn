@@ -82,7 +82,7 @@ class GraphsViewController: UIViewController {
 
            
             //setiing Dataset of the graph
-            let lineChartDataSet = LineChartDataSet(values: dataEntriesLine, label: "Time Spend Learning")
+            let lineChartDataSet = LineChartDataSet(entries: dataEntriesLine, label: "Time Spend Learning")
             lineChartDataSet.valueTextColor = NSUIColor(white: 1, alpha: 1) //points color at each circle
             lineChartDataSet.formSize = CGFloat(20)
     

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WsV-iY-LxL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WsV-iY-LxL">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OOq-PP-hWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135.546875" y="-3066.40625"/>
+            <point key="canvasLocation" x="1136" y="-3066"/>
         </scene>
         <!--BotanyAR Scene Controller-->
         <scene sceneID="UJD-gD-sBm">
@@ -157,7 +157,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lU-LG-pdm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Wmj-47-W7E"/>
             </objects>
-            <point key="canvasLocation" x="2582" y="-1998"/>
+            <point key="canvasLocation" x="2599" y="-2091"/>
         </scene>
         <!--Human Anatomy View Controller-->
         <scene sceneID="FHd-SS-9ut">
@@ -311,7 +311,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="6oR-ss-Wc3"/>
             </objects>
-            <point key="canvasLocation" x="296" y="-2020"/>
+            <point key="canvasLocation" x="226" y="-3066"/>
         </scene>
         <!--Model Selection View Controller-->
         <scene sceneID="aOU-CW-7LZ">
@@ -569,7 +569,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXR-1z-sVx">
-                                            <rect key="frame" x="759" y="46" width="257" height="48"/>
+                                            <rect key="frame" x="650" y="46" width="366" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="40"/>
@@ -658,7 +658,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1v-hN-Qfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3192" y="-445"/>
+            <point key="canvasLocation" x="1849.8046874999998" y="-575"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="cjn-f0-MEX">
@@ -751,7 +751,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dr0-LK-TOh" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="E02-Ea-cbl"/>
             </objects>
-            <point key="canvasLocation" x="185" y="505"/>
+            <point key="canvasLocation" x="226" y="1320"/>
         </scene>
         <!--Botany Selection View Controller-->
         <scene sceneID="Mrn-Ow-qEU">
@@ -949,7 +949,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EeE-CK-gZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135.546875" y="-1998.4375"/>
+            <point key="canvasLocation" x="1136" y="-2091"/>
         </scene>
         <!--Plant Structure View Controller-->
         <scene sceneID="kcr-zo-RLf">
@@ -1108,7 +1108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Jn-gj-aaD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1849.8046874999998" y="-1997.65625"/>
+            <point key="canvasLocation" x="1850" y="-2091"/>
         </scene>
         <!--Select Quiz View Controller-->
         <scene sceneID="MYk-l8-6p0">
@@ -1196,7 +1196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eS4-2G-EWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1849.8046874999998" y="-445.3125"/>
+            <point key="canvasLocation" x="1136" y="-575"/>
         </scene>
         <!--Anatomy Quiz Play Controller-->
         <scene sceneID="hAe-ul-YH7">
@@ -1230,7 +1230,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TG8-5L-1qw">
-                                <rect key="frame" x="351" y="329" width="322" height="59"/>
+                                <rect key="frame" x="253" y="329" width="519" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="45"/>
                                 <color key="textColor" red="0.0" green="0.1529411765" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1351,7 +1351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9p-4u-XED" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2505" y="505"/>
+            <point key="canvasLocation" x="2599" y="505"/>
         </scene>
         <!--ViewController2-->
         <scene sceneID="3dd-QU-hUM">
@@ -1430,7 +1430,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fn-Ry-6qT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jgG-8u-7YS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1229" y="1149"/>
+            <point key="canvasLocation" x="-1099" y="1135"/>
         </scene>
         <!--Graphs View Controller-->
         <scene sceneID="68w-G2-Z2J">
@@ -1585,7 +1585,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yG-HJ-YM7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2740.4296875" y="-252.34375"/>
+            <point key="canvasLocation" x="-2228" y="-575"/>
         </scene>
         <!--Leader Board View Controller-->
         <scene sceneID="GU0-qD-FyY">
@@ -1745,7 +1745,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kus-uZ-476" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-203.3203125" y="-1361.71875"/>
+            <point key="canvasLocation" x="226" y="-2091"/>
         </scene>
         <!--Register User View Controller-->
         <scene sceneID="LZo-bz-Gag">
@@ -1855,7 +1855,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hf2-tT-fQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2740" y="-1362"/>
+            <point key="canvasLocation" x="-2228" y="-2091"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="NsX-1r-hMY">
@@ -1942,7 +1942,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBA-oo-OL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2740" y="1100"/>
+            <point key="canvasLocation" x="-2228" y="1148"/>
         </scene>
         <!--Launch Screen View Controller-->
         <scene sceneID="anj-pQ-cco">
@@ -1956,9 +1956,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzi-Jh-9yj">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzi-Jh-9yj">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.52724093198776245" green="0.064324282109737396" blue="0.40343278646469116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1981,7 +1985,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cyx-VB-yxO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3967" y="-252"/>
+            <point key="canvasLocation" x="-3960" y="-575"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="dBW-U1-vcH">
@@ -2190,7 +2194,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PSg-oe-2AX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="85n-E0-nCz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1229" y="-1362"/>
+            <point key="canvasLocation" x="-1229" y="-575"/>
         </scene>
         <!--Anatomy Quiz Play Controller-->
         <scene sceneID="tMV-xp-dZg">
@@ -2291,7 +2295,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIk-t0-FsC">
-                                <rect key="frame" x="351" y="329" width="322" height="59"/>
+                                <rect key="frame" x="236" y="329" width="551" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="45"/>
                                 <color key="textColor" red="0.0" green="0.1529411765" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2324,27 +2328,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9H-Gh-1zI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919.92187499999989" y="504.6875"/>
+            <point key="canvasLocation" x="1039.453125" y="504.6875"/>
         </scene>
     </scenes>
     <resources>
         <image name="_Pokeball-128" width="128" height="128"/>
         <image name="anatomy" width="512" height="512"/>
         <image name="anatomyBackground" width="852" height="480"/>
-        <image name="back1" width="1440" height="2560"/>
-        <image name="back2" width="1500" height="844"/>
+        <image name="back1" width="720" height="1280"/>
+        <image name="back2" width="750" height="422"/>
         <image name="back_btn" width="34" height="30"/>
         <image name="botany" width="512" height="512"/>
         <image name="firebaseLogin" width="512" height="512"/>
-        <image name="firebaseRegister" width="545.25" height="306.75"/>
+        <image name="firebaseRegister" width="727" height="409"/>
         <image name="leaderIcon" width="512" height="512"/>
-        <image name="learnBck" width="600" height="988"/>
-        <image name="learnImg" width="650" height="862"/>
+        <image name="learnBck" width="300" height="494"/>
+        <image name="learnImg" width="325" height="431"/>
         <image name="plant2" width="5184" height="3456"/>
-        <image name="playButtonIcon" width="75" height="75"/>
-        <image name="playImg" width="341" height="341"/>
-        <image name="solar" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="target" width="75" height="75"/>
+        <image name="playButtonIcon" width="100" height="100"/>
+        <image name="playImg" width="170.5" height="170.5"/>
+        <image name="solar" width="512" height="512"/>
+        <image name="target" width="100" height="100"/>
         <image name="user-icon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
